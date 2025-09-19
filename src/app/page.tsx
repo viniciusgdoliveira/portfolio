@@ -8,21 +8,23 @@ export default function Home() {
 
   const aboutSections = [
     {
-      title: "Professional",
-      content: "As a Software Engineer specializing in Shopify, Hydrogen, and modern web technologies, I bring methodical precision and punctuality to every project. My focus on work excellence drives me to deliver high-quality solutions that exceed client expectations.",
+      title: "At Work",
+      content: "As a Software Engineer focused on Shopify, Hydrogen, and modern web technologies, I bring precision and reliability to every project. My approach is methodical yet creative, always aiming to deliver solutions that not only meet expectations but move them forward.",
       image: "https://cdn.shopify.com/s/files/1/0666/0207/4202/files/MG_7808.jpg?v=1758300880"
     },
     {
-      title: "Lifestyle", 
-      content: "I'm a friendly, easy-going person who believes in the power of adaptation. Whether working solo or collaborating in teams, I bring respect and positivity to every interaction. Life's success comes from embracing different situations with an open mind.",
+      title: "Beyond Work", 
+      content: "I value balance between work and leisure, embracing the idea of creative idleness where stepping away from the desk often sparks the best solutions. Whether collaborating with a team or enjoying time at the beach, I approach life with openness and positivity, believing that rest and curiosity are as essential to progress as focus and discipline.",
       image: "https://cdn.shopify.com/s/files/1/0666/0207/4202/files/WhatsApp_Image_2025-09-19_at_13.37.57.jpg?v=1758300008"
-    },
+    }    
+    ,
     {
-      title: "Introspective",
-      content: "Beyond code, I find fulfillment in exploring new technologies and contributing to open-source projects. I believe continuous learning and adaptation are essential not just for professional growth, but for personal development and meaningful connections.",
+      title: "Always Learning",
+      content: "Curiosity drives me. I enjoy exploring new technologies, contributing to open source, and refining my craft. For me, growth is not only about technical skills but also about building meaningful connections and evolving as a person along the way.",
       image: "https://cdn.shopify.com/s/files/1/0666/0207/4202/files/MG_7850.jpg?v=1758300881"
     }
   ];
+  
 
   useEffect(() => {
     const interval = setInterval(() => {
