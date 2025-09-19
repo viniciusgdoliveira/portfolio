@@ -10,18 +10,47 @@ export default function Home() {
     {
       title: "At Work",
       content: "As a Software Engineer focused on Shopify, Hydrogen, and modern web technologies, I bring precision and reliability to every project. My approach is methodical yet creative, always aiming to deliver solutions that not only meet expectations but move them forward.",
-      image: "https://cdn.shopify.com/s/files/1/0666/0207/4202/files/MG_7808.jpg?v=1758300880"
+      image: "https://cdn.shopify.com/s/files/1/0666/0207/4202/files/MG_7808.jpg?v=1758300880",
+      techStack: [
+        "Shopify",
+        "Hydrogen", 
+        "TypeScript",
+        "React.js",
+        "Next.js",
+        "Firebase",
+        "Node.js",
+        "Git & Version Control"
+      ]
     },
     {
       title: "Beyond Work", 
       content: "I value balance between work and leisure, embracing the idea of creative idleness where stepping away from the desk often sparks the best solutions. Whether collaborating with a team or enjoying time at the beach, I approach life with openness and positivity, believing that rest and curiosity are as essential to progress as focus and discipline.",
-      image: "https://cdn.shopify.com/s/files/1/0666/0207/4202/files/WhatsApp_Image_2025-09-19_at_13.37.57.jpg?v=1758300008"
-    }    
-    ,
+      image: "https://cdn.shopify.com/s/files/1/0666/0207/4202/files/WhatsApp_Image_2025-09-19_at_13.37.57.jpg?v=1758300008",
+      techStack: [
+        "Creativity",
+        "Adaptability",
+        "Collaboration",
+        "Emotional Intelligence",
+        "Open-mindedness",
+        "Positivity",
+        "Cultural Awareness",
+        "Problem Solving"
+      ]
+    },
     {
       title: "Always Learning",
       content: "Curiosity drives me. I enjoy exploring new technologies, contributing to open source, and refining my craft. For me, growth is not only about technical skills but also about building meaningful connections and evolving as a person along the way.",
-      image: "https://cdn.shopify.com/s/files/1/0666/0207/4202/files/MG_7850.jpg?v=1758300881"
+      image: "https://cdn.shopify.com/s/files/1/0666/0207/4202/files/MG_7850.jpg?v=1758300881",
+      techStack: [
+        "Continuous Learning",
+        "Curiosity",
+        "Research & Exploration",
+        "Open Source Contribution",
+        "Critical Thinking",
+        "Self-Reflection",
+        "Knowledge Sharing",
+        "Innovation"
+      ]
     }
   ];
   
@@ -123,7 +152,7 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Rotating Photo/Content */}
             <div className="relative">
               <div className="aspect-square rounded-3xl liquid-glass overflow-hidden transition-all duration-1000 ease-in-out">
@@ -155,7 +184,7 @@ export default function Home() {
             </div>
             
             {/* Content */}
-            <div className="liquid-card p-8">
+            <div className="liquid-card p-8 aspect-square flex flex-col justify-between">
               <div className="mb-6">
                 <h3 className="text-2xl font-bold text-white mb-4">
                   {aboutSections[currentAboutIndex].title}
@@ -165,26 +194,13 @@ export default function Home() {
                 </p>
               </div>
               
-              {/* Skills */}
+              {/* Dynamic Skills */}
               <div className="flex flex-wrap gap-3">
-                <span className="px-4 py-2 liquid-glass-light text-white rounded-full text-sm font-medium">
-                  Shopify
-                </span>
-                <span className="px-4 py-2 liquid-glass-light text-white rounded-full text-sm font-medium">
-                  Hydrogen
-                </span>
-                <span className="px-4 py-2 liquid-glass-light text-white rounded-full text-sm font-medium">
-                  TypeScript
-                </span>
-                <span className="px-4 py-2 liquid-glass-light text-white rounded-full text-sm font-medium">
-                  ReactJS
-                </span>
-                <span className="px-4 py-2 liquid-glass-light text-white rounded-full text-sm font-medium">
-                  Next.js
-                </span>
-                <span className="px-4 py-2 liquid-glass-light text-white rounded-full text-sm font-medium">
-                  Firebase
-                </span>
+                {aboutSections[currentAboutIndex].techStack.map((skill, index) => (
+                  <span key={index} className="px-4 py-2 liquid-glass-light text-white rounded-full text-sm font-medium">
+                    {skill}
+                  </span>
+                ))}
               </div>
             </div>
           </div>

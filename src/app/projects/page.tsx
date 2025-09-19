@@ -72,8 +72,6 @@ export default function Projects() {
     }
   ];
 
-  const featuredProjects = projects.filter(project => project.featured);
-  const otherProjects = projects.filter(project => !project.featured);
 
   const ProjectCard = ({ project, isFeatured = false }: { project: typeof projects[0], isFeatured?: boolean }) => {
     const [activeTab, setActiveTab] = useState<'image' | 'video' | 'live'>('image');
@@ -249,27 +247,29 @@ export default function Projects() {
             </p>
           </div>
 
-          {/* Featured Projects */}
-          <section className="mb-20">
-            <h2 className="text-3xl font-bold text-white mb-8 text-center">
-              Featured Projects
-            </h2>
-            <div className="grid lg:grid-cols-2 gap-8">
-              {featuredProjects.map((project) => (
-                <ProjectCard key={project.id} project={project} isFeatured={true} />
-              ))}
-            </div>
-          </section>
-
-          {/* Other Projects */}
+          {/* All Projects */}
           <section>
-            <h2 className="text-3xl font-bold text-white mb-8 text-center">
-              Other Projects
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {otherProjects.map((project) => (
-                <ProjectCard key={project.id} project={project} isFeatured={false} />
-              ))}
+            <div className="space-y-8">
+              {/* Row 1 */}
+              <div className="grid lg:grid-cols-2 gap-8">
+                {projects.slice(0, 2).map((project) => (
+                  <ProjectCard key={project.id} project={project} isFeatured={true} />
+                ))}
+              </div>
+              
+              {/* Row 2 */}
+              <div className="grid lg:grid-cols-2 gap-8">
+                {projects.slice(2, 4).map((project) => (
+                  <ProjectCard key={project.id} project={project} isFeatured={true} />
+                ))}
+              </div>
+              
+              {/* Row 3 */}
+              <div className="grid lg:grid-cols-2 gap-8">
+                {projects.slice(4, 6).map((project) => (
+                  <ProjectCard key={project.id} project={project} isFeatured={true} />
+                ))}
+              </div>
             </div>
           </section>
         </div>
