@@ -1,3 +1,15 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description: "Get in touch with Vinícius Guimarães de Oliveira. Software Engineer specializing in Shopify, Hydrogen, TypeScript, ReactJS, Next.js, and Firebase. Always interested in new opportunities and collaborations.",
+  openGraph: {
+    title: "Contact - Vinícius Guimarães de Oliveira",
+    description: "Get in touch with Vinícius Guimarães de Oliveira. Software Engineer specializing in Shopify, Hydrogen, TypeScript, ReactJS, Next.js, and Firebase.",
+    images: ["/og-image.png"],
+  },
+};
+
 export default function Contact() {
   return (
     <div className="min-h-screen liquid-bg">

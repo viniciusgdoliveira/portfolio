@@ -37,12 +37,49 @@ export default function Home() {
 
   return (
     <div className="min-h-screen liquid-bg">
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Vinícius Guimarães de Oliveira",
+            "jobTitle": "Software Engineer",
+            "description": "Software Engineer specializing in Shopify, Hydrogen, TypeScript, ReactJS, Next.js, and Firebase",
+            "url": "https://viniciusgdoliveira.vercel.app",
+            "sameAs": [
+              "https://github.com/viniciusgdoliveira",
+              "https://linkedin.com/in/viniciusgdoliveira"
+            ],
+            "knowsAbout": [
+              "Shopify",
+              "Hydrogen",
+              "TypeScript",
+              "ReactJS",
+              "Next.js",
+              "Firebase",
+              "Software Engineering",
+              "Web Development",
+              "Frontend Development"
+            ],
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Freelance"
+            }
+          })
+        }}
+      />
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-20">
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-8">
-            <div className="w-32 h-32 liquid-glass mx-auto mb-6 flex items-center justify-center floating">
-              <span className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">VG</span>
+            <div className="w-32 h-32 liquid-glass mx-auto mb-6 flex items-center justify-center floating overflow-hidden rounded-full">
+              <img 
+                src="https://cdn.shopify.com/s/files/1/0666/0207/4202/files/vinicius-transparent-bg.png?v=1752328643" 
+                alt="Vinícius Guimarães de Oliveira" 
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
           
@@ -189,16 +226,29 @@ export default function Home() {
               }
             ].map((project, index) => (
               <div key={index} className="liquid-card overflow-hidden hover:scale-105 transition-all duration-300">
-                <div className={`h-48 ${project.image} flex items-center justify-center`}>
-                  <div className="text-white text-center">
-                    <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                      </svg>
-                    </div>
-                    <p className="text-sm opacity-80">Project Preview</p>
+                {index === 0 ? (
+                  <div className="h-48 relative">
+                    <video 
+                      src="https://cdn.shopify.com/videos/c/o/v/61e3792a038e4e04a9e5bc85c3f1a54d.mp4"
+                      className="w-full h-full object-cover"
+                      muted
+                      loop
+                      autoPlay
+                      playsInline
+                    />
                   </div>
-                </div>
+                ) : (
+                  <div className={`h-48 ${project.image} flex items-center justify-center`}>
+                    <div className="text-white text-center">
+                      <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                      </div>
+                      <p className="text-sm opacity-80">Project Preview</p>
+                    </div>
+                  </div>
+                )}
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
                     {project.title}
