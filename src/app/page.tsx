@@ -229,7 +229,8 @@ export default function Home() {
                   tech: ["React Native", "Expo", "TypeScript"],
                   image: "bg-gradient-to-br from-blue-400 to-purple-500",
                   github: "https://github.com/viniciusgdoliveira/trail-making-test-digital",
-                  live: ""
+                  live: "",
+                  videoUrl: "https://cdn.shopify.com/videos/c/o/v/61e3792a038e4e04a9e5bc85c3f1a54d.mp4"
                 },
                 {
                   title: "Aula Firebase Next.js",
@@ -237,25 +238,15 @@ export default function Home() {
                   tech: ["Next.js", "Firebase", "Vercel"],
                   image: "bg-gradient-to-br from-green-400 to-blue-500",
                   github: "https://github.com/viniciusgdoliveira/aula-firebase-nextjs",
-                  live: "http://aula-firebase.vercel.app/"
+                  live: "http://aula-firebase.vercel.app/",
+                  videoUrl: "https://cdn.shopify.com/videos/c/o/v/c1bd79ad562d433a9ab0369763c316e2.mov"
                 }
               ].map((project, index) => (
               <div key={index} className="liquid-card overflow-hidden hover:scale-105 transition-all duration-300">
-                {index === 0 ? (
+                {project.videoUrl ? (
                   <div className="h-64 relative">
                     <video 
-                      src="https://cdn.shopify.com/videos/c/o/v/61e3792a038e4e04a9e5bc85c3f1a54d.mp4"
-                      className="w-full h-full object-cover"
-                      muted
-                      loop
-                      autoPlay
-                      playsInline
-                    />
-                  </div>
-                ) : index === 1 ? (
-                  <div className="h-64 relative">
-                    <video 
-                      src="https://cdn.shopify.com/videos/c/o/v/c1bd79ad562d433a9ab0369763c316e2.mov"
+                      src={project.videoUrl}
                       className="w-full h-full object-cover"
                       muted
                       loop
@@ -326,7 +317,8 @@ export default function Home() {
                   tech: ["Python", "Flask", "AI/ML"],
                   image: "bg-gradient-to-br from-orange-400 to-red-500",
                   github: "https://github.com/viniciusgdoliveira/meuassessorfashion",
-                  live: "https://meuassessorfashion.onrender.com"
+                  live: "https://meuassessorfashion.onrender.com",
+                  videoUrl: "https://cdn.shopify.com/videos/c/o/v/f459b50c1b074da3b190bb9c0bd90ae7.mp4"
                 },
                 {
                   title: "Python Code Automation",
@@ -334,7 +326,8 @@ export default function Home() {
                   tech: ["Python", "Automation", "APIs"],
                   image: "bg-gradient-to-br from-yellow-400 to-orange-500",
                   github: "https://github.com/viniciusgdoliveira/python-code-automation",
-                  live: ""
+                  live: "",
+                  videoUrl: "https://cdn.shopify.com/videos/c/o/v/98c41452a4fa445dbd00971e81601fea.mp4"
                 },
                 {
                   title: "Hydrogen Mush",
@@ -342,7 +335,8 @@ export default function Home() {
                   tech: ["Hydrogen", "React", "TypeScript"],
                   image: "bg-gradient-to-br from-purple-400 to-pink-500",
                   github: "https://github.com/viniciusgdoliveira/hydrogen-mush",
-                  live: "https://mush.company"
+                  live: "https://mush.company",
+                  videoUrl: "https://cdn.shopify.com/videos/c/o/v/1088c712e6a7457aae52e3694c54674d.mp4"
                 },
                 {
                   title: "Mush Shopify Store",
@@ -350,20 +344,34 @@ export default function Home() {
                   tech: ["Shopify", "Liquid", "JavaScript"],
                   image: "bg-gradient-to-br from-indigo-400 to-purple-500",
                   github: "https://github.com/viniciusgdoliveira/mush-shopify",
-                  live: "https://mushcompany.myshopify.com"
+                  live: "https://mushcompany.myshopify.com",
+                  videoUrl: ""
                 }
               ].map((project, index) => (
               <div key={index} className="liquid-card overflow-hidden hover:scale-105 transition-all duration-300">
-                <div className={`h-32 ${project.image} flex items-center justify-center`}>
-                  <div className="text-white text-center">
-                    <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2">
-                      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                      </svg>
-                    </div>
-                    <p className="text-xs opacity-80">Project Preview</p>
+                {project.videoUrl ? (
+                  <div className="h-32 relative">
+                    <video 
+                      src={project.videoUrl}
+                      className="w-full h-full object-cover"
+                      muted
+                      loop
+                      autoPlay
+                      playsInline
+                    />
                   </div>
-                </div>
+                ) : (
+                  <div className={`h-32 ${project.image} flex items-center justify-center`}>
+                    <div className="text-white text-center">
+                      <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                      </div>
+                      <p className="text-xs opacity-80">Project Preview</p>
+                    </div>
+                  </div>
+                )}
                 <div className="p-4">
                   <h3 className="text-lg font-bold text-white mb-2">
                     {project.title}

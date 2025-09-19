@@ -8,7 +8,7 @@ export default function Projects() {
       id: 1,
       title: "Trail Making Test Digital",
       description: "A digital adaptation of the Trail Making Test (TMT) neuropsychological assessment tool, developed for iPad and tablets. Features Part A (number sequencing) and Part B (alternating number-letter sequences) to evaluate visual attention and task switching abilities. Built for Ph.D. research and optimized for touch interfaces.",
-      image: "/api/placeholder/600/400",
+      image: "https://cdn.shopify.com/s/files/1/0666/0207/4202/files/Screenshot_2025-09-19_at_16.59.30.png?v=1758311986",
       technologies: ["React Native", "Expo", "TypeScript", "iOS/Android"],
       github: "https://github.com/viniciusgdoliveira/trail-making-test-digital",
       live: "", // Mobile app - no web version
@@ -19,7 +19,7 @@ export default function Projects() {
       id: 2,
       title: "Aula Firebase Next.js",
       description: "A comprehensive learning management system demonstrating Firebase integration with Next.js. Features user authentication, Firestore document management, Cloud Storage for image uploads, and real-time data synchronization. Deployed on Vercel with full CRUD operations and file management capabilities.",
-      image: "/api/placeholder/600/400",
+      image: "https://cdn.shopify.com/s/files/1/0666/0207/4202/files/Screenshot_2025-09-19_at_16.57.00.png?v=1758311880",
       technologies: ["Next.js", "Firebase", "Firestore", "Vercel", "TypeScript"],
       github: "https://github.com/viniciusgdoliveira/aula-firebase-nextjs",
       live: "http://aula-firebase.vercel.app/",
@@ -30,33 +30,33 @@ export default function Projects() {
       id: 3,
       title: "Meu Assessor Fashion",
       description: "An AI-powered fashion consultant application that provides personalized styling recommendations and outfit suggestions. Features intelligent image analysis, style matching algorithms, and interactive fashion advice to help users discover their perfect look.",
-      image: "/api/placeholder/600/400",
+      image: "https://cdn.shopify.com/s/files/1/0666/0207/4202/files/Screenshot_2025-09-19_at_16.56.03.png?v=1758311883",
       technologies: ["Python", "Flask", "HTML", "CSS", "AI/ML"],
       github: "https://github.com/viniciusgdoliveira/meuassessorfashion",
       live: "https://meuassessorfashion.onrender.com",
-      videoUrl: "", // Will be provided later
+      videoUrl: "https://cdn.shopify.com/videos/c/o/v/f459b50c1b074da3b190bb9c0bd90ae7.mp4", // Will be provided later
       featured: false
     },
     {
       id: 4,
       title: "Python Code Automation",
       description: "A powerful automation toolkit built with Python for streamlining development workflows and repetitive tasks. Features script automation, file processing, API integrations, and custom workflow management to enhance developer productivity.",
-      image: "/api/placeholder/600/400",
+      image: "https://cdn.shopify.com/s/files/1/0666/0207/4202/files/Screenshot_2025-09-19_at_16.54.56.png?v=1758311882",
       technologies: ["Python", "Automation", "Scripting", "APIs", "Workflow Management"],
       github: "https://github.com/viniciusgdoliveira/python-code-automation",
       live: "", // CLI tool - no web version
-      videoUrl: "", // Will be provided later
+      videoUrl: "https://cdn.shopify.com/videos/c/o/v/98c41452a4fa445dbd00971e81601fea.mp4", // Will be provided later
       featured: false
     },
     {
       id: 5,
       title: "Hydrogen Mush",
       description: "A modern e-commerce platform built with Shopify Hydrogen, featuring advanced product customization and seamless checkout experience. Optimized for performance with headless commerce architecture.",
-      image: "/api/placeholder/600/400",
+      image: "https://cdn.shopify.com/s/files/1/0666/0207/4202/files/Screenshot_2025-09-19_at_16.55.46.png?v=1758311888",
       technologies: ["Shopify Hydrogen", "React", "TypeScript", "Tailwind CSS", "Shopify Storefront API"],
       github: "https://github.com/viniciusgdoliveira/hydrogen-mush",
       live: "https://mush.company",
-      videoUrl: "", // Will be provided later
+      videoUrl: "https://cdn.shopify.com/videos/c/o/v/1088c712e6a7457aae52e3694c54674d.mp4", // Will be provided later
       featured: false
     },
     {
@@ -74,21 +74,37 @@ export default function Projects() {
 
 
   const ProjectCard = ({ project, isFeatured = false }: { project: typeof projects[0], isFeatured?: boolean }) => {
-    const [activeTab, setActiveTab] = useState<'image' | 'video' | 'live'>('image');
+    const [activeTab, setActiveTab] = useState<'image' | 'video'>('image');
 
     return (
       <div className="liquid-card overflow-hidden hover:scale-105 transition-all duration-300">
         {/* Image/Video/Live Container */}
         <div className="aspect-video bg-gradient-to-br from-blue-400 to-purple-500 relative overflow-hidden">
           {activeTab === 'image' && (
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-white text-center">
-                <div className={`${isFeatured ? 'w-16 h-16' : 'w-12 h-12'} bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4`}>
-                  <svg className={`${isFeatured ? 'w-8 h-8' : 'w-6 h-6'}`} fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                  </svg>
+            <div className="absolute inset-0">
+              <img
+                src={project.image}
+                alt={`${project.title} Preview`}
+                className="w-full h-full object-cover"
+                loading="lazy"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                  const fallbackDiv = target.nextElementSibling as HTMLElement;
+                  if (fallbackDiv) {
+                    fallbackDiv.style.display = 'flex';
+                  }
+                }}
+              />
+              <div className="absolute inset-0 flex items-center justify-center" style={{ display: 'none' }}>
+                <div className="text-white text-center">
+                  <div className={`${isFeatured ? 'w-16 h-16' : 'w-12 h-12'} bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4`}>
+                    <svg className={`${isFeatured ? 'w-8 h-8' : 'w-6 h-6'}`} fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                  </div>
+                  <p className={`${isFeatured ? 'text-sm' : 'text-xs'} opacity-80`}>Project Preview</p>
                 </div>
-                <p className={`${isFeatured ? 'text-sm' : 'text-xs'} opacity-80`}>Project Preview</p>
               </div>
             </div>
           )}
@@ -120,30 +136,6 @@ export default function Projects() {
             </div>
           )}
           
-          {activeTab === 'live' && project.live && (
-            <div className="absolute inset-0">
-              <iframe
-                src={project.live}
-                className="w-full h-full border-0"
-                title={`${project.title} Live Demo`}
-                sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
-              />
-            </div>
-          )}
-          
-          {activeTab === 'live' && !project.live && (
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-white text-center">
-                <div className={`${isFeatured ? 'w-16 h-16' : 'w-12 h-12'} bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4`}>
-                  <svg className={`${isFeatured ? 'w-8 h-8' : 'w-6 h-6'}`} fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                  </svg>
-                </div>
-                <p className={`${isFeatured ? 'text-sm' : 'text-xs'} opacity-80`}>Desktop/Mobile App</p>
-                <p className={`${isFeatured ? 'text-xs' : 'text-xs'} opacity-60 mt-1`}>No web version available</p>
-              </div>
-            </div>
-          )}
         </div>
 
         {/* Tab Navigation */}
@@ -168,16 +160,6 @@ export default function Projects() {
               }`}
             >
               🎥 Video
-            </button>
-            <button
-              onClick={() => setActiveTab('live')}
-              className={`flex-1 py-2 px-3 rounded-[20px] text-xs font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
-                activeTab === 'live'
-                  ? 'liquid-glass text-blue-600 dark:text-blue-400'
-                  : 'text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400'
-              }`}
-            >
-              🌐 Live
             </button>
           </div>
         </div>
