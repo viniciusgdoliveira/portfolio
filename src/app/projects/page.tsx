@@ -190,6 +190,8 @@ export default function Projects() {
           <div className="flex space-x-3">
             <a
               href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center space-x-1 text-white/80 hover:text-white transition-colors text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 rounded-[20px] px-3 py-2 bg-white/10 hover:bg-white/20"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -200,6 +202,8 @@ export default function Projects() {
             {project.live && (
               <a
                 href={project.live}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center space-x-1 text-white/80 hover:text-white transition-colors text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 rounded-[20px] px-3 py-2 bg-blue-500/20 hover:bg-blue-500/30"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
