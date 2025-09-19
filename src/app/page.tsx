@@ -10,20 +10,17 @@ export default function Home() {
     {
       title: "Professional",
       content: "As a Software Engineer specializing in Shopify, Hydrogen, and modern web technologies, I bring methodical precision and punctuality to every project. My focus on work excellence drives me to deliver high-quality solutions that exceed client expectations.",
-      image: "bg-gradient-to-br from-blue-500 to-indigo-600",
-      icon: "💼"
+      image: "https://cdn.shopify.com/s/files/1/0666/0207/4202/files/MG_7808.jpg?v=1758300880"
     },
     {
       title: "Lifestyle", 
       content: "I'm a friendly, easy-going person who believes in the power of adaptation. Whether working solo or collaborating in teams, I bring respect and positivity to every interaction. Life's success comes from embracing different situations with an open mind.",
-      image: "bg-gradient-to-br from-green-500 to-emerald-600",
-      icon: "🌟"
+      image: "https://cdn.shopify.com/s/files/1/0666/0207/4202/files/WhatsApp_Image_2025-09-19_at_13.37.57.jpg?v=1758300008"
     },
     {
       title: "Introspective",
       content: "Beyond code, I find fulfillment in exploring new technologies and contributing to open-source projects. I believe continuous learning and adaptation are essential not just for professional growth, but for personal development and meaningful connections.",
-      image: "bg-gradient-to-br from-purple-500 to-pink-600", 
-      icon: "🧠"
+      image: "https://cdn.shopify.com/s/files/1/0666/0207/4202/files/MG_7850.jpg?v=1758300881"
     }
   ];
 
@@ -71,7 +68,7 @@ export default function Home() {
         }}
       />
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-20">
+      <section className="container mx-auto px-4 py-10">
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-8">
             <div className="w-32 h-32 liquid-glass mx-auto mb-6 flex items-center justify-center floating overflow-hidden rounded-full">
@@ -98,13 +95,13 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
               href="/projects"
-              className="liquid-button text-white font-semibold py-3 px-8 rounded-xl transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              className="liquid-button text-white font-semibold py-3 px-8 rounded-[20px] transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
               View My Work
             </Link>
             <Link
               href="/contact"
-              className="liquid-glass-light text-white hover:text-white font-semibold py-3 px-8 rounded-xl transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
+              className="liquid-glass-light text-white hover:text-white font-semibold py-3 px-8 rounded-[20px] transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
             >
               Get In Touch
             </Link>
@@ -113,9 +110,9 @@ export default function Home() {
       </section>
 
       {/* Rotating About Section */}
-      <section className="container mx-auto px-4 py-20">
+      <section className="container mx-auto px-4 py-10">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               About Me
             </h2>
@@ -127,15 +124,15 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Rotating Photo/Content */}
             <div className="relative">
-              <div className={`aspect-square ${aboutSections[currentAboutIndex].image} rounded-3xl liquid-glass overflow-hidden transition-all duration-1000 ease-in-out`}>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-white text-center">
-                    <div className="w-32 h-32 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                      <span className="text-6xl">{aboutSections[currentAboutIndex].icon}</span>
-                    </div>
-                    <h3 className="text-2xl font-bold mb-2">{aboutSections[currentAboutIndex].title}</h3>
-                    <p className="text-sm opacity-80">Photo Placeholder</p>
-                  </div>
+              <div className="aspect-square rounded-3xl liquid-glass overflow-hidden transition-all duration-1000 ease-in-out">
+                <img 
+                  src={aboutSections[currentAboutIndex].image}
+                  alt={`${aboutSections[currentAboutIndex].title} - Vinícius Guimarães de Oliveira`}
+                  className="w-full h-full object-cover transition-all duration-1000 ease-in-out"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6 text-white">
+              
                 </div>
               </div>
               
@@ -193,9 +190,9 @@ export default function Home() {
       </section>
 
       {/* Featured Projects Preview */}
-      <section className="container mx-auto px-4 py-20">
+      <section className="container mx-auto px-4 py-10">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Featured Projects
             </h2>
@@ -204,30 +201,30 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Trail Making Test Digital",
-                description: "Digital neuropsychological assessment tool for iPad and tablets.",
-                tech: ["React Native", "Expo", "TypeScript"],
-                image: "bg-gradient-to-br from-blue-400 to-purple-500"
-              },
-              {
-                title: "Aula Firebase Next.js",
-                description: "Learning management system with Firebase integration and real-time features.",
-                tech: ["Next.js", "Firebase", "Vercel"],
-                image: "bg-gradient-to-br from-green-400 to-blue-500"
-              },
-              {
-                title: "Meu Assessor Fashion",
-                description: "AI-powered fashion consultant with intelligent styling recommendations.",
-                tech: ["Python", "Flask", "AI/ML"],
-                image: "bg-gradient-to-br from-orange-400 to-red-500"
-              }
-            ].map((project, index) => (
+          <div className="space-y-8">
+            {/* First Row - 2 Big Cards */}
+            <div className="grid md:grid-cols-2 gap-8">
+              {[
+                {
+                  title: "Trail Making Test Digital",
+                  description: "Digital neuropsychological assessment tool for iPad and tablets. Features Part A (number sequencing) and Part B (alternating number-letter sequences) to evaluate visual attention and task switching abilities.",
+                  tech: ["React Native", "Expo", "TypeScript"],
+                  image: "bg-gradient-to-br from-blue-400 to-purple-500",
+                  github: "https://github.com/viniciusgdoliveira/trail-making-test-digital",
+                  live: ""
+                },
+                {
+                  title: "Aula Firebase Next.js",
+                  description: "Learning management system with Firebase integration and real-time features. Features user authentication, Firestore document management, Cloud Storage for image uploads, and real-time data synchronization.",
+                  tech: ["Next.js", "Firebase", "Vercel"],
+                  image: "bg-gradient-to-br from-green-400 to-blue-500",
+                  github: "https://github.com/viniciusgdoliveira/aula-firebase-nextjs",
+                  live: "http://aula-firebase.vercel.app/"
+                }
+              ].map((project, index) => (
               <div key={index} className="liquid-card overflow-hidden hover:scale-105 transition-all duration-300">
                 {index === 0 ? (
-                  <div className="h-48 relative">
+                  <div className="h-64 relative">
                     <video 
                       src="https://cdn.shopify.com/videos/c/o/v/61e3792a038e4e04a9e5bc85c3f1a54d.mp4"
                       className="w-full h-full object-cover"
@@ -237,8 +234,19 @@ export default function Home() {
                       playsInline
                     />
                   </div>
+                ) : index === 1 ? (
+                  <div className="h-64 relative">
+                    <video 
+                      src="https://cdn.shopify.com/videos/c/o/v/c1bd79ad562d433a9ab0369763c316e2.mov"
+                      className="w-full h-full object-cover"
+                      muted
+                      loop
+                      autoPlay
+                      playsInline
+                    />
+                  </div>
                 ) : (
-                  <div className={`h-48 ${project.image} flex items-center justify-center`}>
+                  <div className={`h-64 ${project.image} flex items-center justify-center`}>
                     <div className="text-white text-center">
                       <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
                         <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
@@ -262,19 +270,129 @@ export default function Home() {
                       key={techIndex}
                       className="px-2 py-1 liquid-glass-light text-white text-xs rounded-xl"
                     >
-                        {tech}
-                      </span>
+                      {tech}
+                    </span>
                     ))}
+                  </div>
+                  <div className="flex gap-3">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 bg-white/10 hover:bg-white/20 text-white py-2 px-4 rounded-[20px] transition-colors duration-200 text-center text-sm"
+                    >
+                      GitHub
+                    </a>
+                    {project.live && (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-[20px] transition-colors duration-200 text-center text-sm"
+                      >
+                        Live Demo
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
-            ))}
+              ))}
+            </div>
+            
+            {/* Second Row - 4 Small Cards */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                {
+                  title: "Meu Assessor Fashion",
+                  description: "AI-powered fashion consultant with intelligent styling recommendations.",
+                  tech: ["Python", "Flask", "AI/ML"],
+                  image: "bg-gradient-to-br from-orange-400 to-red-500",
+                  github: "https://github.com/viniciusgdoliveira/meuassessorfashion",
+                  live: "https://meuassessorfashion.onrender.com"
+                },
+                {
+                  title: "Python Code Automation",
+                  description: "Powerful automation toolkit for streamlining development workflows.",
+                  tech: ["Python", "Automation", "APIs"],
+                  image: "bg-gradient-to-br from-yellow-400 to-orange-500",
+                  github: "https://github.com/viniciusgdoliveira/python-code-automation",
+                  live: ""
+                },
+                {
+                  title: "Hydrogen Mush",
+                  description: "Modern e-commerce platform built with Shopify Hydrogen.",
+                  tech: ["Hydrogen", "React", "TypeScript"],
+                  image: "bg-gradient-to-br from-purple-400 to-pink-500",
+                  github: "https://github.com/viniciusgdoliveira/hydrogen-mush",
+                  live: "https://mush.company"
+                },
+                {
+                  title: "Mush Shopify Store",
+                  description: "Comprehensive Shopify store with custom themes and features.",
+                  tech: ["Shopify", "Liquid", "JavaScript"],
+                  image: "bg-gradient-to-br from-indigo-400 to-purple-500",
+                  github: "https://github.com/viniciusgdoliveira/mush-shopify",
+                  live: "https://mushcompany.myshopify.com"
+                }
+              ].map((project, index) => (
+              <div key={index} className="liquid-card overflow-hidden hover:scale-105 transition-all duration-300">
+                <div className={`h-32 ${project.image} flex items-center justify-center`}>
+                  <div className="text-white text-center">
+                    <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                      </svg>
+                    </div>
+                    <p className="text-xs opacity-80">Project Preview</p>
+                  </div>
+                </div>
+                <div className="p-4">
+                  <h3 className="text-lg font-bold text-white mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-white/80 mb-3 text-xs">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-1 mb-3">
+                    {project.tech.map((tech, techIndex) => (
+                    <span
+                      key={techIndex}
+                      className="px-2 py-1 liquid-glass-light text-white text-xs rounded-xl"
+                    >
+                      {tech}
+                    </span>
+                    ))}
+                  </div>
+                  <div className="flex gap-2">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 bg-white/10 hover:bg-white/20 text-white py-1 px-2 rounded-[20px] text-center text-xs transition-colors duration-200"
+                    >
+                      GitHub
+                    </a>
+                    {project.live && (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 bg-blue-500 hover:bg-blue-600 text-white py-1 px-2 rounded-[20px] text-center text-xs transition-colors duration-200"
+                      >
+                        Live Demo
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+              ))}
+            </div>
           </div>
           
-          <div className="text-center mt-12">
+          <div className="text-center mt-6">
             <Link
               href="/projects"
-              className="inline-flex items-center space-x-2 text-white hover:text-white/80 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 rounded-lg px-2 py-1"
+              className="inline-flex items-center space-x-2 text-white hover:text-white/80 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 rounded-[20px] px-4 py-2 bg-white/10 hover:bg-white/20"
             >
               <span>View All Projects</span>
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -286,7 +404,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="container mx-auto px-4 py-20">
+      <section className="container mx-auto px-4 py-10">
         <div className="max-w-4xl mx-auto text-center">
           <div className="liquid-card p-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
@@ -298,7 +416,7 @@ export default function Home() {
             </p>
             <Link
               href="/contact"
-              className="liquid-button text-white font-semibold py-3 px-8 rounded-xl transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              className="liquid-button text-white font-semibold py-3 px-8 rounded-[20px] transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
               Get In Touch
             </Link>

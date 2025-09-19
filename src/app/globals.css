@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: linear-gradient(135deg, #ec4899, #8b5cf6);
+  --background: linear-gradient(135deg, #be185d, #581c87);
   --background-fallback: #ffffff;
   --foreground: #ffffff;
   --glass-bg: rgba(255, 255, 255, 0.15);
@@ -133,7 +133,7 @@
 }
 
 body {
-  background: linear-gradient(135deg, #ec4899, #8b5cf6);
+  background: linear-gradient(135deg, #be185d, #581c87);
   background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;

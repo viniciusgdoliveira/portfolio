@@ -13,10 +13,10 @@ export const metadata: Metadata = {
 export default function Contact() {
   return (
     <div className="min-h-screen liquid-bg">
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-8">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Get In Touch
             </h1>

@@ -30,7 +30,7 @@ export default function Navigation() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 ${
+                className={`px-4 py-2 rounded-[20px] text-sm font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 ${
                   pathname === item.href
                     ? 'liquid-glass-light text-white shadow-lg'
                     : 'text-white/80 hover:text-white hover:liquid-glass-light'
@@ -49,7 +49,7 @@ export default function Navigation() {
             <ThemeToggle />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-xl liquid-glass-light text-white/80 hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
+              className="p-2 rounded-[20px] liquid-glass-light text-white/80 hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
               aria-label="Toggle menu"
             >
               <svg
@@ -80,13 +80,13 @@ export default function Navigation() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 mt-4 liquid-glass-light rounded-xl">
+          <div className="md:hidden py-4 mt-4 liquid-glass-light rounded-[20px]">
             <div className="flex flex-col space-y-2 px-4">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 ${
+                  className={`px-4 py-3 rounded-[20px] text-sm font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 ${
                     pathname === item.href
                       ? 'liquid-glass text-white shadow-lg'
                       : 'text-white/80 hover:text-white hover:liquid-glass-light'
