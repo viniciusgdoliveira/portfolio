@@ -9,7 +9,7 @@ export default function Projects() {
       title: "Trail Making Test Digital",
       description: "A digital adaptation of the Trail Making Test (TMT) neuropsychological assessment tool, developed for iPad and tablets. Features Part A (number sequencing) and Part B (alternating number-letter sequences) to evaluate visual attention and task switching abilities. Built for Ph.D. research and optimized for touch interfaces.",
       image: "/api/placeholder/600/400",
-      technologies: ["React Native", "Expo", "TypeScript", "JavaScript", "iOS/Android"],
+      technologies: ["React Native", "Expo", "TypeScript", "iOS/Android"],
       github: "https://github.com/viniciusgdoliveira/trail-making-test-digital",
       live: "", // Mobile app - no web version
       videoUrl: "https://cdn.shopify.com/videos/c/o/v/61e3792a038e4e04a9e5bc85c3f1a54d.mp4",
@@ -20,7 +20,7 @@ export default function Projects() {
       title: "Aula Firebase Next.js",
       description: "A comprehensive learning management system demonstrating Firebase integration with Next.js. Features user authentication, Firestore document management, Cloud Storage for image uploads, and real-time data synchronization. Deployed on Vercel with full CRUD operations and file management capabilities.",
       image: "/api/placeholder/600/400",
-      technologies: ["Next.js", "Firebase", "Firestore", "Cloud Storage", "Vercel", "TypeScript"],
+      technologies: ["Next.js", "Firebase", "Firestore", "Vercel", "TypeScript"],
       github: "https://github.com/viniciusgdoliveira/aula-firebase-nextjs",
       live: "http://aula-firebase.vercel.app/",
       videoUrl: "https://cdn.shopify.com/videos/c/o/v/c1bd79ad562d433a9ab0369763c316e2.mov",
@@ -31,7 +31,7 @@ export default function Projects() {
       title: "Meu Assessor Fashion",
       description: "An AI-powered fashion consultant application that provides personalized styling recommendations and outfit suggestions. Features intelligent image analysis, style matching algorithms, and interactive fashion advice to help users discover their perfect look.",
       image: "/api/placeholder/600/400",
-      technologies: ["Python", "Flask", "HTML", "CSS", "AI/ML", "Image Processing"],
+      technologies: ["Python", "Flask", "HTML", "CSS", "AI/ML"],
       github: "https://github.com/viniciusgdoliveira/meuassessorfashion",
       live: "https://meuassessorfashion.onrender.com",
       videoUrl: "", // Will be provided later
