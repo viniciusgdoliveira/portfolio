@@ -83,28 +83,28 @@ export default function Home() {
             </div>
           </div>
           
-          <h1 className="text-5xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6">
-            Hi, I&apos;m <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Vinícius Guimarães de Oliveira</span>
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+            Hi, I&apos;m <span className="bg-gradient-to-r from-yellow-300 to-pink-300 bg-clip-text text-transparent">Vinícius Guimarães de Oliveira</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-4 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-white/90 mb-4 max-w-3xl mx-auto">
             Software Engineer | Shopify | Hydrogen | TypeScript | ReactJS | Next.js | Firebase
           </p>
           
-          <p className="text-lg text-slate-500 dark:text-slate-400 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
             Creating beautiful, functional, and user-centered digital experiences with modern technologies.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
               href="/projects"
-              className="liquid-button text-white font-semibold py-3 px-8 rounded-xl transition-all duration-300 hover:scale-105"
+              className="liquid-button text-white font-semibold py-3 px-8 rounded-xl transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
               View My Work
             </Link>
             <Link
               href="/contact"
-              className="liquid-glass-light text-blue-600 dark:text-blue-400 hover:text-white font-semibold py-3 px-8 rounded-xl transition-all duration-300 hover:scale-105"
+              className="liquid-glass-light text-white hover:text-white font-semibold py-3 px-8 rounded-xl transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
             >
               Get In Touch
             </Link>
@@ -116,10 +116,10 @@ export default function Home() {
       <section className="container mx-auto px-4 py-20">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               About Me
             </h2>
-            <p className="text-lg text-slate-600 dark:text-slate-300">
+            <p className="text-lg text-white/80">
               Discover different aspects of who I am
             </p>
           </div>
@@ -158,32 +158,32 @@ export default function Home() {
             {/* Content */}
             <div className="liquid-card p-8">
               <div className="mb-6">
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
+                <h3 className="text-2xl font-bold text-white mb-4">
                   {aboutSections[currentAboutIndex].title}
                 </h3>
-                <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="text-lg text-white/80 leading-relaxed">
                   {aboutSections[currentAboutIndex].content}
                 </p>
               </div>
               
               {/* Skills */}
               <div className="flex flex-wrap gap-3">
-                <span className="px-4 py-2 liquid-glass-light text-blue-600 dark:text-blue-400 rounded-full text-sm font-medium">
+                <span className="px-4 py-2 liquid-glass-light text-white rounded-full text-sm font-medium">
                   Shopify
                 </span>
-                <span className="px-4 py-2 liquid-glass-light text-green-600 dark:text-green-400 rounded-full text-sm font-medium">
+                <span className="px-4 py-2 liquid-glass-light text-white rounded-full text-sm font-medium">
                   Hydrogen
                 </span>
-                <span className="px-4 py-2 liquid-glass-light text-purple-600 dark:text-purple-400 rounded-full text-sm font-medium">
+                <span className="px-4 py-2 liquid-glass-light text-white rounded-full text-sm font-medium">
                   TypeScript
                 </span>
-                <span className="px-4 py-2 liquid-glass-light text-red-600 dark:text-red-400 rounded-full text-sm font-medium">
+                <span className="px-4 py-2 liquid-glass-light text-white rounded-full text-sm font-medium">
                   ReactJS
                 </span>
-                <span className="px-4 py-2 liquid-glass-light text-orange-600 dark:text-orange-400 rounded-full text-sm font-medium">
+                <span className="px-4 py-2 liquid-glass-light text-white rounded-full text-sm font-medium">
                   Next.js
                 </span>
-                <span className="px-4 py-2 liquid-glass-light text-cyan-600 dark:text-cyan-400 rounded-full text-sm font-medium">
+                <span className="px-4 py-2 liquid-glass-light text-white rounded-full text-sm font-medium">
                   Firebase
                 </span>
               </div>
@@ -196,10 +196,10 @@ export default function Home() {
       <section className="container mx-auto px-4 py-20">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Featured Projects
             </h2>
-            <p className="text-lg text-slate-600 dark:text-slate-300">
+            <p className="text-lg text-white/80">
               Here are some of my recent projects that I&apos;m particularly proud of.
             </p>
           </div>
@@ -250,17 +250,17 @@ export default function Home() {
                   </div>
                 )}
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
+                  <h3 className="text-xl font-bold text-white mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-slate-600 dark:text-slate-300 mb-4 text-sm">
+                  <p className="text-white/80 mb-4 text-sm">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tech.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-2 py-1 liquid-glass-light text-slate-700 dark:text-slate-300 text-xs rounded-xl"
+                      className="px-2 py-1 liquid-glass-light text-white text-xs rounded-xl"
                     >
                         {tech}
                       </span>
@@ -274,7 +274,7 @@ export default function Home() {
           <div className="text-center mt-12">
             <Link
               href="/projects"
-              className="inline-flex items-center space-x-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-semibold transition-colors"
+              className="inline-flex items-center space-x-2 text-white hover:text-white/80 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 rounded-lg px-2 py-1"
             >
               <span>View All Projects</span>
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -289,16 +289,16 @@ export default function Home() {
       <section className="container mx-auto px-4 py-20">
         <div className="max-w-4xl mx-auto text-center">
           <div className="liquid-card p-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Let&apos;s Work Together
             </h2>
-            <p className="text-lg text-slate-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
               I&apos;m always interested in new opportunities and exciting projects. 
               Whether you have a question or just want to say hi, I&apos;ll try my best to get back to you!
             </p>
             <Link
               href="/contact"
-              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              className="liquid-button text-white font-semibold py-3 px-8 rounded-xl transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
               Get In Touch
             </Link>
