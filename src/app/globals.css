@@ -649,6 +649,15 @@ html {
   transform: translateX(40px) scale(0.95);
 }
 
+/* Flag emoji support for cross-platform compatibility */
+.flag-emoji {
+  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'Twemoji Mozilla', 'EmojiOne Color', 'Android Emoji', sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-feature-settings: "liga" on, "calt" on;
+  font-feature-settings: "liga" on, "calt" on;
+  font-variant-emoji: emoji;
+}
+
 /* iOS-Style Language Toggle (4 positions) */
 .ios-language-toggle-container {
   position: relative;
@@ -683,9 +692,13 @@ html {
 
 .ios-language-toggle-icon {
   font-size: 16px;
+  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'Twemoji Mozilla', 'EmojiOne Color', 'Android Emoji', sans-serif;
   opacity: 0.6;
   transition: opacity 0.3s ease;
   z-index: 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-feature-settings: "liga" on, "calt" on;
+  font-feature-settings: "liga" on, "calt" on;
 }
 
 .ios-language-toggle-icon-button {
@@ -758,7 +771,11 @@ html {
 
 .ios-language-toggle-knob-icon {
   font-size: 18px;
+  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'Twemoji Mozilla', 'EmojiOne Color', 'Android Emoji', sans-serif;
   transition: all 0.3s ease;
+  text-rendering: optimizeLegibility;
+  -webkit-font-feature-settings: "liga" on, "calt" on;
+  font-feature-settings: "liga" on, "calt" on;
 }
 
 .ios-language-toggle-button {

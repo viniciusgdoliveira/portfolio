@@ -90,7 +90,7 @@ export default function LanguageSwitcher({ isMobile = false }: LanguageSwitcherP
           aria-label={`Current language: ${activeLanguageData.nativeName}`}
           disabled={isChangingLanguage}
         >
-          <span className="text-lg">{activeLanguageData.flag}</span>
+          <span className="text-lg flag-emoji">{activeLanguageData.flag}</span>
         </button>
 
         {isDropdownOpen && (
@@ -106,7 +106,7 @@ export default function LanguageSwitcher({ isMobile = false }: LanguageSwitcherP
                 }`}
                 disabled={isChangingLanguage}
               >
-                <span className="mr-2">{language.flag}</span>
+                <span className="mr-2 flag-emoji">{language.flag}</span>
                 {language.nativeName}
               </button>
             ))}
@@ -123,7 +123,7 @@ export default function LanguageSwitcher({ isMobile = false }: LanguageSwitcherP
       <div className="ios-language-toggle-track">
         {/* Sliding Knob */}
         <div className={`ios-language-toggle-knob pos-${activeIndex}`}>
-          <span className="ios-language-toggle-knob-icon">
+          <span className="ios-language-toggle-knob-icon flag-emoji">
             {activeLanguageData.flag}
           </span>
         </div>
@@ -131,10 +131,10 @@ export default function LanguageSwitcher({ isMobile = false }: LanguageSwitcherP
         {/* Individual clickable flag buttons */}
         <div className="ios-language-toggle-icons">
           {languages.map((language) => (
-            <button
+              <button
               key={language.code}
               onClick={() => handleLanguageChange(language.code)}
-              className="ios-language-toggle-icon ios-language-toggle-icon-button"
+              className="ios-language-toggle-icon ios-language-toggle-icon-button flag-emoji"
               aria-label={`${t('switch')} - ${language.nativeName}`}
               disabled={isChangingLanguage}
               title={language.nativeName}
