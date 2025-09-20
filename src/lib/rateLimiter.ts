@@ -33,7 +33,7 @@ class RateLimiter {
       const data = await fs.readFile(this.dataFile, 'utf-8');
       const parsed = JSON.parse(data);
       this.entries = new Map(Object.entries(parsed));
-    } catch (error) {
+    } catch {
       // File doesn't exist or is invalid, start with empty map
       this.entries = new Map();
     }
@@ -58,8 +58,8 @@ class RateLimiter {
     if (realIP) return realIP;
     if (forwarded) return forwarded.split(',')[0].trim();
     
-    // Fallback to connection remote address
-    return request.ip || 'unknown';
+    // Fallback to unknown if no IP headers are found
+    return 'unknown';
   }
 
   private getTodayString(): string {
