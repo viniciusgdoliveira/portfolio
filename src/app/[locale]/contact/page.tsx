@@ -17,9 +17,8 @@ export default function Contact() {
     message: ''
   });
   
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-  const [errorMessage, setErrorMessage] = useState('');
 
   // Handle form input changes
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -169,7 +168,7 @@ export default function Contact() {
                     </svg>
                     <span className="text-green-400 font-medium">Message sent successfully!</span>
                   </div>
-                  <p className="text-white/80 text-sm mt-2">Thank you for your message. I'll get back to you soon!</p>
+                  <p className="text-white/80 text-sm mt-2">Thank you for your message. I&apos;ll get back to you soon!</p>
                 </div>
               )}
 
@@ -182,7 +181,7 @@ export default function Contact() {
                     </svg>
                     <span className="text-red-400 font-medium">Error sending message</span>
                   </div>
-                  <p className="text-white/80 text-sm mt-2">{errorMessage}</p>
+                  <p className="text-white/80 text-sm mt-2">Please try again or contact me directly via email.</p>
                 </div>
               )}
               
