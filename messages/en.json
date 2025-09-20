@@ -60,7 +60,33 @@
       "description": "Here are some of my recent projects that I'm particularly proud of.",
       "viewAllProjects": "View All Projects",
       "github": "GitHub",
-      "liveDemo": "Live Demo"
+      "liveDemo": "Live Demo",
+      "items": {
+        "trailMakingTest": {
+          "title": "Trail Making Test Digital",
+          "description": "Digital neuropsychological assessment tool for iPad and tablets. Features Part A (number sequencing) and Part B (alternating number-letter sequences) to evaluate visual attention and task switching abilities."
+        },
+        "aulaFirebase": {
+          "title": "Aula Firebase Next.js",
+          "description": "Learning management system with Firebase integration and real-time features. Features user authentication, Firestore document management, Cloud Storage for image uploads, and real-time data synchronization."
+        },
+        "meuAssessorFashion": {
+          "title": "Meu Assessor Fashion",
+          "description": "AI-powered fashion consultant with intelligent styling recommendations."
+        },
+        "pythonAutomation": {
+          "title": "Python Code Automation",
+          "description": "Powerful automation toolkit for streamlining development workflows."
+        },
+        "hydrogenMush": {
+          "title": "Hydrogen Mush",
+          "description": "Modern e-commerce platform built with Shopify Hydrogen."
+        },
+        "mushShopify": {
+          "title": "Mush Shopify Store",
+          "description": "Comprehensive Shopify store with custom themes and features."
+        }
+      }
     },
     "cta": {
       "title": "Let's Work Together",
@@ -76,7 +102,34 @@
     "image": "📷 Image",
     "video": "🎥 Video",
     "videoComingSoon": "Video Coming Soon",
-    "projectPreview": "Project Preview"
+    "projectPreview": "Project Preview",
+    "backToHome": "Back to Home",
+    "items": {
+      "trailMakingTest": {
+        "title": "Trail Making Test Digital",
+        "description": "Digital neuropsychological assessment tool for iPad and tablets. Features Part A (number sequencing) and Part B (alternating number-letter sequences) to evaluate visual attention and task switching abilities."
+      },
+      "aulaFirebase": {
+        "title": "Aula Firebase Next.js",
+        "description": "Learning management system with Firebase integration and real-time features. Features user authentication, Firestore document management, Cloud Storage for image uploads, and real-time data synchronization."
+      },
+      "meuAssessorFashion": {
+        "title": "Meu Assessor Fashion",
+        "description": "AI-powered fashion consultant with intelligent styling recommendations."
+      },
+      "pythonAutomation": {
+        "title": "Python Code Automation",
+        "description": "Powerful automation toolkit for streamlining development workflows."
+      },
+      "hydrogenMush": {
+        "title": "Hydrogen Mush",
+        "description": "Modern e-commerce platform built with Shopify Hydrogen."
+      },
+      "mushShopify": {
+        "title": "Mush Shopify Store",
+        "description": "Comprehensive Shopify store with custom themes and features."
+      }
+    }
   },
   "contact": {
     "title": "Get In Touch",

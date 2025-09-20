@@ -9,8 +9,7 @@ export default function Projects() {
 
   const projects = [
     {
-      title: "Trail Making Test Digital",
-      description: "Digital neuropsychological assessment tool for iPad and tablets. Features Part A (number sequencing) and Part B (alternating number-letter sequences) to evaluate visual attention and task switching abilities.",
+      key: "trailMakingTest",
       tech: ["React Native", "Expo", "TypeScript"],
       image: "bg-gradient-to-br from-blue-400 to-purple-500",
       github: "https://github.com/viniciusgdoliveira/trail-making-test-digital",
@@ -18,8 +17,7 @@ export default function Projects() {
       videoUrl: "https://cdn.shopify.com/videos/c/o/v/61e3792a038e4e04a9e5bc85c3f1a54d.mp4"
     },
     {
-      title: "Aula Firebase Next.js",
-      description: "Learning management system with Firebase integration and real-time features. Features user authentication, Firestore document management, Cloud Storage for image uploads, and real-time data synchronization.",
+      key: "aulaFirebase",
       tech: ["Next.js", "Firebase", "Vercel"],
       image: "bg-gradient-to-br from-green-400 to-blue-500",
       github: "https://github.com/viniciusgdoliveira/aula-firebase-nextjs",
@@ -27,8 +25,7 @@ export default function Projects() {
       videoUrl: "https://cdn.shopify.com/videos/c/o/v/c1bd79ad562d433a9ab0369763c316e2.mov"
     },
     {
-      title: "Meu Assessor Fashion",
-      description: "AI-powered fashion consultant with intelligent styling recommendations.",
+      key: "meuAssessorFashion",
       tech: ["Python", "Flask", "AI/ML"],
       image: "bg-gradient-to-br from-orange-400 to-red-500",
       github: "https://github.com/viniciusgdoliveira/meuassessorfashion",
@@ -36,8 +33,7 @@ export default function Projects() {
       videoUrl: "https://cdn.shopify.com/videos/c/o/v/f459b50c1b074da3b190bb9c0bd90ae7.mp4"
     },
     {
-      title: "Python Code Automation",
-      description: "Powerful automation toolkit for streamlining development workflows.",
+      key: "pythonAutomation",
       tech: ["Python", "Automation", "APIs"],
       image: "bg-gradient-to-br from-yellow-400 to-orange-500",
       github: "https://github.com/viniciusgdoliveira/python-code-automation",
@@ -45,8 +41,7 @@ export default function Projects() {
       videoUrl: "https://cdn.shopify.com/videos/c/o/v/98c41452a4fa445dbd00971e81601fea.mp4"
     },
     {
-      title: "Hydrogen Mush",
-      description: "Modern e-commerce platform built with Shopify Hydrogen.",
+      key: "hydrogenMush",
       tech: ["Hydrogen", "React", "TypeScript"],
       image: "bg-gradient-to-br from-purple-400 to-pink-500",
       github: "https://github.com/viniciusgdoliveira/hydrogen-mush",
@@ -54,8 +49,7 @@ export default function Projects() {
       videoUrl: "https://cdn.shopify.com/videos/c/o/v/1088c712e6a7457aae52e3694c54674d.mp4"
     },
     {
-      title: "Mush Shopify Store",
-      description: "Comprehensive Shopify store with custom themes and features.",
+      key: "mushShopify",
       tech: ["Shopify", "Liquid", "JavaScript"],
       image: "bg-gradient-to-br from-indigo-400 to-purple-500",
       github: "https://github.com/viniciusgdoliveira/mush-shopify",
@@ -109,10 +103,10 @@ export default function Projects() {
                 )}
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-white mb-2">
-                    {project.title}
+                    {t(`items.${project.key}.title`)}
                   </h3>
                   <p className="text-white/80 mb-4 text-sm">
-                    {project.description}
+                    {t(`items.${project.key}.description`)}
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tech.map((tech, techIndex) => (
@@ -161,7 +155,7 @@ export default function Projects() {
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
-            <span>Back to Home</span>
+            <span>{t('backToHome')}</span>
           </Link>
         </div>
       </section>

@@ -60,7 +60,33 @@
       "description": "Voici quelques-uns de mes projets récents dont je suis particulièrement fier.",
       "viewAllProjects": "Voir Tous les Projets",
       "github": "GitHub",
-      "liveDemo": "Démo en Direct"
+      "liveDemo": "Démo en Direct",
+      "items": {
+        "trailMakingTest": {
+          "title": "Trail Making Test Digital",
+          "description": "Outil d'évaluation neuropsychologique numérique pour iPad et tablettes. Comprend la Partie A (séquençage numérique) et la Partie B (séquences alternées nombre-lettre) pour évaluer l'attention visuelle et les capacités de changement de tâche."
+        },
+        "aulaFirebase": {
+          "title": "Aula Firebase Next.js",
+          "description": "Système de gestion d'apprentissage avec intégration Firebase et fonctionnalités temps réel. Comprend l'authentification utilisateur, la gestion de documents Firestore, Cloud Storage pour le téléchargement d'images et la synchronisation de données en temps réel."
+        },
+        "meuAssessorFashion": {
+          "title": "Meu Assessor Fashion",
+          "description": "Consultant mode alimenté par IA avec des recommandations de style intelligentes."
+        },
+        "pythonAutomation": {
+          "title": "Automatisation de Code Python",
+          "description": "Boîte à outils d'automatisation puissante pour rationaliser les flux de travail de développement."
+        },
+        "hydrogenMush": {
+          "title": "Hydrogen Mush",
+          "description": "Plateforme e-commerce moderne construite avec Shopify Hydrogen."
+        },
+        "mushShopify": {
+          "title": "Boutique Shopify Mush",
+          "description": "Boutique Shopify complète avec thèmes et fonctionnalités personnalisés."
+        }
+      }
     },
     "cta": {
       "title": "Travaillons Ensemble",
@@ -76,7 +102,34 @@
     "image": "📷 Image",
     "video": "🎥 Vidéo",
     "videoComingSoon": "Vidéo Bientôt Disponible",
-    "projectPreview": "Aperçu du Projet"
+    "projectPreview": "Aperçu du Projet",
+    "backToHome": "Retour à l'Accueil",
+    "items": {
+      "trailMakingTest": {
+        "title": "Trail Making Test Digital",
+        "description": "Outil d'évaluation neuropsychologique numérique pour iPad et tablettes. Comprend la Partie A (séquençage numérique) et la Partie B (séquences alternées nombre-lettre) pour évaluer l'attention visuelle et les capacités de changement de tâche."
+      },
+      "aulaFirebase": {
+        "title": "Aula Firebase Next.js",
+        "description": "Système de gestion d'apprentissage avec intégration Firebase et fonctionnalités temps réel. Comprend l'authentification utilisateur, la gestion de documents Firestore, Cloud Storage pour le téléchargement d'images et la synchronisation de données en temps réel."
+      },
+      "meuAssessorFashion": {
+        "title": "Meu Assessor Fashion",
+        "description": "Consultant mode alimenté par IA avec des recommandations de style intelligentes."
+      },
+      "pythonAutomation": {
+        "title": "Automatisation de Code Python",
+        "description": "Boîte à outils d'automatisation puissante pour rationaliser les flux de travail de développement."
+      },
+      "hydrogenMush": {
+        "title": "Hydrogen Mush",
+        "description": "Plateforme e-commerce moderne construite avec Shopify Hydrogen."
+      },
+      "mushShopify": {
+        "title": "Boutique Shopify Mush",
+        "description": "Boutique Shopify complète avec thèmes et fonctionnalités personnalisés."
+      }
+    }
   },
   "contact": {
     "title": "Entrer en Contact",

@@ -4,11 +4,17 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useTranslations, useLocale } from 'next-intl';
+import { usePathname } from 'next/navigation';
 
 export default function Home() {
   const [currentAboutIndex, setCurrentAboutIndex] = useState(0);
   const t = useTranslations('home');
   const locale = useLocale();
+  const pathname = usePathname();
+  
+  // Extract locale from pathname as fallback
+  const pathLocale = pathname.split('/')[1] || 'en';
+  const currentLocale = locale || pathLocale;
 
   const aboutSections = [
     {
@@ -105,13 +111,13 @@ export default function Home() {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
-              href={`/${locale}/projects`}
+              href={`/${currentLocale}/projects`}
               className="liquid-button text-white font-semibold py-3 px-8 rounded-[20px] transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
               {t('viewWork')}
             </Link>
             <Link
-              href={`/${locale}/contact`}
+              href={`/${currentLocale}/contact`}
               className="liquid-glass-light text-white hover:text-white font-semibold py-3 px-8 rounded-[20px] transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
             >
               {t('getInTouch')}
@@ -206,8 +212,7 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-8">
               {[
                 {
-                  title: "Trail Making Test Digital",
-                  description: "Digital neuropsychological assessment tool for iPad and tablets. Features Part A (number sequencing) and Part B (alternating number-letter sequences) to evaluate visual attention and task switching abilities.",
+                  key: "trailMakingTest",
                   tech: ["React Native", "Expo", "TypeScript"],
                   image: "bg-gradient-to-br from-blue-400 to-purple-500",
                   github: "https://github.com/viniciusgdoliveira/trail-making-test-digital",
@@ -215,8 +220,7 @@ export default function Home() {
                   videoUrl: "https://cdn.shopify.com/videos/c/o/v/61e3792a038e4e04a9e5bc85c3f1a54d.mp4"
                 },
                 {
-                  title: "Aula Firebase Next.js",
-                  description: "Learning management system with Firebase integration and real-time features. Features user authentication, Firestore document management, Cloud Storage for image uploads, and real-time data synchronization.",
+                  key: "aulaFirebase",
                   tech: ["Next.js", "Firebase", "Vercel"],
                   image: "bg-gradient-to-br from-green-400 to-blue-500",
                   github: "https://github.com/viniciusgdoliveira/aula-firebase-nextjs",
@@ -250,10 +254,10 @@ export default function Home() {
                 )}
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-white mb-2">
-                    {project.title}
+                    {t(`featuredProjects.items.${project.key}.title`)}
                   </h3>
                   <p className="text-white/80 mb-4 text-sm">
-                    {project.description}
+                    {t(`featuredProjects.items.${project.key}.description`)}
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tech.map((tech, techIndex) => (
@@ -294,8 +298,7 @@ export default function Home() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 {
-                  title: "Meu Assessor Fashion",
-                  description: "AI-powered fashion consultant with intelligent styling recommendations.",
+                  key: "meuAssessorFashion",
                   tech: ["Python", "Flask", "AI/ML"],
                   image: "bg-gradient-to-br from-orange-400 to-red-500",
                   github: "https://github.com/viniciusgdoliveira/meuassessorfashion",
@@ -303,8 +306,7 @@ export default function Home() {
                   videoUrl: "https://cdn.shopify.com/videos/c/o/v/f459b50c1b074da3b190bb9c0bd90ae7.mp4"
                 },
                 {
-                  title: "Python Code Automation",
-                  description: "Powerful automation toolkit for streamlining development workflows.",
+                  key: "pythonAutomation",
                   tech: ["Python", "Automation", "APIs"],
                   image: "bg-gradient-to-br from-yellow-400 to-orange-500",
                   github: "https://github.com/viniciusgdoliveira/python-code-automation",
@@ -312,8 +314,7 @@ export default function Home() {
                   videoUrl: "https://cdn.shopify.com/videos/c/o/v/98c41452a4fa445dbd00971e81601fea.mp4"
                 },
                 {
-                  title: "Hydrogen Mush",
-                  description: "Modern e-commerce platform built with Shopify Hydrogen.",
+                  key: "hydrogenMush",
                   tech: ["Hydrogen", "React", "TypeScript"],
                   image: "bg-gradient-to-br from-purple-400 to-pink-500",
                   github: "https://github.com/viniciusgdoliveira/hydrogen-mush",
@@ -321,8 +322,7 @@ export default function Home() {
                   videoUrl: "https://cdn.shopify.com/videos/c/o/v/1088c712e6a7457aae52e3694c54674d.mp4"
                 },
                 {
-                  title: "Mush Shopify Store",
-                  description: "Comprehensive Shopify store with custom themes and features.",
+                  key: "mushShopify",
                   tech: ["Shopify", "Liquid", "JavaScript"],
                   image: "bg-gradient-to-br from-indigo-400 to-purple-500",
                   github: "https://github.com/viniciusgdoliveira/mush-shopify",
@@ -356,10 +356,10 @@ export default function Home() {
                 )}
                 <div className="p-4">
                   <h3 className="text-lg font-bold text-white mb-2">
-                    {project.title}
+                    {t(`featuredProjects.items.${project.key}.title`)}
                   </h3>
                   <p className="text-white/80 mb-3 text-xs">
-                    {project.description}
+                    {t(`featuredProjects.items.${project.key}.description`)}
                   </p>
                   <div className="flex flex-wrap gap-1 mb-3">
                     {project.tech.map((tech, techIndex) => (
@@ -399,7 +399,7 @@ export default function Home() {
           
           <div className="text-center mt-6">
             <Link
-              href={`/${locale}/projects`}
+              href={`/${currentLocale}/projects`}
               className="inline-flex items-center space-x-2 text-white hover:text-white/80 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 rounded-[20px] px-4 py-2 bg-white/10 hover:bg-white/20"
             >
               <span>{t('featuredProjects.viewAllProjects')}</span>
@@ -422,7 +422,7 @@ export default function Home() {
               {t('cta.description')}
             </p>
             <Link
-              href={`/${locale}/contact`}
+              href={`/${currentLocale}/contact`}
               className="liquid-button text-white font-semibold py-3 px-8 rounded-[20px] transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
               {t('cta.getInTouch')}
