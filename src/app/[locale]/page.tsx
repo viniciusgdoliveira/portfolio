@@ -156,6 +156,24 @@ export default function Home() {
                 <div className="absolute bottom-6 left-6 right-6 text-white">
               
                 </div>
+                {/* Play/Pause Button - Inside Image */}
+                <div className="absolute bottom-4 right-4">
+                  <button
+                    onClick={() => setIsAutoRotating(!isAutoRotating)}
+                    className="p-2 rounded-full bg-black/30 backdrop-blur-sm text-white/90 hover:text-white hover:bg-black/50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
+                    aria-label={isAutoRotating ? "Pause auto-rotation" : "Resume auto-rotation"}
+                  >
+                    {isAutoRotating ? (
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+                      </svg>
+                    ) : (
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                    )}
+                  </button>
+                </div>
               </div>
               
               {/* Navigation Dots */}
@@ -175,25 +193,6 @@ export default function Home() {
                     }`}
                   />
                 ))}
-              </div>
-              
-              {/* Play/Pause Button */}
-              <div className="flex justify-center mt-4">
-                <button
-                  onClick={() => setIsAutoRotating(!isAutoRotating)}
-                  className="p-2 rounded-full liquid-glass-light text-white/80 hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
-                  aria-label={isAutoRotating ? "Pause auto-rotation" : "Resume auto-rotation"}
-                >
-                  {isAutoRotating ? (
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
-                    </svg>
-                  ) : (
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z"/>
-                    </svg>
-                  )}
-                </button>
               </div>
             </div>
             
