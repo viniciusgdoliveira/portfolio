@@ -2,10 +2,60 @@
 
 import Link from "next/link";
 import { useTranslations, useLocale } from 'next-intl';
+import { useState } from 'react';
 
 export default function Contact() {
   const t = useTranslations('contact');
   const locale = useLocale();
+
+  // Form state
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  // Handle form input changes
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  // Simple mailto submission - opens user's email client
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    const subject = encodeURIComponent(formData.subject || 'Contact from Portfolio');
+    const body = encodeURIComponent(
+      `Hi Vinícius,\n\n` +
+      `Name: ${formData.firstName} ${formData.lastName}\n` +
+      `Email: ${formData.email}\n\n` +
+      `Message:\n${formData.message}\n\n` +
+      `Sent from your portfolio contact form.`
+    );
+    
+    const mailtoLink = `mailto:viniciusgdoliveira@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = mailtoLink;
+    
+    // Show success message
+    setSubmitStatus('success');
+    setFormData({
+      firstName: '',
+      lastName: '',
+      email: '',
+      subject: '',
+      message: ''
+    });
+  };
 
   return (
     <div className="min-h-screen liquid-bg">
@@ -28,7 +78,7 @@ export default function Contact() {
             <h2 className="text-2xl font-bold text-white mb-6">
               {t('sendMessage')}
             </h2>
-            <form className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="firstName" className="block text-white text-sm font-medium mb-2">
@@ -38,6 +88,9 @@ export default function Contact() {
                     type="text"
                     id="firstName"
                     name="firstName"
+                    value={formData.firstName}
+                    onChange={handleChange}
+                    required
                     className="w-full px-4 py-3 liquid-glass-light text-white placeholder-white/60 rounded-[20px] focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder={t('firstName')}
                   />
@@ -50,6 +103,9 @@ export default function Contact() {
                     type="text"
                     id="lastName"
                     name="lastName"
+                    value={formData.lastName}
+                    onChange={handleChange}
+                    required
                     className="w-full px-4 py-3 liquid-glass-light text-white placeholder-white/60 rounded-[20px] focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder={t('lastName')}
                   />
@@ -64,6 +120,9 @@ export default function Contact() {
                   type="email"
                   id="email"
                   name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
                   className="w-full px-4 py-3 liquid-glass-light text-white placeholder-white/60 rounded-[20px] focus:outline-none focus:ring-2 focus:ring-blue-500"
                   placeholder={t('email')}
                 />
@@ -77,6 +136,9 @@ export default function Contact() {
                   type="text"
                   id="subject"
                   name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
                   className="w-full px-4 py-3 liquid-glass-light text-white placeholder-white/60 rounded-[20px] focus:outline-none focus:ring-2 focus:ring-blue-500"
                   placeholder={t('subject')}
                 />
@@ -90,16 +152,60 @@ export default function Contact() {
                   id="message"
                   name="message"
                   rows={6}
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
                   className="w-full px-4 py-3 liquid-glass-light text-white placeholder-white/60 rounded-[20px] focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
                   placeholder={t('message')}
                 />
               </div>
               
+              {/* Success Message */}
+              {submitStatus === 'success' && (
+                <div className="p-4 liquid-glass-light border border-green-500/20 rounded-[20px]">
+                  <div className="flex items-center space-x-2">
+                    <svg className="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-green-400 font-medium">Message sent successfully!</span>
+                  </div>
+                  <p className="text-white/80 text-sm mt-2">Thank you for your message. I'll get back to you soon!</p>
+                </div>
+              )}
+
+              {/* Error Message */}
+              {submitStatus === 'error' && (
+                <div className="p-4 liquid-glass-light border border-red-500/20 rounded-[20px]">
+                  <div className="flex items-center space-x-2">
+                    <svg className="w-5 h-5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-red-400 font-medium">Error sending message</span>
+                  </div>
+                  <p className="text-white/80 text-sm mt-2">{errorMessage}</p>
+                </div>
+              )}
+              
               <button
                 type="submit"
-                className="w-full liquid-button text-white font-semibold py-3 px-8 rounded-[20px] transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                disabled={isSubmitting}
+                className={`w-full font-semibold py-3 px-8 rounded-[20px] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
+                  isSubmitting 
+                    ? 'liquid-glass-light text-white/50 cursor-not-allowed' 
+                    : 'liquid-button text-white hover:scale-105'
+                }`}
               >
-                {t('sendButton')}
+                {isSubmitting ? (
+                  <div className="flex items-center justify-center space-x-2">
+                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    <span>Sending...</span>
+                  </div>
+                ) : (
+                  t('sendButton')
+                )}
               </button>
             </form>
           </div>
