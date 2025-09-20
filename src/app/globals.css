@@ -703,6 +703,113 @@ html {
   font-variant-emoji: emoji;
 }
 
+/* Enhanced Chat Message Bubbles */
+.chat-bubble {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.chat-bubble:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.chat-bubble-user {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+}
+
+.chat-bubble-assistant {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Chat Avatar Enhancements */
+.chat-avatar {
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.chat-avatar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.chat-avatar-assistant {
+  background: linear-gradient(135deg, #a855f7, #ec4899, #eab308);
+  animation: avatarPulse 3s ease-in-out infinite;
+}
+
+@keyframes avatarPulse {
+  0%, 100% { 
+    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+  }
+  50% { 
+    box-shadow: 0 6px 25px rgba(168, 85, 247, 0.6);
+  }
+}
+
+.chat-avatar-user {
+  background: linear-gradient(135deg, #6b7280, #4b5563);
+}
+
+/* Enhanced Typography for Chat */
+.chat-message-text {
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.chat-timestamp {
+  font-size: 0.75rem;
+  font-weight: 500;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.chat-bubble:hover .chat-timestamp {
+  opacity: 0.9;
+}
+
+/* Message Animation */
+.message-enter {
+  animation: messageSlideIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes messageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Improved Scrollbar for Chat */
+.chat-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+}
+
+.chat-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  transition: background 0.3s ease;
+}
+
+.chat-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
 /* Simple Language Selector with Circular Highlights */
 .language-selector-container {
   position: relative;

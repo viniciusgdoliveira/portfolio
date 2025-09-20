@@ -2,6 +2,7 @@
   "navigation": {
     "home": "Accueil",
     "projects": "Projets",
+    "chat": "Chat",
     "contact": "Contact",
     "portfolio": "Portfolio"
   },
@@ -151,6 +152,43 @@
     "portuguese": "Português",
     "spanish": "Español",
     "french": "Français"
+  },
+  "chat": {
+    "title": "Discuter avec Vinícius",
+    "subtitle": "Demande-moi n'importe quoi sur mes projets, stack technologique ou expériences !",
+    "placeholder": "Tapez votre message ici...",
+    "send": "Envoyer",
+    "clear": "Effacer le Chat",
+    "thinking": "Réfléchis...",
+    "greeting": "Salut ! Je suis Vinícius. N'hésite pas à me poser des questions sur mes projets, stack technologique ou tout ce que tu veux savoir sur mon travail et mes expériences !",
+    "error": "Désolé, quelque chose s'est mal passé. Veuillez réessayer.",
+    "tokenWarning": "La conversation devient longue. Considérez démarrer un nouveau chat pour de meilleures réponses.",
+    "conversationLimit": "Limite de conversation atteinte. Veuillez démarrer un nouveau chat.",
+    "rateLimit": {
+      "exceeded": "Vous avez atteint la limite quotidienne de 50 messages. Revenez demain pour continuer notre conversation !",
+      "remaining": "Il vous reste {remaining} messages aujourd'hui",
+      "approachingLimit": "⚠️ Approche de la limite",
+      "dailyLimitReached": "Limite quotidienne atteinte. Revenez demain !",
+      "limitReached": "Limite quotidienne atteinte"
+    },
+    "quickActions": {
+      "title": "Questions rapides :",
+      "projects": "Parle-moi de tes projets",
+      "techStack": "Quelle est ta stack technologique ?",
+      "experience": "Parle-moi de ton expérience",
+      "aboutMe": "Parle-moi de toi"
+    },
+    "quickActionMessages": {
+      "projects": "Parle-moi de tes projets",
+      "techStack": "Quelle est ta stack technologique ?",
+      "experience": "Parle-moi de ton expérience",
+      "aboutMe": "Parle-moi de toi"
+    },
+    "status": {
+      "online": "En ligne",
+      "typing": "En train d'écrire...",
+      "tokensUsed": "Tokens utilisés : {count}"
+    }
   },
   "seo": {
     "title": "Vinícius Guimarães de Oliveira - Ingénieur Logiciel",

@@ -2,6 +2,7 @@
   "navigation": {
     "home": "Início",
     "projects": "Projetos",
+    "chat": "Chat",
     "contact": "Contato",
     "portfolio": "Portfolio"
   },
@@ -151,6 +152,43 @@
     "portuguese": "Português",
     "spanish": "Español",
     "french": "Français"
+  },
+  "chat": {
+    "title": "Conversar com Vinícius",
+    "subtitle": "Pergunte-me qualquer coisa sobre meus projetos, stack tecnológico ou experiências!",
+    "placeholder": "Digite sua mensagem aqui...",
+    "send": "Enviar",
+    "clear": "Limpar Chat",
+    "thinking": "Pensando...",
+    "greeting": "Oi! Eu sou o Vinícius, e estou animado para conversar com você! Adoro falar sobre tecnologia, compartilhar histórias de projetos e aprender sobre o que te anima também. O que você gostaria de saber?",
+    "error": "Desculpe, algo deu errado. Tente novamente.",
+    "tokenWarning": "A conversa está ficando longa. Considere iniciar um novo chat para melhores respostas.",
+    "conversationLimit": "Limite de conversa atingido. Por favor, inicie um novo chat.",
+    "rateLimit": {
+      "exceeded": "Você atingiu o limite diário de 50 mensagens. Volte amanhã para continuar nossa conversa!",
+      "remaining": "{remaining} mensagens restantes hoje",
+      "approachingLimit": "⚠️ Aproximando-se do limite",
+      "dailyLimitReached": "Limite diário atingido. Volte amanhã!",
+      "limitReached": "Limite diário atingido"
+    },
+    "quickActions": {
+      "title": "Perguntas rápidas:",
+      "projects": "Conte-me sobre seus projetos",
+      "techStack": "Qual é sua stack tecnológica?",
+      "experience": "Conte-me sobre sua experiência",
+      "aboutMe": "Conte-me sobre você"
+    },
+    "quickActionMessages": {
+      "projects": "Conte-me sobre seus projetos",
+      "techStack": "Qual é sua stack tecnológica?",
+      "experience": "Conte-me sobre sua experiência",
+      "aboutMe": "Conte-me sobre você"
+    },
+    "status": {
+      "online": "Online",
+      "typing": "Digitando...",
+      "tokensUsed": "Tokens usados: {count}"
+    }
   },
   "seo": {
     "title": "Vinícius Guimarães de Oliveira - Engenheiro de Software",

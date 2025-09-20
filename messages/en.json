@@ -2,6 +2,7 @@
   "navigation": {
     "home": "Home",
     "projects": "Projects",
+    "chat": "Chat",
     "contact": "Contact",
     "portfolio": "Portfolio"
   },
@@ -151,6 +152,43 @@
     "portuguese": "Português",
     "spanish": "Español",
     "french": "Français"
+  },
+  "chat": {
+    "title": "Chat with Vinícius",
+    "subtitle": "Ask me anything about my projects, tech stack, or experiences!",
+    "placeholder": "Type your message here...",
+    "send": "Send",
+    "clear": "Clear Chat",
+    "thinking": "Thinking...",
+    "greeting": "Hey there! I'm Vinícius, and I'm excited to chat with you! I love talking about technology, sharing project stories, and learning about what excites you too. What would you like to know?",
+    "error": "Sorry, something went wrong. Please try again.",
+    "tokenWarning": "Conversation is getting long. Consider starting a new chat for better responses.",
+    "conversationLimit": "Conversation limit reached. Please start a new chat.",
+    "rateLimit": {
+      "exceeded": "You've reached the daily limit of 50 messages. Please come back tomorrow to continue our conversation!",
+      "remaining": "{remaining} messages remaining today",
+      "approachingLimit": "⚠️ Approaching limit",
+      "dailyLimitReached": "Daily limit reached. Come back tomorrow!",
+      "limitReached": "Daily limit reached"
+    },
+    "quickActions": {
+      "title": "Quick questions:",
+      "projects": "Tell me about your projects",
+      "techStack": "What's your tech stack?",
+      "experience": "Tell me about your experience",
+      "aboutMe": "Tell me about yourself"
+    },
+    "quickActionMessages": {
+      "projects": "Tell me about your projects",
+      "techStack": "What's your tech stack?",
+      "experience": "Tell me about your experience",
+      "aboutMe": "Tell me about yourself"
+    },
+    "status": {
+      "online": "Online",
+      "typing": "Typing...",
+      "tokensUsed": "Tokens used: {count}"
+    }
   },
   "seo": {
     "title": "Vinícius Guimarães de Oliveira - Software Engineer",

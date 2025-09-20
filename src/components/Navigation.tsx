@@ -21,6 +21,7 @@ export default function Navigation() {
   const navItems = [
     { name: t('home'), href: `/${activeLocale}` },
     { name: t('projects'), href: `/${activeLocale}/projects` },
+    { name: t('chat'), href: `/${activeLocale}/chat` },
     { name: t('contact'), href: `/${activeLocale}/contact` },
   ];
 
