@@ -32,7 +32,7 @@ export function LanguageProvider({ children, initialLocale }: LanguageProviderPr
     // Try to get from localStorage first, then fall back to initialLocale or default
     if (typeof window !== 'undefined') {
       const stored = localStorage.getItem('preferred-language');
-      if (stored && routing.locales.includes(stored as any)) {
+      if (stored && routing.locales.includes(stored as typeof routing.locales[number])) {
         return stored;
       }
     }
@@ -45,14 +45,14 @@ export function LanguageProvider({ children, initialLocale }: LanguageProviderPr
     const pathSegments = pathname.split('/').filter(Boolean);
     const urlLocale = pathSegments[0];
     
-    if (urlLocale && routing.locales.includes(urlLocale as any)) {
+    if (urlLocale && routing.locales.includes(urlLocale as typeof routing.locales[number])) {
       // Only set from URL if we don't already have a stored preference
       const storedLanguage = typeof window !== 'undefined' ? localStorage.getItem('preferred-language') : null;
       if (!storedLanguage) {
         setCurrentLanguage(urlLocale);
       }
     }
-  }, []); // Only run once on mount
+  }, [pathname]); // Add pathname dependency
 
   // Save to localStorage whenever language changes
   useEffect(() => {
@@ -68,7 +68,7 @@ export function LanguageProvider({ children, initialLocale }: LanguageProviderPr
     
     // Parse the current pathname to extract the route without locale
     const pathSegments = pathname.split('/').filter(Boolean);
-    const hasLocaleInPath = pathSegments[0] && routing.locales.includes(pathSegments[0] as any);
+    const hasLocaleInPath = pathSegments[0] && routing.locales.includes(pathSegments[0] as typeof routing.locales[number]);
     
     let routeWithoutLocale = '';
     if (hasLocaleInPath) {

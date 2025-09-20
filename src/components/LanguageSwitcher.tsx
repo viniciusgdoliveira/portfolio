@@ -130,7 +130,7 @@ export default function LanguageSwitcher({ isMobile = false }: LanguageSwitcherP
         
         {/* Individual clickable flag buttons */}
         <div className="ios-language-toggle-icons">
-          {languages.map((language, index) => (
+          {languages.map((language) => (
             <button
               key={language.code}
               onClick={() => handleLanguageChange(language.code)}

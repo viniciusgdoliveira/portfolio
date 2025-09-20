@@ -1,6 +1,7 @@
 'use client';
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useTranslations, useLocale } from 'next-intl';
 
@@ -79,10 +80,13 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-8">
             <div className="w-32 h-32 liquid-glass mx-auto mb-6 flex items-center justify-center floating overflow-hidden rounded-full">
-              <img 
+              <Image 
                 src="https://cdn.shopify.com/s/files/1/0666/0207/4202/files/vinicius-transparent-bg.png?v=1752328643" 
                 alt="Vinícius Guimarães de Oliveira" 
+                width={128}
+                height={128}
                 className="w-full h-full object-cover"
+                priority
               />
             </div>
           </div>
@@ -132,9 +136,11 @@ export default function Home() {
             {/* Rotating Photo/Content */}
             <div className="relative">
               <div className="aspect-square md:aspect-[4/5] lg:aspect-square rounded-3xl liquid-glass overflow-hidden transition-all duration-1000 ease-in-out">
-                <img 
+                <Image 
                   src={aboutSections[currentAboutIndex].image}
                   alt={`${aboutSections[currentAboutIndex].title} - Vinícius Guimarães de Oliveira`}
+                  width={500}
+                  height={500}
                   className="w-full h-full object-cover transition-all duration-1000 ease-in-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
