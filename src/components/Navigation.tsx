@@ -3,50 +3,64 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import { useTranslations, useLocale } from 'next-intl';
+import { useLanguage } from '@/contexts/LanguageContext';
 import ThemeToggle from './ThemeToggle';
+import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Navigation() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const t = useTranslations('navigation');
+  const urlLocale = useLocale();
+  const { currentLanguage } = useLanguage();
+  
+  // Use the context language, fallback to URL locale
+  const activeLocale = currentLanguage || urlLocale;
 
   const navItems = [
-    { name: 'Home', href: '/' },
-    { name: 'Projects', href: '/projects' },
-    { name: 'Contact', href: '/contact' },
+    { name: t('home'), href: `/${activeLocale}` },
+    { name: t('projects'), href: `/${activeLocale}/projects` },
+    { name: t('contact'), href: `/${activeLocale}/contact` },
   ];
 
   return (
     <nav className="sticky top-4 z-50 mx-4 mt-4">
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Portfolio
-          </Link>
+          {/* Desktop Layout */}
+          <div className="hidden md:flex items-center justify-between w-full">
+            {/* Left: Language Switcher */}
+            <div className="flex items-center">
+              <LanguageSwitcher />
+            </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-2">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={`px-4 py-2 rounded-[20px] text-sm font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 ${
-                  pathname === item.href
-                    ? 'liquid-glass-light text-white shadow-lg'
-                    : 'text-white/80 hover:text-white hover:liquid-glass-light'
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
-            <div className="ml-4">
+            {/* Center: Navigation Menu */}
+            <div className="flex items-center space-x-2">
+              {navItems.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`px-4 py-2 rounded-[20px] text-sm font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 ${
+                    pathname === item.href
+                      ? 'liquid-glass-light text-white shadow-lg'
+                      : 'text-white/80 hover:text-white hover:liquid-glass-light'
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+
+            {/* Right: Theme Toggle */}
+            <div className="flex items-center">
               <ThemeToggle />
             </div>
           </div>
 
-          {/* Mobile menu button and theme toggle */}
-          <div className="md:hidden flex items-center space-x-2">
-            <ThemeToggle />
+          {/* Mobile Layout */}
+          <div className="md:hidden flex items-center justify-between w-full">
+            {/* Left: Mobile menu button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="p-2 rounded-[20px] liquid-glass-light text-white/80 hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
@@ -75,6 +89,17 @@ export default function Navigation() {
                 )}
               </svg>
             </button>
+
+            {/* Center: VGO Initials */}
+            <Link href={`/${activeLocale}`} className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              VGO
+            </Link>
+
+            {/* Right: Language Switcher and Theme Toggle */}
+            <div className="flex items-center space-x-2">
+              <LanguageSwitcher isMobile={true} />
+              <ThemeToggle isMobile={true} />
+            </div>
           </div>
         </div>
 

@@ -2,9 +2,29 @@
 
 import { useTheme } from '@/contexts/ThemeContext';
 
-export default function ThemeToggle() {
+interface ThemeToggleProps {
+  isMobile?: boolean;
+}
+
+export default function ThemeToggle({ isMobile = false }: ThemeToggleProps) {
   const { theme, setTheme } = useTheme();
 
+  // Mobile compact version
+  if (isMobile) {
+    return (
+      <button
+        onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+        className="p-2 rounded-[20px] liquid-glass-light text-white/80 hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
+        aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+      >
+        <span className="text-lg">
+          {theme === 'light' ? '☀️' : '🌙'}
+        </span>
+      </button>
+    );
+  }
+
+  // Desktop toggle version (original)
   return (
     <div className="ios-toggle-container">
       {/* Toggle Track */}

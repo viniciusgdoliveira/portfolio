@@ -648,3 +648,178 @@ html {
 .ios-toggle-button:active + .ios-toggle-track .ios-toggle-knob.dark {
   transform: translateX(40px) scale(0.95);
 }
+
+/* iOS-Style Language Toggle (4 positions) */
+.ios-language-toggle-container {
+  position: relative;
+  width: 160px;
+  height: 40px;
+}
+
+.ios-language-toggle-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.ios-language-toggle-icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 1px;
+}
+
+.ios-language-toggle-icon {
+  font-size: 16px;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.ios-language-toggle-icon-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 3;
+}
+
+.ios-language-toggle-icon-button:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.ios-language-toggle-icon-button:active {
+  transform: scale(0.95);
+}
+
+.ios-language-toggle-icon-button:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+.ios-language-toggle-icon-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.ios-language-toggle-knob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+.ios-language-toggle-knob.pos-0 {
+  transform: translateX(2px);
+}
+
+.ios-language-toggle-knob.pos-1 {
+  transform: translateX(41px);
+}
+
+.ios-language-toggle-knob.pos-2 {
+  transform: translateX(80px);
+}
+
+.ios-language-toggle-knob.pos-3 {
+  transform: translateX(119px);
+}
+
+.ios-language-toggle-knob-icon {
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.ios-language-toggle-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.ios-language-toggle-button:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+  border-radius: 20px;
+}
+
+.ios-language-toggle-container:hover .ios-language-toggle-track {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.ios-language-toggle-container:hover .ios-language-toggle-knob {
+  transform: scale(1.05);
+}
+
+.ios-language-toggle-container:hover .ios-language-toggle-knob.pos-0 {
+  transform: translateX(2px) scale(1.05);
+}
+
+.ios-language-toggle-container:hover .ios-language-toggle-knob.pos-1 {
+  transform: translateX(41px) scale(1.05);
+}
+
+.ios-language-toggle-container:hover .ios-language-toggle-knob.pos-2 {
+  transform: translateX(80px) scale(1.05);
+}
+
+.ios-language-toggle-container:hover .ios-language-toggle-knob.pos-3 {
+  transform: translateX(119px) scale(1.05);
+}
+
+.ios-language-toggle-container:active .ios-language-toggle-knob {
+  transform: scale(0.95);
+}
+
+.ios-language-toggle-container:active .ios-language-toggle-knob.pos-0 {
+  transform: translateX(2px) scale(0.95);
+}
+
+.ios-language-toggle-container:active .ios-language-toggle-knob.pos-1 {
+  transform: translateX(41px) scale(0.95);
+}
+
+.ios-language-toggle-container:active .ios-language-toggle-knob.pos-2 {
+  transform: translateX(80px) scale(0.95);
+}
+
+.ios-language-toggle-container:active .ios-language-toggle-knob.pos-3 {
+  transform: translateX(119px) scale(0.95);
+}

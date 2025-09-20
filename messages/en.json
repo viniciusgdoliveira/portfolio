@@ -1,0 +1,120 @@
+{
+  "navigation": {
+    "home": "Home",
+    "projects": "Projects",
+    "contact": "Contact",
+    "portfolio": "Portfolio"
+  },
+  "home": {
+    "title": "Hi, I'm Vinícius Guimarães de Oliveira",
+    "subtitle": "Software Engineer | Shopify | Hydrogen | TypeScript | ReactJS | Next.js | Firebase",
+    "description": "Creating beautiful, functional, and user-centered digital experiences with modern technologies.",
+    "viewWork": "View My Work",
+    "getInTouch": "Get In Touch",
+    "aboutMe": "About Me",
+    "aboutDescription": "Discover different aspects of who I am",
+    "atWork": {
+      "title": "At Work",
+      "content": "As a Software Engineer focused on Shopify, Hydrogen, and modern web technologies, I bring precision and reliability to every project. My approach is methodical yet creative, always aiming to deliver solutions that not only meet expectations but move them forward.",
+      "techStack": [
+        "Shopify",
+        "Hydrogen", 
+        "TypeScript",
+        "React.js",
+        "Next.js",
+        "Firebase",
+        "Node.js",
+        "Git & Version Control"
+      ]
+    },
+    "beyondWork": {
+      "title": "Beyond Work", 
+      "content": "I value balance between work and leisure, embracing the idea of creative idleness where stepping away from the desk often sparks the best solutions. Whether collaborating with a team or enjoying time at the beach, I approach life with openness and positivity, believing that rest and curiosity are as essential to progress as focus and discipline.",
+      "techStack": [
+        "Creativity",
+        "Adaptability",
+        "Collaboration",
+        "Emotional Intelligence",
+        "Open-mindedness",
+        "Positivity",
+        "Cultural Awareness",
+        "Problem Solving"
+      ]
+    },
+    "alwaysLearning": {
+      "title": "Always Learning",
+      "content": "Curiosity drives me. I enjoy exploring new technologies, contributing to open source, and refining my craft. For me, growth is not only about technical skills but also about building meaningful connections and evolving as a person along the way.",
+      "techStack": [
+        "Continuous Learning",
+        "Curiosity",
+        "Research & Exploration",
+        "Open Source Contribution",
+        "Critical Thinking",
+        "Self-Reflection",
+        "Knowledge Sharing",
+        "Innovation"
+      ]
+    },
+    "featuredProjects": {
+      "title": "Featured Projects",
+      "description": "Here are some of my recent projects that I'm particularly proud of.",
+      "viewAllProjects": "View All Projects",
+      "github": "GitHub",
+      "liveDemo": "Live Demo"
+    },
+    "cta": {
+      "title": "Let's Work Together",
+      "description": "I'm always interested in new opportunities and exciting projects. Whether you have a question or just want to say hi, I'll try my best to get back to you!",
+      "getInTouch": "Get In Touch"
+    }
+  },
+  "projects": {
+    "title": "My Projects",
+    "description": "A collection of projects that showcase my skills and passion for creating innovative solutions to real-world problems.",
+    "code": "Code",
+    "demo": "Demo",
+    "image": "📷 Image",
+    "video": "🎥 Video",
+    "videoComingSoon": "Video Coming Soon",
+    "projectPreview": "Project Preview"
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "description": "I'm always interested in new opportunities and collaborations. Let's discuss how we can work together to bring your ideas to life.",
+    "sendMessage": "Send me a message",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email Address",
+    "subject": "Subject",
+    "message": "Message",
+    "sendButton": "Send Message",
+    "contactInfo": "Contact Information",
+    "followMe": "Follow Me",
+    "whatsappMessage": "WhatsApp Message"
+  },
+  "language": {
+    "switch": "Switch Language",
+    "english": "English",
+    "portuguese": "Português",
+    "spanish": "Español",
+    "french": "Français"
+  },
+  "seo": {
+    "title": "Vinícius Guimarães de Oliveira - Software Engineer",
+    "description": "Software Engineer specializing in Shopify, Hydrogen, TypeScript, ReactJS, Next.js, and Firebase. Creating beautiful, functional, and user-centered digital experiences with modern technologies.",
+    "keywords": [
+      "Software Engineer",
+      "Shopify Developer",
+      "Hydrogen",
+      "TypeScript",
+      "ReactJS",
+      "Next.js",
+      "Firebase",
+      "Frontend Developer",
+      "Full Stack Developer",
+      "Web Development",
+      "Portfolio",
+      "Vinícius Guimarães de Oliveira"
+    ]
+  }
+}

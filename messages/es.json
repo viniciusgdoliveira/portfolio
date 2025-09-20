@@ -1,0 +1,120 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "portfolio": "Portafolio"
+  },
+  "home": {
+    "title": "Hola, soy Vinícius Guimarães de Oliveira",
+    "subtitle": "Ingeniero de Software | Shopify | Hydrogen | TypeScript | ReactJS | Next.js | Firebase",
+    "description": "Creando experiencias digitales hermosas, funcionales y centradas en el usuario con tecnologías modernas.",
+    "viewWork": "Ver Mi Trabajo",
+    "getInTouch": "Ponerse en Contacto",
+    "aboutMe": "Acerca de Mí",
+    "aboutDescription": "Descubre diferentes aspectos de quién soy",
+    "atWork": {
+      "title": "En el Trabajo",
+      "content": "Como Ingeniero de Software especializado en Shopify, Hydrogen y tecnologías web modernas, aporto precisión y confiabilidad a cada proyecto. Mi enfoque es metódico pero creativo, siempre buscando entregar soluciones que no solo cumplan las expectativas, sino que las impulsen hacia adelante.",
+      "techStack": [
+        "Shopify",
+        "Hydrogen", 
+        "TypeScript",
+        "React.js",
+        "Next.js",
+        "Firebase",
+        "Node.js",
+        "Git y Control de Versiones"
+      ]
+    },
+    "beyondWork": {
+      "title": "Más Allá del Trabajo", 
+      "content": "Valoro el equilibrio entre trabajo y ocio, abrazando la idea del ocio creativo donde alejarse del escritorio a menudo genera las mejores soluciones. Ya sea colaborando con un equipo o disfrutando del tiempo en la playa, abordo la vida con apertura y positividad, creyendo que el descanso y la curiosidad son tan esenciales para el progreso como el enfoque y la disciplina.",
+      "techStack": [
+        "Creatividad",
+        "Adaptabilidad",
+        "Colaboración",
+        "Inteligencia Emocional",
+        "Mentalidad Abierta",
+        "Positividad",
+        "Conciencia Cultural",
+        "Resolución de Problemas"
+      ]
+    },
+    "alwaysLearning": {
+      "title": "Siempre Aprendiendo",
+      "content": "La curiosidad me impulsa. Disfruto explorando nuevas tecnologías, contribuyendo al código abierto y refinando mi arte. Para mí, el crecimiento no se trata solo de habilidades técnicas, sino también de construir conexiones significativas y evolucionar como persona en el camino.",
+      "techStack": [
+        "Aprendizaje Continuo",
+        "Curiosidad",
+        "Investigación y Exploración",
+        "Contribución a Código Abierto",
+        "Pensamiento Crítico",
+        "Autorreflexión",
+        "Compartir Conocimiento",
+        "Innovación"
+      ]
+    },
+    "featuredProjects": {
+      "title": "Proyectos Destacados",
+      "description": "Aquí tienes algunos de mis proyectos recientes de los que estoy particularmente orgulloso.",
+      "viewAllProjects": "Ver Todos los Proyectos",
+      "github": "GitHub",
+      "liveDemo": "Demo en Vivo"
+    },
+    "cta": {
+      "title": "Trabajemos Juntos",
+      "description": "Siempre estoy interesado en nuevas oportunidades y proyectos emocionantes. Ya sea que tengas una pregunta o solo quieras saludar, ¡haré mi mejor esfuerzo para responderte!",
+      "getInTouch": "Ponerse en Contacto"
+    }
+  },
+  "projects": {
+    "title": "Mis Proyectos",
+    "description": "Una colección de proyectos que muestran mis habilidades y pasión por crear soluciones innovadoras para problemas del mundo real.",
+    "code": "Código",
+    "demo": "Demo",
+    "image": "📷 Imagen",
+    "video": "🎥 Video",
+    "videoComingSoon": "Video Próximamente",
+    "projectPreview": "Vista Previa del Proyecto"
+  },
+  "contact": {
+    "title": "Ponerse en Contacto",
+    "description": "Siempre estoy interesado en nuevas oportunidades y colaboraciones. Hablemos sobre cómo podemos trabajar juntos para dar vida a tus ideas.",
+    "sendMessage": "Envíame un mensaje",
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "email": "Dirección de Correo",
+    "subject": "Asunto",
+    "message": "Mensaje",
+    "sendButton": "Enviar Mensaje",
+    "contactInfo": "Información de Contacto",
+    "followMe": "Sígueme",
+    "whatsappMessage": "Mensaje de WhatsApp"
+  },
+  "language": {
+    "switch": "Cambiar Idioma",
+    "english": "English",
+    "portuguese": "Português",
+    "spanish": "Español",
+    "french": "Français"
+  },
+  "seo": {
+    "title": "Vinícius Guimarães de Oliveira - Ingeniero de Software",
+    "description": "Ingeniero de Software especializado en Shopify, Hydrogen, TypeScript, ReactJS, Next.js y Firebase. Creando experiencias digitales hermosas, funcionales y centradas en el usuario con tecnologías modernas.",
+    "keywords": [
+      "Ingeniero de Software",
+      "Desarrollador Shopify",
+      "Hydrogen",
+      "TypeScript",
+      "ReactJS",
+      "Next.js",
+      "Firebase",
+      "Desarrollador Frontend",
+      "Desarrollador Full Stack",
+      "Desarrollo Web",
+      "Portafolio",
+      "Vinícius Guimarães de Oliveira"
+    ]
+  }
+}
