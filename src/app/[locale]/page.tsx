@@ -8,6 +8,7 @@ import { usePathname } from 'next/navigation';
 
 export default function Home() {
   const [currentAboutIndex, setCurrentAboutIndex] = useState(0);
+  const [isAutoRotating, setIsAutoRotating] = useState(true);
   const t = useTranslations('home');
   const locale = useLocale();
   const pathname = usePathname();
@@ -39,12 +40,14 @@ export default function Home() {
   
 
   useEffect(() => {
+    if (!isAutoRotating) return;
+    
     const interval = setInterval(() => {
       setCurrentAboutIndex((prevIndex) => (prevIndex + 1) % aboutSections.length);
-    }, 5000); // Change every 5 seconds
+    }, 8000); // Change every 8 seconds (slower)
 
     return () => clearInterval(interval);
-  }, [aboutSections.length]);
+  }, [aboutSections.length, isAutoRotating]);
 
   return (
     <div className="min-h-screen liquid-bg">
@@ -160,7 +163,11 @@ export default function Home() {
                 {aboutSections.map((_, index) => (
                   <button
                     key={index}
-                    onClick={() => setCurrentAboutIndex(index)}
+                    onClick={() => {
+                      setCurrentAboutIndex(index);
+                      // Optionally pause auto-rotation when user manually navigates
+                      // setIsAutoRotating(false);
+                    }}
                     className={`w-3 h-3 rounded-full transition-all duration-300 ${
                       index === currentAboutIndex 
                         ? 'bg-blue-600 dark:bg-blue-400 scale-125' 
@@ -168,6 +175,25 @@ export default function Home() {
                     }`}
                   />
                 ))}
+              </div>
+              
+              {/* Play/Pause Button */}
+              <div className="flex justify-center mt-4">
+                <button
+                  onClick={() => setIsAutoRotating(!isAutoRotating)}
+                  className="p-2 rounded-full liquid-glass-light text-white/80 hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
+                  aria-label={isAutoRotating ? "Pause auto-rotation" : "Resume auto-rotation"}
+                >
+                  {isAutoRotating ? (
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+                    </svg>
+                  ) : (
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  )}
+                </button>
               </div>
             </div>
             
