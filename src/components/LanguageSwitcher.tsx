@@ -3,30 +3,31 @@
 import { useLocale, useTranslations } from 'next-intl';
 import React, { useState, useRef, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import Image from 'next/image';
 
 const languages = [
   {
     code: 'en',
     name: 'English',
-    flag: '🇺🇸',
+    flag: '/flags/us.svg',
     nativeName: 'English'
   },
   {
     code: 'pt-BR',
     name: 'Portuguese',
-    flag: '🇧🇷',
+    flag: '/flags/br.svg',
     nativeName: 'Português'
   },
   {
     code: 'es',
     name: 'Spanish',
-    flag: '🇪🇸',
+    flag: '/flags/es.svg',
     nativeName: 'Español'
   },
   {
     code: 'fr',
     name: 'French',
-    flag: '🇫🇷',
+    flag: '/flags/fr.svg',
     nativeName: 'Français'
   }
 ];
@@ -90,7 +91,13 @@ export default function LanguageSwitcher({ isMobile = false }: LanguageSwitcherP
           aria-label={`Current language: ${activeLanguageData.nativeName}`}
           disabled={isChangingLanguage}
         >
-          <span className="text-lg flag-emoji">{activeLanguageData.flag}</span>
+          <Image
+            src={activeLanguageData.flag}
+            alt={`${activeLanguageData.nativeName} flag`}
+            width={20}
+            height={20}
+            className="flag-icon"
+          />
         </button>
 
         {isDropdownOpen && (
@@ -99,14 +106,20 @@ export default function LanguageSwitcher({ isMobile = false }: LanguageSwitcherP
               <button
                 key={language.code}
                 onClick={() => handleLanguageChange(language.code)}
-                className={`w-full px-4 py-2 text-left text-sm transition-all duration-300 hover:liquid-glass-light ${
+                className={`w-full px-4 py-2 text-left text-sm transition-all duration-300 hover:liquid-glass-light flex items-center ${
                   language.code === activeLanguage
                     ? 'text-white'
                     : 'text-white/80 hover:text-white'
                 }`}
                 disabled={isChangingLanguage}
               >
-                <span className="mr-2 flag-emoji">{language.flag}</span>
+                <Image
+                  src={language.flag}
+                  alt={`${language.nativeName} flag`}
+                  width={16}
+                  height={16}
+                  className="mr-2 flag-icon"
+                />
                 {language.nativeName}
               </button>
             ))}
@@ -116,33 +129,30 @@ export default function LanguageSwitcher({ isMobile = false }: LanguageSwitcherP
     );
   }
 
-  // Desktop toggle version (original)
+  // Desktop toggle version with circular highlights
   return (
-    <div className="ios-language-toggle-container">
-      {/* Toggle Track */}
-      <div className="ios-language-toggle-track">
-        {/* Sliding Knob */}
-        <div className={`ios-language-toggle-knob pos-${activeIndex}`}>
-          <span className="ios-language-toggle-knob-icon flag-emoji">
-            {activeLanguageData.flag}
-          </span>
-        </div>
-        
-        {/* Individual clickable flag buttons */}
-        <div className="ios-language-toggle-icons">
-          {languages.map((language) => (
-              <button
-              key={language.code}
-              onClick={() => handleLanguageChange(language.code)}
-              className="ios-language-toggle-icon ios-language-toggle-icon-button flag-emoji"
-              aria-label={`${t('switch')} - ${language.nativeName}`}
-              disabled={isChangingLanguage}
-              title={language.nativeName}
-            >
-              {language.flag}
-            </button>
-          ))}
-        </div>
+    <div className="language-selector-container">
+      <div className="language-selector-track">
+        {languages.map((language) => (
+          <button
+            key={language.code}
+            onClick={() => handleLanguageChange(language.code)}
+            className={`language-selector-button ${
+              language.code === activeLanguage ? 'active' : ''
+            }`}
+            aria-label={`${t('switch')} - ${language.nativeName}`}
+            disabled={isChangingLanguage}
+            title={language.nativeName}
+          >
+            <Image
+              src={language.flag}
+              alt={`${language.nativeName} flag`}
+              width={16}
+              height={16}
+              className="flag-icon"
+            />
+          </button>
+        ))}
       </div>
     </div>
   );

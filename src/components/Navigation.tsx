@@ -41,9 +41,9 @@ export default function Navigation() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`px-4 py-2 rounded-[20px] text-sm font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 ${
+                  className={`px-6 h-10 flex items-center justify-center rounded-[20px] text-sm font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 ${
                     pathname === item.href
-                      ? 'liquid-glass-light text-white shadow-lg'
+                      ? 'nav-selected text-white dark:text-white shadow-lg'
                       : 'text-white/80 hover:text-white hover:liquid-glass-light'
                   }`}
                 >
@@ -111,9 +111,9 @@ export default function Navigation() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`px-4 py-3 rounded-[20px] text-sm font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 ${
+                  className={`px-6 h-10 flex items-center justify-center rounded-[20px] text-sm font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 ${
                     pathname === item.href
-                      ? 'liquid-glass text-white shadow-lg'
+                      ? 'nav-selected text-white dark:text-white shadow-lg'
                       : 'text-white/80 hover:text-white hover:liquid-glass-light'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
