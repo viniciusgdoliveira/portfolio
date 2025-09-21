@@ -24,7 +24,7 @@ export function ProjectGrid({ projects, columns = 2, className }: ProjectGridPro
 
 	return (
 		<div className={cn("grid gap-6", gridClasses[columns], className)}>
-			{projects.map((project, index) => (
+			{projects.map((project) => (
 				<ProjectCard
 					key={project.id}
 					project={project}

@@ -8,7 +8,7 @@ import { Card, CardContent, CardFooter } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { MediaDisplay } from "@/components/ui/MediaDisplay";
-import { Project, ProjectCardProps } from "@/types/project";
+import { ProjectCardProps } from "@/types/project";
 import { cn } from "@/lib/utils";
 
 export function ProjectCard({ project, size = "medium", showFullDescription = false, className }: ProjectCardProps) {

@@ -5,7 +5,6 @@
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { ProjectGrid } from "@/components/projects/ProjectGrid";
-import { ProjectCard } from "@/components/projects/ProjectCard";
 import { Button } from "@/components/ui/Button";
 import { Project } from "@/types/project";
 
