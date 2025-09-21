@@ -1,211 +1,188 @@
 {
-  "navigation": {
-    "home": "Accueil",
-    "projects": "Projets",
-    "chat": "Chat",
-    "contact": "Contact",
-    "portfolio": "Portfolio"
-  },
-  "home": {
-    "title": "Salut, je suis Vinícius Guimarães de Oliveira",
-    "subtitle": "Ingénieur Logiciel | Shopify | Hydrogen | TypeScript | ReactJS | Next.js | Firebase",
-    "description": "Créer des expériences numériques belles, fonctionnelles et centrées sur l'utilisateur avec des technologies modernes.",
-    "viewWork": "Voir Mon Travail",
-    "getInTouch": "Entrer en Contact",
-    "aboutMe": "À Propos de Moi",
-    "aboutDescription": "Découvrez différents aspects de qui je suis",
-    "atWork": {
-      "title": "Au Travail",
-      "content": "En tant qu'Ingénieur Logiciel concentré sur la résolution de problèmes avec des technologies web modernes, j'apporte précision et fiabilité à chaque projet. Mon approche est méthodique mais créative, visant toujours à livrer des solutions qui non seulement répondent aux attentes mais les dépassent.",
-      "techStack": [
-        "Shopify",
-        "Hydrogen", 
-        "TypeScript",
-        "React.js",
-        "Next.js",
-        "Firebase",
-        "Node.js",
-        "Git & Contrôle de Version"
-      ]
-    },
-    "beyondWork": {
-      "title": "Au-delà du Travail", 
-      "content": "Je valorise l'équilibre entre travail et loisirs, embrassant l'idée de l'oisiveté créative où s'éloigner du bureau génère souvent les meilleures solutions. Que ce soit en collaborant avec une équipe ou en profitant du temps à la plage, j'aborde la vie avec ouverture et positivité, croyant que le repos et la curiosité sont aussi essentiels au progrès que la concentration et la discipline.",
-      "techStack": [
-        "Créativité",
-        "Adaptabilité",
-        "Collaboration",
-        "Intelligence Émotionnelle",
-        "Ouverture d'Esprit",
-        "Positivité",
-        "Conscience Culturelle",
-        "Résolution de Problèmes"
-      ]
-    },
-    "alwaysLearning": {
-      "title": "Toujours en Apprentissage",
-      "content": "La curiosité me pousse. J'aime explorer de nouvelles technologies, contribuer à l'open source et affiner mon art. Pour moi, la croissance ne concerne pas seulement les compétences techniques, mais aussi la construction de connexions significatives et l'évolution en tant que personne en cours de route.",
-      "techStack": [
-        "Apprentissage Continu",
-        "Curiosité",
-        "Recherche et Exploration",
-        "Contribution Open Source",
-        "Pensée Critique",
-        "Auto-réflexion",
-        "Partage de Connaissances",
-        "Innovation"
-      ]
-    },
-    "featuredProjects": {
-      "title": "Projets en Vedette",
-      "description": "Voici quelques-uns de mes projets récents dont je suis particulièrement fier.",
-      "viewAllProjects": "Voir Tous les Projets",
-      "github": "GitHub",
-      "liveDemo": "Démo en Direct",
-      "items": {
-        "trailMakingTest": {
-          "title": "Trail Making Test Digital",
-          "description": "Outil d'évaluation neuropsychologique numérique pour iPad et tablettes. Comprend la Partie A (séquençage numérique) et la Partie B (séquences alternées nombre-lettre) pour évaluer l'attention visuelle et les capacités de changement de tâche."
-        },
-        "aulaFirebase": {
-          "title": "Aula Firebase Next.js",
-          "description": "Système de gestion d'apprentissage avec intégration Firebase et fonctionnalités temps réel. Comprend l'authentification utilisateur, la gestion de documents Firestore, Cloud Storage pour le téléchargement d'images et la synchronisation de données en temps réel."
-        },
-        "meuAssessorFashion": {
-          "title": "Meu Assessor Fashion",
-          "description": "Consultant mode alimenté par IA avec des recommandations de style intelligentes."
-        },
-        "pythonAutomation": {
-          "title": "Automatisation de Code Python",
-          "description": "Boîte à outils d'automatisation puissante pour rationaliser les flux de travail de développement."
-        },
-        "hydrogenMush": {
-          "title": "Hydrogen Mush",
-          "description": "Plateforme e-commerce moderne construite avec Shopify Hydrogen."
-        },
-        "mushShopify": {
-          "title": "Boutique Shopify Mush",
-          "description": "Boutique Shopify complète avec thèmes et fonctionnalités personnalisés."
-        }
-      }
-    },
-    "cta": {
-      "title": "Travaillons Ensemble",
-      "description": "Je suis toujours intéressé par de nouvelles opportunités et projets passionnants. Que vous ayez une question ou que vous vouliez simplement dire bonjour, je ferai de mon mieux pour vous répondre !",
-      "getInTouch": "Entrer en Contact"
-    }
-  },
-  "projects": {
-    "title": "Mes Projets",
-    "description": "Une collection de projets qui montrent mes compétences et ma passion pour créer des solutions innovantes aux problèmes du monde réel.",
-    "code": "Code",
-    "demo": "Démo",
-    "image": "📷 Image",
-    "video": "🎥 Vidéo",
-    "videoComingSoon": "Vidéo Bientôt Disponible",
-    "projectPreview": "Aperçu du Projet",
-    "backToHome": "Retour à l'Accueil",
-    "items": {
-      "trailMakingTest": {
-        "title": "Trail Making Test Digital",
-        "description": "Outil d'évaluation neuropsychologique numérique pour iPad et tablettes. Comprend la Partie A (séquençage numérique) et la Partie B (séquences alternées nombre-lettre) pour évaluer l'attention visuelle et les capacités de changement de tâche."
-      },
-      "aulaFirebase": {
-        "title": "Aula Firebase Next.js",
-        "description": "Système de gestion d'apprentissage avec intégration Firebase et fonctionnalités temps réel. Comprend l'authentification utilisateur, la gestion de documents Firestore, Cloud Storage pour le téléchargement d'images et la synchronisation de données en temps réel."
-      },
-      "meuAssessorFashion": {
-        "title": "Meu Assessor Fashion",
-        "description": "Consultant mode alimenté par IA avec des recommandations de style intelligentes."
-      },
-      "pythonAutomation": {
-        "title": "Automatisation de Code Python",
-        "description": "Boîte à outils d'automatisation puissante pour rationaliser les flux de travail de développement."
-      },
-      "hydrogenMush": {
-        "title": "Hydrogen Mush",
-        "description": "Plateforme e-commerce moderne construite avec Shopify Hydrogen."
-      },
-      "mushShopify": {
-        "title": "Boutique Shopify Mush",
-        "description": "Boutique Shopify complète avec thèmes et fonctionnalités personnalisés."
-      }
-    }
-  },
-  "contact": {
-    "title": "Entrer en Contact",
-    "description": "Je suis toujours intéressé par de nouvelles opportunités et collaborations. Parlons de la façon dont nous pouvons travailler ensemble pour donner vie à vos idées.",
-    "sendMessage": "Envoyez-moi un message",
-    "firstName": "Prénom",
-    "lastName": "Nom de Famille",
-    "email": "Adresse E-mail",
-    "subject": "Sujet",
-    "message": "Message",
-    "sendButton": "Envoyer le Message",
-    "contactInfo": "Informations de Contact",
-    "followMe": "Suivez-moi",
-    "whatsappMessage": "Message WhatsApp"
-  },
-  "language": {
-    "switch": "Changer de Langue",
-    "english": "English",
-    "portuguese": "Português",
-    "spanish": "Español",
-    "french": "Français"
-  },
-  "chat": {
-    "title": "Discuter avec Vinícius",
-    "subtitle": "Demande-moi n'importe quoi sur mes projets, stack technologique ou expériences !",
-    "placeholder": "Tapez votre message ici...",
-    "send": "Envoyer",
-    "clear": "Effacer le Chat",
-    "thinking": "Réfléchis...",
-    "greeting": "Salut ! Je suis Vinícius. N'hésite pas à me poser des questions sur mes projets, stack technologique ou tout ce que tu veux savoir sur mon travail et mes expériences !",
-    "error": "Désolé, quelque chose s'est mal passé. Veuillez réessayer.",
-    "tokenWarning": "La conversation devient longue. Considérez démarrer un nouveau chat pour de meilleures réponses.",
-    "conversationLimit": "Limite de conversation atteinte. Veuillez démarrer un nouveau chat.",
-    "rateLimit": {
-      "exceeded": "Vous avez atteint la limite quotidienne de 50 messages. Revenez demain pour continuer notre conversation !",
-      "remaining": "Il vous reste {remaining} messages aujourd'hui",
-      "approachingLimit": "⚠️ Approche de la limite",
-      "dailyLimitReached": "Limite quotidienne atteinte. Revenez demain !",
-      "limitReached": "Limite quotidienne atteinte"
-    },
-    "quickActions": {
-      "title": "Questions rapides :",
-      "projects": "Parle-moi de tes projets",
-      "techStack": "Quelle est ta stack technologique ?",
-      "experience": "Parle-moi de ton expérience",
-      "aboutMe": "Parle-moi de toi"
-    },
-    "quickActionMessages": {
-      "projects": "Parle-moi de tes projets",
-      "techStack": "Quelle est ta stack technologique ?",
-      "experience": "Parle-moi de ton expérience",
-      "aboutMe": "Parle-moi de toi"
-    },
-    "status": {
-      "online": "En ligne",
-      "typing": "En train d'écrire...",
-      "tokensUsed": "Tokens utilisés : {count}"
-    }
-  },
-  "seo": {
-    "title": "Vinícius Guimarães de Oliveira - Ingénieur Logiciel",
-    "description": "Ingénieur Logiciel spécialisé dans Shopify, Hydrogen, TypeScript, ReactJS, Next.js et Firebase. Créer des expériences numériques belles, fonctionnelles et centrées sur l'utilisateur avec des technologies modernes.",
-    "keywords": [
-      "Ingénieur Logiciel",
-      "Développeur Shopify",
-      "Hydrogen",
-      "TypeScript",
-      "ReactJS",
-      "Next.js",
-      "Firebase",
-      "Développeur Frontend",
-      "Développeur Full Stack",
-      "Développement Web",
-      "Portfolio",
-      "Vinícius Guimarães de Oliveira"
-    ]
-  }
+	"navigation": {
+		"home": "Accueil",
+		"projects": "Projets",
+		"chat": "Chat",
+		"contact": "Contact",
+		"portfolio": "Portfolio"
+	},
+	"home": {
+		"title": "Salut, je suis Vinícius Guimarães de Oliveira",
+		"subtitle": "Ingénieur Logiciel | Shopify | Hydrogen | TypeScript | ReactJS | Next.js | Firebase",
+		"description": "Créer des expériences numériques belles, fonctionnelles et centrées sur l'utilisateur avec des technologies modernes.",
+		"viewWork": "Voir Mon Travail",
+		"getInTouch": "Entrer en Contact",
+		"aboutMe": "À Propos de Moi",
+		"aboutDescription": "Découvrez différents aspects de qui je suis",
+		"atWork": {
+			"title": "Au Travail",
+			"content": "En tant qu'Ingénieur Logiciel concentré sur la résolution de problèmes avec des technologies web modernes, j'apporte précision et fiabilité à chaque projet. Mon approche est méthodique mais créative, visant toujours à livrer des solutions qui non seulement répondent aux attentes mais les dépassent.",
+			"techStack": ["Shopify", "Hydrogen", "TypeScript", "React.js", "Next.js", "Firebase", "Node.js", "Git & Contrôle de Version"]
+		},
+		"beyondWork": {
+			"title": "Au-delà du Travail",
+			"content": "Je valorise l'équilibre entre travail et loisirs, embrassant l'idée de l'oisiveté créative où s'éloigner du bureau génère souvent les meilleures solutions. Que ce soit en collaborant avec une équipe ou en profitant du temps à la plage, j'aborde la vie avec ouverture et positivité, croyant que le repos et la curiosité sont aussi essentiels au progrès que la concentration et la discipline.",
+			"techStack": ["Créativité", "Adaptabilité", "Collaboration", "Intelligence Émotionnelle", "Ouverture d'Esprit", "Positivité", "Conscience Culturelle", "Résolution de Problèmes"]
+		},
+		"alwaysLearning": {
+			"title": "Toujours en Apprentissage",
+			"content": "La curiosité me pousse. J'aime explorer de nouvelles technologies, contribuer à l'open source et affiner mon art. Pour moi, la croissance ne concerne pas seulement les compétences techniques, mais aussi la construction de connexions significatives et l'évolution en tant que personne en cours de route.",
+			"techStack": ["Apprentissage Continu", "Curiosité", "Recherche et Exploration", "Contribution Open Source", "Pensée Critique", "Auto-réflexion", "Partage de Connaissances", "Innovation"]
+		},
+		"featuredProjects": {
+			"title": "Projets en Vedette",
+			"description": "Voici quelques-uns de mes projets récents dont je suis particulièrement fier.",
+			"viewAllProjects": "Voir Tous les Projets",
+			"github": "GitHub",
+			"liveDemo": "Démo en Direct",
+			"items": {
+				"trailMakingTest": {
+					"title": "Trail Making Test Digital",
+					"description": "Outil d'évaluation neuropsychologique numérique pour iPad et tablettes. Comprend la Partie A (séquençage numérique) et la Partie B (séquences alternées nombre-lettre) pour évaluer l'attention visuelle et les capacités de changement de tâche."
+				},
+				"aulaFirebase": {
+					"title": "Aula Firebase Next.js",
+					"description": "Système de gestion d'apprentissage avec intégration Firebase et fonctionnalités temps réel. Comprend l'authentification utilisateur, la gestion de documents Firestore, Cloud Storage pour le téléchargement d'images et la synchronisation de données en temps réel."
+				},
+				"meuAssessorFashion": {
+					"title": "Meu Assessor Fashion",
+					"description": "Consultant mode alimenté par IA avec des recommandations de style intelligentes."
+				},
+				"pythonAutomation": {
+					"title": "Automatisation de Code Python",
+					"description": "Boîte à outils d'automatisation puissante pour rationaliser les flux de travail de développement."
+				},
+				"hydrogenMush": {
+					"title": "Hydrogen Mush",
+					"description": "Plateforme e-commerce moderne construite avec Shopify Hydrogen."
+				},
+				"mushShopify": {
+					"title": "Boutique Shopify Mush",
+					"description": "Boutique Shopify complète avec thèmes et fonctionnalités personnalisés."
+				}
+			}
+		},
+		"cta": {
+			"title": "Travaillons Ensemble",
+			"description": "Je suis toujours intéressé par de nouvelles opportunités et projets passionnants. Que vous ayez une question ou que vous vouliez simplement dire bonjour, je ferai de mon mieux pour vous répondre !",
+			"getInTouch": "Entrer en Contact"
+		}
+	},
+	"projects": {
+		"title": "Mes Projets",
+		"description": "Une collection de projets qui montrent mes compétences et ma passion pour créer des solutions innovantes aux problèmes du monde réel.",
+		"code": "Code",
+		"demo": "Démo",
+		"image": "📷 Image",
+		"video": "🎥 Vidéo",
+		"videoComingSoon": "Vidéo Bientôt Disponible",
+		"projectPreview": "Aperçu du Projet",
+		"backToHome": "Retour à l'Accueil",
+		"actions": {
+			"viewCode": "Voir le Code",
+			"liveDemo": "Démo en Direct"
+		},
+		"items": {
+			"trailMakingTest": {
+				"title": "Trail Making Test Digital",
+				"description": "Outil d'évaluation neuropsychologique numérique pour iPad et tablettes. Comprend la Partie A (séquençage numérique) et la Partie B (séquences alternées nombre-lettre) pour évaluer l'attention visuelle et les capacités de changement de tâche."
+			},
+			"aulaFirebase": {
+				"title": "Aula Firebase Next.js",
+				"description": "Système de gestion d'apprentissage avec intégration Firebase et fonctionnalités temps réel. Comprend l'authentification utilisateur, la gestion de documents Firestore, Cloud Storage pour le téléchargement d'images et la synchronisation de données en temps réel."
+			},
+			"meuAssessorFashion": {
+				"title": "Meu Assessor Fashion",
+				"description": "Consultant mode alimenté par IA avec des recommandations de style intelligentes."
+			},
+			"pythonAutomation": {
+				"title": "Automatisation de Code Python",
+				"description": "Boîte à outils d'automatisation puissante pour rationaliser les flux de travail de développement."
+			},
+			"hydrogenMush": {
+				"title": "Hydrogen Mush",
+				"description": "Plateforme e-commerce moderne construite avec Shopify Hydrogen."
+			},
+			"mushShopify": {
+				"title": "Boutique Shopify Mush",
+				"description": "Boutique Shopify complète avec thèmes et fonctionnalités personnalisés."
+			}
+		}
+	},
+	"contact": {
+		"title": "Entrer en Contact",
+		"description": "Je suis toujours intéressé par de nouvelles opportunités et collaborations. Parlons de la façon dont nous pouvons travailler ensemble pour donner vie à vos idées.",
+		"sendMessage": "Envoyez-moi un message",
+		"firstName": "Prénom",
+		"lastName": "Nom de Famille",
+		"email": "Adresse E-mail",
+		"subject": "Sujet",
+		"message": "Message",
+		"sendButton": "Envoyer le Message",
+		"contactInfo": "Informations de Contact",
+		"followMe": "Suivez-moi",
+		"whatsappMessage": "Message WhatsApp"
+	},
+	"language": {
+		"switch": "Changer de Langue",
+		"english": "English",
+		"portuguese": "Português",
+		"spanish": "Español",
+		"french": "Français"
+	},
+	"chat": {
+		"title": "Discuter avec Vinícius",
+		"subtitle": "Demande-moi n'importe quoi sur mes projets, stack technologique ou expériences !",
+		"placeholder": "Tapez votre message ici...",
+		"send": "Envoyer",
+		"clear": "Effacer le Chat",
+		"thinking": "Réfléchis...",
+		"greeting": "Salut ! Je suis Vinícius. N'hésite pas à me poser des questions sur mes projets, stack technologique ou tout ce que tu veux savoir sur mon travail et mes expériences !",
+		"error": "Désolé, quelque chose s'est mal passé. Veuillez réessayer.",
+		"tokenWarning": "La conversation devient longue. Considérez démarrer un nouveau chat pour de meilleures réponses.",
+		"conversationLimit": "Limite de conversation atteinte. Veuillez démarrer un nouveau chat.",
+		"rateLimit": {
+			"exceeded": "Vous avez atteint la limite quotidienne de 50 messages. Revenez demain pour continuer notre conversation !",
+			"remaining": "Il vous reste {remaining} messages aujourd'hui",
+			"approachingLimit": "⚠️ Approche de la limite",
+			"dailyLimitReached": "Limite quotidienne atteinte. Revenez demain !",
+			"limitReached": "Limite quotidienne atteinte"
+		},
+		"quickActions": {
+			"title": "Questions rapides :",
+			"projects": "Parle-moi de tes projets",
+			"techStack": "Quelle est ta stack technologique ?",
+			"experience": "Parle-moi de ton expérience",
+			"aboutMe": "Parle-moi de toi"
+		},
+		"quickActionMessages": {
+			"projects": "Parle-moi de tes projets",
+			"techStack": "Quelle est ta stack technologique ?",
+			"experience": "Parle-moi de ton expérience",
+			"aboutMe": "Parle-moi de toi"
+		},
+		"status": {
+			"online": "En ligne",
+			"typing": "En train d'écrire...",
+			"tokensUsed": "Tokens utilisés : {count}"
+		}
+	},
+	"seo": {
+		"title": "Vinícius Guimarães de Oliveira - Ingénieur Logiciel",
+		"description": "Ingénieur Logiciel spécialisé dans Shopify, Hydrogen, TypeScript, ReactJS, Next.js et Firebase. Créer des expériences numériques belles, fonctionnelles et centrées sur l'utilisateur avec des technologies modernes.",
+		"keywords": [
+			"Ingénieur Logiciel",
+			"Développeur Shopify",
+			"Hydrogen",
+			"TypeScript",
+			"ReactJS",
+			"Next.js",
+			"Firebase",
+			"Développeur Frontend",
+			"Développeur Full Stack",
+			"Développement Web",
+			"Portfolio",
+			"Vinícius Guimarães de Oliveira"
+		]
+	}
 }
