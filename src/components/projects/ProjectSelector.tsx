@@ -50,8 +50,10 @@ function ProjectSelectorItem({ project, isSelected, onClick }: ProjectSelectorIt
 			{/* Media Section */}
 			<div className="h-20 md:h-24 relative">
 				<MediaDisplay
-					media={project.image}
-					alt={`${project.title} preview`}
+					media={{
+						...project.image,
+						alt: `${project.title} preview`,
+					}}
 					className="rounded-t-2xl md:rounded-t-3xl"
 					width={120}
 					height={96}

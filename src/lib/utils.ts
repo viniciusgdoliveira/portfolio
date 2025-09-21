@@ -16,7 +16,7 @@ export function truncateText(text: string, maxLength: number): string {
 	return text.slice(0, maxLength) + "...";
 }
 
-export function debounce<T extends (...args: any[]) => any>(func: T, delay: number): (...args: Parameters<T>) => void {
+export function debounce<T extends (...args: unknown[]) => unknown>(func: T, delay: number): (...args: Parameters<T>) => void {
 	let timeoutId: NodeJS.Timeout;
 	return (...args: Parameters<T>) => {
 		clearTimeout(timeoutId);

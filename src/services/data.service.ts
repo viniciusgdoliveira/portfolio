@@ -1,7 +1,7 @@
 /** @format */
 
 import { Project, ProjectsData } from "@/types/project";
-import { AboutSection, AboutSectionsData } from "@/types/about";
+import { AboutSectionsData } from "@/types/about";
 
 // Abstract interface for data services (Dependency Inversion Principle)
 export interface DataService {
@@ -27,7 +27,7 @@ export class JsonDataService implements DataService {
 				throw new Error("Failed to fetch projects data");
 			}
 			this.projectsCache = await response.json();
-			return this.projectsCache;
+			return this.projectsCache!;
 		} catch (error) {
 			console.error("Error fetching projects:", error);
 			// Return fallback data
@@ -56,7 +56,7 @@ export class JsonDataService implements DataService {
 				throw new Error("Failed to fetch about sections data");
 			}
 			this.aboutCache = await response.json();
-			return this.aboutCache;
+			return this.aboutCache!;
 		} catch (error) {
 			console.error("Error fetching about sections:", error);
 			// Return fallback data

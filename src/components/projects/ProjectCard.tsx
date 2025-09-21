@@ -34,8 +34,10 @@ export function ProjectCard({ project, size = "medium", showFullDescription = fa
 			{/* Media Section */}
 			<div className={cn("relative", mediaSizeClasses[size])}>
 				<MediaDisplay
-					media={project.image}
-					alt={`${project.title} preview`}
+					media={{
+						...project.image,
+						alt: `${project.title} preview`,
+					}}
 				/>
 				<div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 			</div>
