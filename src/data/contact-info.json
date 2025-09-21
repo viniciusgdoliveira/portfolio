@@ -1,0 +1,116 @@
+{
+	"contactMethods": [
+		{
+			"id": "email",
+			"name": "Email",
+			"value": "viniciusgdoliveira@gmail.com",
+			"href": "mailto:viniciusgdoliveira@gmail.com",
+			"icon": "email",
+			"description": "Best for detailed discussions and professional inquiries",
+			"primary": true,
+			"response_time": "24-48 hours",
+			"color": "blue"
+		},
+		{
+			"id": "whatsapp",
+			"name": "WhatsApp",
+			"value": "+55 11 99999-9999",
+			"href": "https://wa.me/5511999999999",
+			"icon": "whatsapp",
+			"description": "Quick conversations and immediate questions",
+			"primary": false,
+			"response_time": "Usually within hours",
+			"color": "green"
+		},
+		{
+			"id": "linkedin",
+			"name": "LinkedIn",
+			"value": "viniciusgdoliveira",
+			"href": "https://linkedin.com/in/viniciusgdoliveira",
+			"icon": "linkedin",
+			"description": "Professional networking and industry connections",
+			"primary": false,
+			"response_time": "1-3 days",
+			"color": "blue"
+		},
+		{
+			"id": "github",
+			"name": "GitHub",
+			"value": "viniciusgdoliveira",
+			"href": "https://github.com/viniciusgdoliveira",
+			"icon": "github",
+			"description": "Code collaboration and technical discussions",
+			"primary": false,
+			"response_time": "Varies",
+			"color": "gray"
+		}
+	],
+	"socialLinks": [
+		{
+			"platform": "GitHub",
+			"url": "https://github.com/viniciusgdoliveira",
+			"username": "viniciusgdoliveira",
+			"icon": "github"
+		},
+		{
+			"platform": "LinkedIn",
+			"url": "https://linkedin.com/in/viniciusgdoliveira",
+			"username": "viniciusgdoliveira",
+			"icon": "linkedin"
+		}
+	],
+	"availability": {
+		"status": "Available for opportunities",
+		"timezone": "America/Sao_Paulo",
+		"preferredContactTimes": "9 AM - 6 PM BRT",
+		"responseCommitment": "I'll do my best to get back to you within 24-48 hours",
+		"openTo": ["New job opportunities", "Freelance projects", "Collaboration discussions", "Technical questions", "Mentorship opportunities"]
+	},
+	"formConfiguration": {
+		"fields": [
+			{
+				"name": "firstName",
+				"type": "text",
+				"required": true,
+				"label": "First Name",
+				"placeholder": "Your first name"
+			},
+			{
+				"name": "lastName",
+				"type": "text",
+				"required": true,
+				"label": "Last Name",
+				"placeholder": "Your last name"
+			},
+			{
+				"name": "email",
+				"type": "email",
+				"required": true,
+				"label": "Email Address",
+				"placeholder": "your.email@example.com"
+			},
+			{
+				"name": "subject",
+				"type": "text",
+				"required": true,
+				"label": "Subject",
+				"placeholder": "What's this about?"
+			},
+			{
+				"name": "message",
+				"type": "textarea",
+				"required": true,
+				"label": "Message",
+				"placeholder": "Tell me about your project or question...",
+				"rows": 6
+			}
+		],
+		"submitMethod": "mailto",
+		"submitTo": "viniciusgdoliveira@gmail.com"
+	},
+	"meta": {
+		"title": "Get In Touch",
+		"description": "I'm always interested in new opportunities and collaborations. Let's discuss how we can work together to bring your ideas to life.",
+		"preferredMethod": "email"
+	}
+}

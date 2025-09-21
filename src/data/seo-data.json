@@ -1,0 +1,187 @@
+{
+	"person": {
+		"@context": "https://schema.org",
+		"@type": "Person",
+		"name": "Vinícius Guimarães de Oliveira",
+		"jobTitle": "Software Engineer",
+		"description": "Software Engineer specializing in Shopify, Hydrogen, TypeScript, ReactJS, Next.js, and Firebase",
+		"url": "https://viniciusgdoliveira.vercel.app",
+		"image": "https://cdn.shopify.com/s/files/1/0666/0207/4202/files/vinicius-transparent-bg.png?v=1752328643",
+		"sameAs": ["https://github.com/viniciusgdoliveira", "https://linkedin.com/in/viniciusgdoliveira"],
+		"knowsAbout": [
+			"Shopify",
+			"Hydrogen",
+			"TypeScript",
+			"ReactJS",
+			"Next.js",
+			"Firebase",
+			"Software Engineering",
+			"Web Development",
+			"Frontend Development",
+			"E-commerce Development",
+			"Mobile App Development",
+			"Python",
+			"React Native"
+		],
+		"worksFor": {
+			"@type": "Organization",
+			"name": "Freelance"
+		},
+		"address": {
+			"@type": "PostalAddress",
+			"addressCountry": "BR",
+			"addressRegion": "Brazil"
+		},
+		"email": "viniciusgdoliveira@gmail.com",
+		"knowsLanguage": [
+			{
+				"@type": "Language",
+				"name": "Portuguese",
+				"alternateName": "pt-BR"
+			},
+			{
+				"@type": "Language",
+				"name": "English",
+				"alternateName": "en"
+			},
+			{
+				"@type": "Language",
+				"name": "Spanish",
+				"alternateName": "es"
+			},
+			{
+				"@type": "Language",
+				"name": "French",
+				"alternateName": "fr"
+			}
+		]
+	},
+	"website": {
+		"@context": "https://schema.org",
+		"@type": "WebSite",
+		"name": "Vinícius Guimarães de Oliveira - Portfolio",
+		"description": "Software Engineer portfolio showcasing projects in Shopify, Hydrogen, TypeScript, ReactJS, Next.js, and Firebase",
+		"url": "https://viniciusgdoliveira.vercel.app",
+		"author": {
+			"@type": "Person",
+			"name": "Vinícius Guimarães de Oliveira"
+		},
+		"inLanguage": ["en", "pt-BR", "es", "fr"],
+		"potentialAction": {
+			"@type": "SearchAction",
+			"target": "https://viniciusgdoliveira.vercel.app/search?q={search_term_string}",
+			"query-input": "required name=search_term_string"
+		}
+	},
+	"portfolioWork": {
+		"@context": "https://schema.org",
+		"@type": "CreativeWork",
+		"name": "Software Development Portfolio",
+		"description": "A collection of software projects demonstrating expertise in modern web technologies",
+		"author": {
+			"@type": "Person",
+			"name": "Vinícius Guimarães de Oliveira"
+		},
+		"dateCreated": "2024",
+		"genre": "Software Development",
+		"keywords": [
+			"Software Engineer",
+			"Shopify Developer",
+			"Hydrogen",
+			"TypeScript",
+			"ReactJS",
+			"Next.js",
+			"Firebase",
+			"Frontend Developer",
+			"Full Stack Developer",
+			"Web Development",
+			"Portfolio",
+			"E-commerce",
+			"Mobile Development"
+		]
+	},
+	"chat": {
+		"@context": "https://schema.org",
+		"@type": "WebPage",
+		"name": "Chat with Vinícius Guimarães de Oliveira",
+		"description": "Interactive chat to learn about Vinícius's projects, tech stack, and software development experiences",
+		"author": {
+			"@type": "Person",
+			"name": "Vinícius Guimarães de Oliveira",
+			"jobTitle": "Software Engineer",
+			"sameAs": ["https://github.com/viniciusgdoliveira", "https://linkedin.com/in/viniciusgdoliveira"]
+		},
+		"potentialAction": {
+			"@type": "CommunicateAction",
+			"target": {
+				"@type": "EntryPoint",
+				"urlTemplate": "https://viniciusgdoliveira.vercel.app/{locale}/chat"
+			}
+		}
+	},
+	"breadcrumbs": {
+		"@context": "https://schema.org",
+		"@type": "BreadcrumbList",
+		"itemListElement": [
+			{
+				"@type": "ListItem",
+				"position": 1,
+				"name": "Home",
+				"item": "https://viniciusgdoliveira.vercel.app"
+			},
+			{
+				"@type": "ListItem",
+				"position": 2,
+				"name": "Projects",
+				"item": "https://viniciusgdoliveira.vercel.app/projects"
+			},
+			{
+				"@type": "ListItem",
+				"position": 3,
+				"name": "Contact",
+				"item": "https://viniciusgdoliveira.vercel.app/contact"
+			},
+			{
+				"@type": "ListItem",
+				"position": 4,
+				"name": "Chat",
+				"item": "https://viniciusgdoliveira.vercel.app/chat"
+			}
+		]
+	},
+	"meta": {
+		"defaultTitle": "Vinícius Guimarães de Oliveira - Software Engineer",
+		"defaultDescription": "Software Engineer specializing in Shopify, Hydrogen, TypeScript, ReactJS, Next.js, and Firebase. Creating beautiful, functional, and user-centered digital experiences with modern technologies.",
+		"keywords": [
+			"Software Engineer",
+			"Shopify Developer",
+			"Hydrogen",
+			"TypeScript",
+			"ReactJS",
+			"Next.js",
+			"Firebase",
+			"Frontend Developer",
+			"Full Stack Developer",
+			"Web Development",
+			"Portfolio",
+			"Vinícius Guimarães de Oliveira",
+			"E-commerce Development",
+			"Mobile App Development",
+			"React Native",
+			"Python",
+			"AI/ML"
+		],
+		"author": "Vinícius Guimarães de Oliveira",
+		"robots": "index, follow",
+		"openGraph": {
+			"type": "website",
+			"siteName": "Vinícius Guimarães de Oliveira - Portfolio",
+			"image": "https://cdn.shopify.com/s/files/1/0666/0207/4202/files/vinicius-transparent-bg.png?v=1752328643",
+			"imageAlt": "Vinícius Guimarães de Oliveira - Software Engineer"
+		},
+		"twitter": {
+			"card": "summary_large_image",
+			"creator": "@viniciusgdoliveira"
+		}
+	}
+}

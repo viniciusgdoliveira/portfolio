@@ -1,0 +1,184 @@
+{
+	"featured": [
+		{
+			"id": "trailMakingTest",
+			"title": "Trail Making Test Digital",
+			"shortDescription": "Digital neuropsychological assessment tool for iPad and tablets.",
+			"fullDescription": "Digital neuropsychological assessment tool for iPad and tablets. Features Part A (number sequencing) and Part B (alternating number-letter sequences) to evaluate visual attention and task switching abilities.",
+			"technologies": ["React Native", "Expo", "TypeScript"],
+			"category": "Mobile App",
+			"status": "completed",
+			"featured": true,
+			"image": {
+				"type": "video",
+				"url": "https://cdn.shopify.com/videos/c/o/v/61e3792a038e4e04a9e5bc85c3f1a54d.mp4",
+				"fallback": "bg-gradient-to-br from-blue-400 to-purple-500"
+			},
+			"links": {
+				"github": "https://github.com/viniciusgdoliveira/trail-making-test-digital",
+				"live": ""
+			},
+			"keyFeatures": ["Touch-based interaction", "Timer functionality", "Results analysis", "Part A and B testing", "Cognitive assessment"],
+			"challenges": "Implementing precise touch interactions and timing for neuropsychological accuracy",
+			"learnings": "Understanding the intersection of technology and healthcare, mobile app optimization"
+		},
+		{
+			"id": "aulaFirebase",
+			"title": "Aula Firebase Next.js",
+			"shortDescription": "Learning management system with Firebase integration and real-time features.",
+			"fullDescription": "Learning management system with Firebase integration and real-time features. Features user authentication, Firestore document management, Cloud Storage for image uploads, and real-time data synchronization.",
+			"technologies": ["Next.js", "Firebase", "Vercel"],
+			"category": "Web Application",
+			"status": "completed",
+			"featured": true,
+			"image": {
+				"type": "video",
+				"url": "https://cdn.shopify.com/videos/c/o/v/c1bd79ad562d433a9ab0369763c316e2.mov",
+				"fallback": "bg-gradient-to-br from-green-400 to-blue-500"
+			},
+			"links": {
+				"github": "https://github.com/viniciusgdoliveira/aula-firebase-nextjs",
+				"live": "http://aula-firebase.vercel.app/"
+			},
+			"keyFeatures": ["User authentication", "Firestore document management", "Cloud Storage integration", "Real-time data synchronization", "Responsive design"],
+			"challenges": "Implementing real-time data sync and managing complex Firebase security rules",
+			"learnings": "Advanced Firebase techniques, real-time application architecture"
+		}
+	],
+	"all": [
+		{
+			"id": "trailMakingTest",
+			"title": "Trail Making Test Digital",
+			"shortDescription": "Digital neuropsychological assessment tool for iPad and tablets.",
+			"fullDescription": "Digital neuropsychological assessment tool for iPad and tablets. Features Part A (number sequencing) and Part B (alternating number-letter sequences) to evaluate visual attention and task switching abilities.",
+			"technologies": ["React Native", "Expo", "TypeScript"],
+			"category": "Mobile App",
+			"status": "completed",
+			"featured": true,
+			"image": {
+				"type": "video",
+				"url": "https://cdn.shopify.com/videos/c/o/v/61e3792a038e4e04a9e5bc85c3f1a54d.mp4",
+				"fallback": "bg-gradient-to-br from-blue-400 to-purple-500"
+			},
+			"links": {
+				"github": "https://github.com/viniciusgdoliveira/trail-making-test-digital",
+				"live": ""
+			},
+			"keyFeatures": ["Touch-based interaction", "Timer functionality", "Results analysis", "Part A and B testing", "Cognitive assessment"],
+			"challenges": "Implementing precise touch interactions and timing for neuropsychological accuracy",
+			"learnings": "Understanding the intersection of technology and healthcare, mobile app optimization"
+		},
+		{
+			"id": "aulaFirebase",
+			"title": "Aula Firebase Next.js",
+			"shortDescription": "Learning management system with Firebase integration and real-time features.",
+			"fullDescription": "Learning management system with Firebase integration and real-time features. Features user authentication, Firestore document management, Cloud Storage for image uploads, and real-time data synchronization.",
+			"technologies": ["Next.js", "Firebase", "Vercel"],
+			"category": "Web Application",
+			"status": "completed",
+			"featured": true,
+			"image": {
+				"type": "video",
+				"url": "https://cdn.shopify.com/videos/c/o/v/c1bd79ad562d433a9ab0369763c316e2.mov",
+				"fallback": "bg-gradient-to-br from-green-400 to-blue-500"
+			},
+			"links": {
+				"github": "https://github.com/viniciusgdoliveira/aula-firebase-nextjs",
+				"live": "http://aula-firebase.vercel.app/"
+			},
+			"keyFeatures": ["User authentication", "Firestore document management", "Cloud Storage integration", "Real-time data synchronization", "Responsive design"],
+			"challenges": "Implementing real-time data sync and managing complex Firebase security rules",
+			"learnings": "Advanced Firebase techniques, real-time application architecture"
+		},
+		{
+			"id": "meuAssessorFashion",
+			"title": "Meu Assessor Fashion",
+			"shortDescription": "AI-powered fashion consultant with intelligent styling recommendations.",
+			"fullDescription": "AI-powered fashion consultant with intelligent styling recommendations. This project challenged me to work with AI/ML integration and create a system that understands user preferences to provide personalized fashion advice.",
+			"technologies": ["Python", "Flask", "AI/ML"],
+			"category": "AI/Web Application",
+			"status": "completed",
+			"featured": true,
+			"image": {
+				"type": "video",
+				"url": "https://cdn.shopify.com/videos/c/o/v/f459b50c1b074da3b190bb9c0bd90ae7.mp4",
+				"fallback": "bg-gradient-to-br from-orange-400 to-red-500"
+			},
+			"links": {
+				"github": "https://github.com/viniciusgdoliveira/meuassessorfashion",
+				"live": "https://meuassessorfashion.onrender.com"
+			},
+			"keyFeatures": ["AI-powered recommendations", "Style analysis", "User preference learning", "Fashion trend integration", "Interactive interface"],
+			"challenges": "Training AI models for fashion recommendations and handling subjective style preferences",
+			"learnings": "AI/ML integration, Python Flask development, fashion industry insights"
+		},
+		{
+			"id": "pythonAutomation",
+			"title": "Python Code Automation",
+			"shortDescription": "Powerful automation toolkit for streamlining development workflows.",
+			"fullDescription": "Powerful automation toolkit for streamlining development workflows. Built to solve repetitive tasks and includes workflow automation, API integrations, and script management capabilities.",
+			"technologies": ["Python", "Automation", "APIs"],
+			"category": "Automation/Tools",
+			"status": "completed",
+			"featured": true,
+			"image": {
+				"type": "video",
+				"url": "https://cdn.shopify.com/videos/c/o/v/98c41452a4fa445dbd00971e81601fea.mp4",
+				"fallback": "bg-gradient-to-br from-yellow-400 to-orange-500"
+			},
+			"links": {
+				"github": "https://github.com/viniciusgdoliveira/python-code-automation",
+				"live": ""
+			},
+			"keyFeatures": ["Workflow automation", "API integrations", "Script management", "Task scheduling", "Error handling"],
+			"challenges": "Creating flexible automation scripts that work across different environments",
+			"learnings": "Python automation best practices, API integration patterns"
+		},
+		{
+			"id": "hydrogenMush",
+			"title": "Hydrogen Mush",
+			"shortDescription": "Modern e-commerce platform built with Shopify Hydrogen.",
+			"fullDescription": "Modern e-commerce platform built with Shopify Hydrogen featuring server-side rendering, lightning-fast performance, and a beautiful modern UI. This project showcases the power of Hydrogen for e-commerce.",
+			"technologies": ["Hydrogen", "React", "TypeScript"],
+			"category": "E-commerce",
+			"status": "completed",
+			"featured": true,
+			"image": {
+				"type": "video",
+				"url": "https://cdn.shopify.com/videos/c/o/v/1088c712e6a7457aae52e3694c54674d.mp4",
+				"fallback": "bg-gradient-to-br from-purple-400 to-pink-500"
+			},
+			"links": {
+				"github": "https://github.com/viniciusgdoliveira/hydrogen-mush",
+				"live": "https://mush.company"
+			},
+			"keyFeatures": ["Server-side rendering", "Fast performance", "Modern UI/UX", "Shopify integration", "Responsive design"],
+			"challenges": "Optimizing performance with Hydrogen and creating seamless user experience",
+			"learnings": "Advanced Hydrogen techniques, e-commerce optimization, performance tuning"
+		},
+		{
+			"id": "mushShopify",
+			"title": "Mush Shopify Store",
+			"shortDescription": "Comprehensive Shopify store with custom themes and features.",
+			"fullDescription": "Comprehensive Shopify store with custom themes and features. Built with Shopify, Liquid, and JavaScript to create a complete e-commerce solution that helps businesses grow.",
+			"technologies": ["Shopify", "Liquid", "JavaScript"],
+			"category": "E-commerce",
+			"status": "completed",
+			"featured": true,
+			"image": {
+				"type": "gradient",
+				"url": "",
+				"fallback": "bg-gradient-to-br from-indigo-400 to-purple-500"
+			},
+			"links": {
+				"github": "https://github.com/viniciusgdoliveira/mush-shopify",
+				"live": "https://mushcompany.myshopify.com"
+			},
+			"keyFeatures": ["Custom Shopify themes", "Advanced Liquid templating", "JavaScript enhancements", "Mobile optimization", "Conversion optimization"],
+			"challenges": "Creating custom Shopify themes that balance functionality with performance",
+			"learnings": "Advanced Shopify development, Liquid templating, e-commerce best practices"
+		}
+	],
+	"categories": ["Mobile App", "Web Application", "E-commerce", "AI/Web Application", "Automation/Tools"],
+	"technologies": ["React Native", "Expo", "TypeScript", "Next.js", "Firebase", "Vercel", "Python", "Flask", "AI/ML", "Automation", "APIs", "Hydrogen", "React", "Shopify", "Liquid", "JavaScript"]
+}

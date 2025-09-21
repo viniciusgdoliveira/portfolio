@@ -1,0 +1,51 @@
+{
+	"name": "Vinícius Guimarães de Oliveira",
+	"title": "Software Engineer",
+	"specialization": "Shopify | Hydrogen | TypeScript | ReactJS | Next.js | Firebase",
+	"description": "Creating beautiful, functional, and user-centered digital experiences with modern technologies.",
+	"location": "Brazil",
+	"email": "viniciusgdoliveira@gmail.com",
+	"phone": "+5511999999999",
+	"profile": {
+		"image": "https://cdn.shopify.com/s/files/1/0666/0207/4202/files/vinicius-transparent-bg.png?v=1752328643",
+		"alt": "Vinícius Guimarães de Oliveira"
+	},
+	"social": {
+		"github": {
+			"url": "https://github.com/viniciusgdoliveira",
+			"username": "viniciusgdoliveira"
+		},
+		"linkedin": {
+			"url": "https://linkedin.com/in/viniciusgdoliveira",
+			"username": "viniciusgdoliveira"
+		},
+		"whatsapp": {
+			"url": "https://wa.me/5511999999999",
+			"number": "+55 11 99999-9999"
+		}
+	},
+	"languages": [
+		{
+			"language": "Portuguese",
+			"level": "Native",
+			"code": "pt-BR"
+		},
+		{
+			"language": "English",
+			"level": "Fluent",
+			"code": "en"
+		},
+		{
+			"language": "Spanish",
+			"level": "Intermediate",
+			"code": "es"
+		},
+		{
+			"language": "French",
+			"level": "Intermediate",
+			"code": "fr"
+		}
+	],
+	"interests": ["Modern web technologies", "Open source contribution", "Continuous learning", "Work-life balance", "Beach and outdoor activities", "Cultural experiences"],
+	"values": ["Precision and reliability", "Collaboration and teamwork", "Innovation and creativity", "Continuous improvement", "Building meaningful connections"]
+}
