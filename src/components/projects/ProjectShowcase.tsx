@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { ProjectCard } from "./ProjectCard";
 import { ProjectSelector } from "./ProjectSelector";
+import { ProjectModal } from "./ProjectModal";
 import { Button } from "@/components/ui/Button";
 import { Project } from "@/types/project";
 import { cn } from "@/lib/utils";
@@ -24,6 +25,7 @@ export function ProjectShowcase({ projects, selectedIndex = 0, onProjectSelect, 
 	const t = useTranslations("projects");
 	const [internalSelectedProject, setInternalSelectedProject] = useState(0);
 	const [isTransitioning, setIsTransitioning] = useState(false);
+	const [isModalOpen, setIsModalOpen] = useState(false);
 
 	// Use external selectedIndex if provided, otherwise use internal state
 	const currentSelectedIndex = selectedIndex !== undefined ? selectedIndex : internalSelectedProject;
@@ -52,6 +54,14 @@ export function ProjectShowcase({ projects, selectedIndex = 0, onProjectSelect, 
 		handleProjectSelect(newIndex);
 	};
 
+	const handleCardClick = () => {
+		setIsModalOpen(true);
+	};
+
+	const handleCloseModal = () => {
+		setIsModalOpen(false);
+	};
+
 	if (!projects || projects.length === 0) {
 		return (
 			<div className="h-full flex items-center justify-center">
@@ -66,19 +76,22 @@ export function ProjectShowcase({ projects, selectedIndex = 0, onProjectSelect, 
 		<div className={cn("h-full flex flex-col", className)}>
 			{/* Full-screen Project Display */}
 			<div className="flex-1 flex items-center justify-center p-4 lg:p-0">
-				<div className="relative w-full max-w-4xl">
+				<div className="relative w-full max-w-7xl">
 					{/* Enhanced TV Frame Effect */}
 					<div className="absolute -inset-4 bg-gradient-to-br from-white/10 via-white/5 to-transparent rounded-3xl blur-xl" />
 					<div className="relative liquid-glass-light rounded-3xl p-4 lg:p-6 border border-white/20">
 						{/* Inner glow effect */}
 						<div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-3xl" />
 
-						<div className={cn("relative transition-all duration-700 ease-out", isTransitioning ? "opacity-60 scale-98 blur-sm" : "opacity-100 scale-100 blur-0")}>
+						<div
+							className={cn("relative transition-all duration-700 ease-out cursor-pointer", isTransitioning ? "opacity-60 scale-98 blur-sm" : "opacity-100 scale-100 blur-0")}
+							onClick={handleCardClick}
+						>
 							<ProjectCard
 								project={currentProject}
 								size="large"
 								showFullDescription={true}
-								className="hover:scale-[1.01] hover:shadow-2xl"
+								className="hover:scale-[1.01] hover:shadow-2xl transition-all duration-300"
 							/>
 						</div>
 					</div>
@@ -173,6 +186,13 @@ export function ProjectShowcase({ projects, selectedIndex = 0, onProjectSelect, 
 					</Button>
 				</div>
 			)}
+
+			{/* Project Modal */}
+			<ProjectModal
+				project={currentProject}
+				isOpen={isModalOpen}
+				onClose={handleCloseModal}
+			/>
 		</div>
 	);
 }

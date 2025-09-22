@@ -952,3 +952,8 @@ html {
 		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 	}
 }
+
+/* Chat send button green hover effect */
+.hover\:shadow-green-500\/25:hover {
+	box-shadow: 0 8px 32px rgba(34, 197, 94, 0.25);
+}

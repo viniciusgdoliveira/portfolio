@@ -27,7 +27,10 @@ export default function ChatInterface() {
 	};
 
 	useEffect(() => {
-		scrollToBottom();
+		// Only auto-scroll if there are messages and we're not at the initial load
+		if (messages.length > 0) {
+			scrollToBottom();
+		}
 	}, [messages]);
 
 	// Handle scroll to show/hide scroll button
@@ -75,7 +78,7 @@ export default function ChatInterface() {
 	];
 
 	return (
-		<div className="h-full flex flex-col max-w-4xl mx-auto px-4 py-4">
+		<div className="h-full flex flex-col w-full py-4">
 			<div className="liquid-card p-6 mb-6 flex-shrink-0">
 				<div className="flex items-center justify-between">
 					<div>
@@ -305,7 +308,7 @@ export default function ChatInterface() {
 						<button
 							type="submit"
 							disabled={!input.trim() || isLoading || (rateLimit?.remaining ?? 1) <= 0}
-							className="liquid-button text-white font-semibold px-6 py-4 rounded-[20px] transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 min-w-[80px] flex items-center justify-center"
+							className="liquid-button text-white font-semibold px-6 py-4 rounded-[20px] transition-all duration-300 hover:scale-105 hover:bg-green-500/20 hover:border-green-400/50 hover:shadow-green-500/25 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:bg-transparent disabled:hover:border-transparent min-w-[80px] flex items-center justify-center"
 						>
 							{isLoading ? (
 								<div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />

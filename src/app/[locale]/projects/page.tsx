@@ -76,7 +76,7 @@ export default function Projects() {
 				</div>
 
 				{/* Mobile/Desktop Sidebar */}
-				<aside className="w-full lg:w-80 lg:h-full liquid-glass-light rounded-t-3xl lg:rounded-l-3xl lg:rounded-t-none border-t lg:border-t-0 lg:border-l border-white/10 p-4 lg:p-6 flex flex-col order-1 lg:order-2">
+				<aside className="w-full lg:w-72 lg:h-full liquid-glass-light rounded-t-3xl lg:rounded-l-3xl lg:rounded-t-none border-t lg:border-t-0 lg:border-l border-white/10 p-4 lg:p-6 flex flex-col order-1 lg:order-2">
 					{/* Header with Navigation */}
 					<div className="mb-4 lg:mb-6 flex items-center justify-between">
 						<h3 className="text-white font-semibold text-base lg:text-sm">Projects ({projects.length})</h3>

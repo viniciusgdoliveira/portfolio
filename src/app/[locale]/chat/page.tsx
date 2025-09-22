@@ -53,8 +53,10 @@ export default async function ChatPage({ params }: PageProps) {
 				}}
 			/>
 
-			<div className="h-[calc(100vh-5rem)] flex flex-col">
-				<ChatInterface />
+			<div className="h-[calc(100vh-5rem)] flex flex-col px-4 sm:px-6 lg:px-8">
+				<div className="flex-1 flex flex-col max-w-none lg:max-w-7xl mx-auto w-full">
+					<ChatInterface />
+				</div>
 			</div>
 		</div>
 	);
