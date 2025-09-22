@@ -340,6 +340,15 @@ body {
 	}
 }
 
+/* Project Card Light Theme Transparency */
+:root:not(.dark) .liquid-card {
+	background: rgba(255, 255, 255, 0.05) !important;
+}
+
+:root:not(.dark) .liquid-card:hover {
+	background: rgba(255, 255, 255, 0.08) !important;
+}
+
 /* Floating Elements */
 .floating {
 	animation: float 6s ease-in-out infinite;
