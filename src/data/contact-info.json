@@ -1,24 +1,13 @@
 {
 	"contactMethods": [
 		{
-			"id": "email",
-			"name": "Email",
-			"value": "viniciusgdoliveira@gmail.com",
-			"href": "mailto:viniciusgdoliveira@gmail.com",
-			"icon": "email",
-			"description": "Best for detailed discussions and professional inquiries",
-			"primary": true,
-			"response_time": "24-48 hours",
-			"color": "blue"
-		},
-		{
 			"id": "whatsapp",
 			"name": "WhatsApp",
-			"value": "+55 11 99999-9999",
-			"href": "https://wa.me/5511999999999",
+			"value": "+55 48 99694-2118",
+			"href": "https://wa.me/5548996942118",
 			"icon": "whatsapp",
 			"description": "Quick conversations and immediate questions",
-			"primary": false,
+			"primary": true,
 			"response_time": "Usually within hours",
 			"color": "green"
 		},
@@ -106,11 +95,11 @@
 			}
 		],
 		"submitMethod": "mailto",
-		"submitTo": "viniciusgdoliveira@gmail.com"
+		"submitTo": "https://wa.me/5548996942118"
 	},
 	"meta": {
 		"title": "Get In Touch",
 		"description": "I'm always interested in new opportunities and collaborations. Let's discuss how we can work together to bring your ideas to life.",
-		"preferredMethod": "email"
+		"preferredMethod": "whatsapp"
 	}
 }

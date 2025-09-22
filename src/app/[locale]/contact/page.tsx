@@ -27,15 +27,18 @@ export default function Contact() {
 
 			{/* Contact Form Section */}
 			<section className="container mx-auto px-4 py-10">
-				<div className="max-w-2xl mx-auto">
-					<ContactForm />
-				</div>
-			</section>
+				<div className="max-w-6xl mx-auto">
+					<div className="grid lg:grid-cols-2 gap-8 items-start">
+						{/* Contact Form */}
+						<div className="order-2 lg:order-1">
+							<ContactForm />
+						</div>
 
-			{/* Contact Information Section */}
-			<section className="container mx-auto px-4 py-10">
-				<div className="max-w-4xl mx-auto">
-					<ContactInfo />
+						{/* Contact Information */}
+						<div className="order-1 lg:order-2">
+							<ContactInfo />
+						</div>
+					</div>
 				</div>
 			</section>
 

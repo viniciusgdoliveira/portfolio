@@ -30,7 +30,7 @@ export function ContactForm({ className }: ContactFormProps) {
 		message: "",
 	});
 
-	const [isSubmitting] = useState(false);
+	const [isSubmitting, setIsSubmitting] = useState(false);
 	const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -41,25 +41,40 @@ export function ContactForm({ className }: ContactFormProps) {
 		}));
 	};
 
-	const handleSubmit = (e: React.FormEvent) => {
+	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
+		setIsSubmitting(true);
+		setSubmitStatus("idle");
 
-		const subject = encodeURIComponent(formData.subject || "Contact from Portfolio");
-		const body = encodeURIComponent(
-			`Hi Vinícius,\n\n` + `Name: ${formData.firstName} ${formData.lastName}\n` + `Email: ${formData.email}\n\n` + `Message:\n${formData.message}\n\n` + `Sent from your portfolio contact form.`
-		);
+		try {
+			const response = await fetch("/api/contact", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(formData),
+			});
 
-		const mailtoLink = `mailto:viniciusgdoliveira@gmail.com?subject=${subject}&body=${body}`;
-		window.location.href = mailtoLink;
-
-		setSubmitStatus("success");
-		setFormData({
-			firstName: "",
-			lastName: "",
-			email: "",
-			subject: "",
-			message: "",
-		});
+			if (response.ok) {
+				setSubmitStatus("success");
+				setFormData({
+					firstName: "",
+					lastName: "",
+					email: "",
+					subject: "",
+					message: "",
+				});
+			} else {
+				const errorData = await response.json();
+				console.error("Form submission error:", errorData);
+				setSubmitStatus("error");
+			}
+		} catch (error) {
+			console.error("Network error:", error);
+			setSubmitStatus("error");
+		} finally {
+			setIsSubmitting(false);
+		}
 	};
 
 	return (
