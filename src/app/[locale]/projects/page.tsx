@@ -54,7 +54,7 @@ export default function Projects() {
 			<StructuredData data={createWebPageSchema(locale, "Projects")} />
 
 			{/* Mobile-first responsive layout */}
-			<div className="flex min-h-[calc(100vh-5rem)] flex-col lg:flex-row lg:h-[calc(100vh-5rem)] gap-4 lg:gap-6">
+			<div className="flex min-h-[calc(100vh-5rem)] flex-col lg:flex-row lg:h-[calc(100vh-3rem)] gap-4 lg:gap-6">
 				{/* Main Display Area */}
 				<div className="flex-1 flex flex-col order-2 lg:order-1">
 					{/* Main Project Display */}
@@ -76,12 +76,12 @@ export default function Projects() {
 				</div>
 
 				{/* Mobile/Desktop Sidebar */}
-				<aside className="w-full lg:w-72 lg:h-full liquid-glass-light rounded-t-3xl lg:rounded-l-3xl lg:rounded-t-none border-t lg:border-t-0 lg:border-l border-white/10 p-4 lg:p-6 flex flex-col order-1 lg:order-2">
+				<aside className="w-full lg:w-72 lg:h-[calc(100vh-2rem)] liquid-glass-light rounded-t-3xl lg:rounded-l-3xl lg:rounded-t-none border-t lg:border-t-0 lg:border-l border-white/10 p-4 lg:p-6 flex flex-col order-1 lg:order-2">
 					{/* Header with Navigation */}
 					<div className="mb-4 lg:mb-6 flex items-center justify-between">
 						<h3 className="text-white font-semibold text-base lg:text-sm">Projects ({projects.length})</h3>
 						{/* Mobile Navigation Arrows */}
-						<div className="flex lg:hidden gap-2">
+						<div className="flex lg:hidden gap-2 ">
 							<button
 								onClick={() => setSelectedProjectIndex(Math.max(0, selectedProjectIndex - 1))}
 								disabled={selectedProjectIndex === 0}
@@ -190,7 +190,7 @@ export default function Projects() {
 					</div>
 
 					{/* Desktop: Vertical stack with scroll */}
-					<div className="hidden lg:block flex-1 overflow-y-auto pr-2">
+					<div className="hidden lg:block h-[calc(3.5*280px+3*16px)] overflow-y-auto pr-2">
 						<div className="space-y-4">
 							{projects.map((project, index) => (
 								<MiniatureProjectCard
