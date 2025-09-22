@@ -22,6 +22,7 @@ export function ProjectCard({ project, size = "medium", showFullDescription = fa
 			title: t(`items.${projectKey}.title`),
 			shortDescription: t(`items.${projectKey}.description`),
 			fullDescription: t(`items.${projectKey}.description`), // Using the same description for both
+			keyFeatures: proj.keyFeatures, // Keep original keyFeatures
 		};
 	};
 
@@ -30,13 +31,13 @@ export function ProjectCard({ project, size = "medium", showFullDescription = fa
 	const sizeClasses = {
 		small: "h-auto",
 		medium: "h-auto",
-		large: "h-auto min-h-[500px]",
+		large: "h-auto min-h-[500px] sm:min-h-[600px] max-h-[85vh]",
 	};
 
 	const mediaSizeClasses = {
 		small: "h-32",
 		medium: "h-48",
-		large: "h-64 md:h-80 lg:h-96",
+		large: "h-64 sm:h-80 md:h-96 lg:h-[400px]",
 	};
 
 	return (
@@ -56,10 +57,12 @@ export function ProjectCard({ project, size = "medium", showFullDescription = fa
 			</div>
 
 			{/* Content Section */}
-			<CardContent className="p-4 md:p-6">
-				<h3 className={cn("font-bold text-white mb-2", size === "large" ? "text-2xl md:text-3xl" : "text-lg md:text-xl")}>{translatedProject.title}</h3>
+			<CardContent className="p-4 sm:p-5 md:p-6">
+				<h3 className={cn("font-bold text-white mb-3", size === "large" ? "text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl" : "text-lg md:text-xl")}>{translatedProject.title}</h3>
 
-				<p className="text-white/80 mb-4 text-sm md:text-base leading-relaxed">{showFullDescription ? translatedProject.fullDescription : translatedProject.shortDescription}</p>
+				<p className={cn("text-white/80 mb-4 sm:mb-6 leading-relaxed", size === "large" ? "text-sm sm:text-base md:text-lg lg:text-xl" : "text-sm md:text-base")}>
+					{showFullDescription ? translatedProject.fullDescription : translatedProject.shortDescription}
+				</p>
 
 				{/* Category Badge */}
 				<div className="mb-4">
@@ -72,11 +75,12 @@ export function ProjectCard({ project, size = "medium", showFullDescription = fa
 				</div>
 
 				{/* Tech Stack */}
-				<div className="flex flex-wrap gap-2 mb-4">
+				<div className="flex flex-wrap gap-1 sm:gap-2 mb-4">
 					{translatedProject.technologies.map((tech, index) => (
 						<Badge
 							key={index}
 							size="sm"
+							className="text-xs sm:text-sm"
 						>
 							{tech}
 						</Badge>
@@ -85,16 +89,16 @@ export function ProjectCard({ project, size = "medium", showFullDescription = fa
 
 				{/* Key Features (for large cards) */}
 				{size === "large" && translatedProject.keyFeatures && (
-					<div className="mb-4">
-						<h4 className="text-white font-semibold mb-2 text-sm">Key Features:</h4>
-						<ul className="text-white/70 text-sm space-y-1">
+					<div className="mb-4 sm:mb-6">
+						<h4 className="text-white font-semibold mb-2 sm:mb-3 text-sm sm:text-base md:text-lg">Key Features:</h4>
+						<ul className="text-white/70 text-xs sm:text-sm md:text-base space-y-1 sm:space-y-2">
 							{translatedProject.keyFeatures.slice(0, 4).map((feature, index) => (
 								<li
 									key={index}
-									className="flex items-center"
+									className="flex items-start"
 								>
-									<span className="w-1.5 h-1.5 bg-white/50 rounded-full mr-2 flex-shrink-0" />
-									{feature}
+									<span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white/50 rounded-full mr-2 sm:mr-3 flex-shrink-0 mt-1.5 sm:mt-2" />
+									<span className="leading-relaxed">{feature}</span>
 								</li>
 							))}
 						</ul>
@@ -103,13 +107,13 @@ export function ProjectCard({ project, size = "medium", showFullDescription = fa
 			</CardContent>
 
 			{/* Action Buttons */}
-			<CardFooter className="p-4 md:p-6 pt-0">
-				<div className="flex gap-3 w-full">
+			<CardFooter className="p-4 sm:p-5 md:p-6 pt-0">
+				<div className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full">
 					{translatedProject.links.github && (
 						<Button
 							variant="glass"
-							size={size === "large" ? "md" : "sm"}
-							className="flex-1"
+							size={size === "large" ? "lg" : "sm"}
+							className="flex-1 liquid-button hover:scale-105 transition-all duration-300"
 							asChild
 						>
 							<Link
@@ -125,8 +129,8 @@ export function ProjectCard({ project, size = "medium", showFullDescription = fa
 					{translatedProject.links.live && (
 						<Button
 							variant="primary"
-							size={size === "large" ? "md" : "sm"}
-							className="flex-1"
+							size={size === "large" ? "lg" : "sm"}
+							className="flex-1 liquid-button hover:scale-105 transition-all duration-300"
 							asChild
 						>
 							<Link

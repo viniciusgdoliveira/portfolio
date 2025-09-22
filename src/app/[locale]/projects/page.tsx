@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
 import { useEffect, useState } from "react";
 import { ProjectShowcase } from "@/components/projects/ProjectShowcase";
+import { MiniatureProjectCard } from "@/components/projects/MiniatureProjectCard";
 import { Button } from "@/components/ui/Button";
 import { StructuredData, createWebPageSchema } from "@/components/seo/StructuredData";
 import { dataService } from "@/services/data.service";
@@ -19,6 +20,7 @@ export default function Projects() {
 
 	const [projects, setProjects] = useState<Project[]>([]);
 	const [isLoading, setIsLoading] = useState(true);
+	const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
 
 	useEffect(() => {
 		const loadProjects = async () => {
@@ -51,57 +53,158 @@ export default function Projects() {
 		<div className="min-h-screen liquid-bg">
 			<StructuredData data={createWebPageSchema(locale, "Projects")} />
 
-			{/* Hero Section */}
-			<section className="container mx-auto px-4 py-10">
-				<div className="max-w-4xl mx-auto text-center">
-					<h1 className="text-5xl md:text-6xl font-bold text-white mb-6">{t("title")}</h1>
-					<p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">{t("description")}</p>
+			{/* Mobile-first responsive layout */}
+			<div className="flex min-h-[calc(100vh-5rem)] flex-col lg:flex-row lg:h-[calc(100vh-5rem)] gap-4 lg:gap-6">
+				{/* Main Display Area */}
+				<div className="flex-1 flex flex-col order-2 lg:order-1">
+					{/* Main Project Display */}
+					<main className="flex-1 p-4 lg:p-0">
+						{projects.length > 0 ? (
+							<ProjectShowcase
+								projects={projects}
+								selectedIndex={selectedProjectIndex}
+								onProjectSelect={setSelectedProjectIndex}
+								showBackButton={true}
+								backButtonHref={`/${locale}`}
+							/>
+						) : (
+							<div className="h-full flex items-center justify-center">
+								<p className="text-white/60 text-lg">No projects found.</p>
+							</div>
+						)}
+					</main>
 				</div>
-			</section>
 
-			{/* Projects Showcase */}
-			<section className="container mx-auto px-4 py-8">
-				<div className="max-w-5xl mx-auto">
-					{projects.length > 0 ? (
-						<ProjectShowcase projects={projects} />
-					) : (
-						<div className="text-center py-12">
-							<p className="text-white/60">No projects found.</p>
-						</div>
-					)}
-				</div>
-			</section>
-
-			{/* Back to Home */}
-			<section className="container mx-auto px-4 py-10">
-				<div className="max-w-4xl mx-auto text-center">
-					<Button
-						variant="secondary"
-						size="md"
-						asChild
-					>
-						<Link
-							href={`/${locale}`}
-							className="inline-flex items-center space-x-2"
-						>
-							<svg
-								className="w-5 h-5"
-								fill="none"
-								stroke="currentColor"
-								viewBox="0 0 24 24"
+				{/* Mobile/Desktop Sidebar */}
+				<aside className="w-full lg:w-80 lg:h-full liquid-glass-light rounded-t-3xl lg:rounded-l-3xl lg:rounded-t-none border-t lg:border-t-0 lg:border-l border-white/10 p-4 lg:p-6 flex flex-col order-1 lg:order-2">
+					{/* Header with Navigation */}
+					<div className="mb-4 lg:mb-6 flex items-center justify-between">
+						<h3 className="text-white font-semibold text-base lg:text-sm">Projects ({projects.length})</h3>
+						{/* Mobile Navigation Arrows */}
+						<div className="flex lg:hidden gap-2">
+							<button
+								onClick={() => setSelectedProjectIndex(Math.max(0, selectedProjectIndex - 1))}
+								disabled={selectedProjectIndex === 0}
+								className="w-8 h-8 rounded-full liquid-button hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center transition-all duration-300"
 							>
-								<path
-									strokeLinecap="round"
-									strokeLinejoin="round"
-									strokeWidth={2}
-									d="M10 19l-7-7m0 0l7-7m-7 7h18"
+								<svg
+									className="w-4 h-4 text-white"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+								>
+									<path
+										strokeLinecap="round"
+										strokeLinejoin="round"
+										strokeWidth={2}
+										d="M15 19l-7-7 7-7"
+									/>
+								</svg>
+							</button>
+							<button
+								onClick={() => setSelectedProjectIndex(Math.min(projects.length - 1, selectedProjectIndex + 1))}
+								disabled={selectedProjectIndex === projects.length - 1}
+								className="w-8 h-8 rounded-full liquid-button hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center transition-all duration-300"
+							>
+								<svg
+									className="w-4 h-4 text-white"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+								>
+									<path
+										strokeLinecap="round"
+										strokeLinejoin="round"
+										strokeWidth={2}
+										d="M9 5l7 7-7 7"
+									/>
+								</svg>
+							</button>
+						</div>
+						{/* Desktop Navigation Arrows */}
+						<div className="hidden lg:flex gap-2">
+							<button
+								onClick={() => setSelectedProjectIndex(Math.max(0, selectedProjectIndex - 1))}
+								disabled={selectedProjectIndex === 0}
+								className="w-6 h-6 rounded-full liquid-button hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center transition-all duration-300"
+							>
+								<svg
+									className="w-3 h-3 text-white"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+								>
+									<path
+										strokeLinecap="round"
+										strokeLinejoin="round"
+										strokeWidth={2}
+										d="M5 15l7-7 7 7"
+									/>
+								</svg>
+							</button>
+							<button
+								onClick={() => setSelectedProjectIndex(Math.min(projects.length - 1, selectedProjectIndex + 1))}
+								disabled={selectedProjectIndex === projects.length - 1}
+								className="w-6 h-6 rounded-full liquid-button hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center transition-all duration-300"
+							>
+								<svg
+									className="w-3 h-3 text-white"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+								>
+									<path
+										strokeLinecap="round"
+										strokeLinejoin="round"
+										strokeWidth={2}
+										d="M19 9l-7 7-7-7"
+									/>
+								</svg>
+							</button>
+						</div>
+					</div>
+
+					{/* Mobile: Horizontal scroll with enhanced styling */}
+					<div className="lg:hidden">
+						<div className="relative">
+							{/* Gradient fade effects */}
+							<div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-transparent to-white/5 z-10 pointer-events-none" />
+							<div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-transparent to-white/5 z-10 pointer-events-none" />
+
+							<div className="flex gap-4 overflow-x-auto py-4 px-2 scrollbar-hide">
+								{projects.map((project, index) => (
+									<div
+										key={project.id}
+										className="flex-shrink-0 w-72"
+									>
+										<MiniatureProjectCard
+											project={project}
+											index={index}
+											isSelected={index === selectedProjectIndex}
+											onClick={() => setSelectedProjectIndex(index)}
+										/>
+									</div>
+								))}
+							</div>
+						</div>
+					</div>
+
+					{/* Desktop: Vertical stack with scroll */}
+					<div className="hidden lg:block flex-1 overflow-y-auto pr-2">
+						<div className="space-y-4">
+							{projects.map((project, index) => (
+								<MiniatureProjectCard
+									key={project.id}
+									project={project}
+									index={index}
+									isSelected={index === selectedProjectIndex}
+									onClick={() => setSelectedProjectIndex(index)}
 								/>
-							</svg>
-							<span>{t("backToHome")}</span>
-						</Link>
-					</Button>
-				</div>
-			</section>
+							))}
+						</div>
+					</div>
+				</aside>
+			</div>
 		</div>
 	);
 }
