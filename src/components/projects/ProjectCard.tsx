@@ -14,6 +14,19 @@ import { cn } from "@/lib/utils";
 export function ProjectCard({ project, size = "medium", showFullDescription = false, className }: ProjectCardProps) {
 	const t = useTranslations("projects");
 
+	// Get translated project content
+	const getTranslatedProject = (proj: typeof project) => {
+		const projectKey = proj.id;
+		return {
+			...proj,
+			title: t(`items.${projectKey}.title`),
+			shortDescription: t(`items.${projectKey}.description`),
+			fullDescription: t(`items.${projectKey}.description`), // Using the same description for both
+		};
+	};
+
+	const translatedProject = getTranslatedProject(project);
+
 	const sizeClasses = {
 		small: "h-auto",
 		medium: "h-auto",
@@ -35,8 +48,8 @@ export function ProjectCard({ project, size = "medium", showFullDescription = fa
 			<div className={cn("relative", mediaSizeClasses[size])}>
 				<MediaDisplay
 					media={{
-						...project.image,
-						alt: `${project.title} preview`,
+						...translatedProject.image,
+						alt: `${translatedProject.title} preview`,
 					}}
 				/>
 				<div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
@@ -44,9 +57,9 @@ export function ProjectCard({ project, size = "medium", showFullDescription = fa
 
 			{/* Content Section */}
 			<CardContent className="p-4 md:p-6">
-				<h3 className={cn("font-bold text-white mb-2", size === "large" ? "text-2xl md:text-3xl" : "text-lg md:text-xl")}>{project.title}</h3>
+				<h3 className={cn("font-bold text-white mb-2", size === "large" ? "text-2xl md:text-3xl" : "text-lg md:text-xl")}>{translatedProject.title}</h3>
 
-				<p className="text-white/80 mb-4 text-sm md:text-base leading-relaxed">{showFullDescription ? project.fullDescription : project.shortDescription}</p>
+				<p className="text-white/80 mb-4 text-sm md:text-base leading-relaxed">{showFullDescription ? translatedProject.fullDescription : translatedProject.shortDescription}</p>
 
 				{/* Category Badge */}
 				<div className="mb-4">
@@ -54,13 +67,13 @@ export function ProjectCard({ project, size = "medium", showFullDescription = fa
 						variant="secondary"
 						size="sm"
 					>
-						{project.category}
+						{translatedProject.category}
 					</Badge>
 				</div>
 
 				{/* Tech Stack */}
 				<div className="flex flex-wrap gap-2 mb-4">
-					{project.technologies.map((tech, index) => (
+					{translatedProject.technologies.map((tech, index) => (
 						<Badge
 							key={index}
 							size="sm"
@@ -71,11 +84,11 @@ export function ProjectCard({ project, size = "medium", showFullDescription = fa
 				</div>
 
 				{/* Key Features (for large cards) */}
-				{size === "large" && project.keyFeatures && (
+				{size === "large" && translatedProject.keyFeatures && (
 					<div className="mb-4">
 						<h4 className="text-white font-semibold mb-2 text-sm">Key Features:</h4>
 						<ul className="text-white/70 text-sm space-y-1">
-							{project.keyFeatures.slice(0, 4).map((feature, index) => (
+							{translatedProject.keyFeatures.slice(0, 4).map((feature, index) => (
 								<li
 									key={index}
 									className="flex items-center"
@@ -92,7 +105,7 @@ export function ProjectCard({ project, size = "medium", showFullDescription = fa
 			{/* Action Buttons */}
 			<CardFooter className="p-4 md:p-6 pt-0">
 				<div className="flex gap-3 w-full">
-					{project.links.github && (
+					{translatedProject.links.github && (
 						<Button
 							variant="glass"
 							size={size === "large" ? "md" : "sm"}
@@ -100,7 +113,7 @@ export function ProjectCard({ project, size = "medium", showFullDescription = fa
 							asChild
 						>
 							<Link
-								href={project.links.github}
+								href={translatedProject.links.github}
 								target="_blank"
 								rel="noopener noreferrer"
 							>
@@ -109,7 +122,7 @@ export function ProjectCard({ project, size = "medium", showFullDescription = fa
 						</Button>
 					)}
 
-					{project.links.live && (
+					{translatedProject.links.live && (
 						<Button
 							variant="primary"
 							size={size === "large" ? "md" : "sm"}
@@ -117,7 +130,7 @@ export function ProjectCard({ project, size = "medium", showFullDescription = fa
 							asChild
 						>
 							<Link
-								href={project.links.live}
+								href={translatedProject.links.live}
 								target="_blank"
 								rel="noopener noreferrer"
 							>

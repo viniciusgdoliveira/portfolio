@@ -4,6 +4,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { AboutCarouselProps } from "@/types/about";
@@ -12,6 +13,7 @@ import { cn } from "@/lib/utils";
 export function AboutCarousel({ sections, autoRotate = true, interval = 8000, className }: AboutCarouselProps) {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [isAutoRotating, setIsAutoRotating] = useState(autoRotate);
+	const t = useTranslations("home");
 
 	useEffect(() => {
 		if (!isAutoRotating || sections.length <= 1) return;
@@ -37,6 +39,24 @@ export function AboutCarousel({ sections, autoRotate = true, interval = 8000, cl
 
 	const currentSection = sections[currentIndex];
 
+	// Get translated content based on section ID
+	const getTranslatedSection = (section: typeof currentSection) => {
+		const sectionKey = section.id; // atWork, beyondWork, alwaysLearning
+
+		// Get the techStack as raw JSON to handle array
+		const techStackRaw = t.raw(`${sectionKey}.techStack`);
+		const techStack = Array.isArray(techStackRaw) ? techStackRaw : section.techStack;
+
+		return {
+			...section,
+			title: t(`${sectionKey}.title`),
+			content: t(`${sectionKey}.content`),
+			techStack: techStack,
+		};
+	};
+
+	const translatedSection = getTranslatedSection(currentSection);
+
 	return (
 		<div className={cn("max-w-6xl mx-auto", className)}>
 			<div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
@@ -44,8 +64,8 @@ export function AboutCarousel({ sections, autoRotate = true, interval = 8000, cl
 				<div className="relative">
 					<div className="aspect-square md:aspect-[4/5] lg:aspect-square rounded-3xl liquid-glass overflow-hidden transition-all duration-1000 ease-in-out">
 						<Image
-							src={currentSection.image}
-							alt={currentSection.alt || `${currentSection.title} - About section`}
+							src={translatedSection.image}
+							alt={translatedSection.alt || `${translatedSection.title} - About section`}
 							width={500}
 							height={500}
 							className="w-full h-full object-cover transition-all duration-1000 ease-in-out"
@@ -103,13 +123,13 @@ export function AboutCarousel({ sections, autoRotate = true, interval = 8000, cl
 				{/* Content Section */}
 				<Card className="p-6 md:p-8 min-h-[400px] md:min-h-[500px] flex flex-col justify-between">
 					<div className="mb-6">
-						<h3 className="text-xl md:text-2xl font-bold text-white mb-4">{currentSection.title}</h3>
-						<p className="text-base md:text-lg text-white/80 leading-relaxed">{currentSection.content}</p>
+						<h3 className="text-xl md:text-2xl font-bold text-white mb-4">{translatedSection.title}</h3>
+						<p className="text-base md:text-lg text-white/80 leading-relaxed">{translatedSection.content}</p>
 					</div>
 
 					{/* Tech Stack */}
 					<div className="flex flex-wrap gap-2 md:gap-3">
-						{currentSection.techStack.map((skill, index) => (
+						{translatedSection.techStack.map((skill, index) => (
 							<Badge
 								key={index}
 								size="md"

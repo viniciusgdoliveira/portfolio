@@ -10,10 +10,12 @@ import { Button } from "@/components/ui/Button";
 import { StructuredData, createWebPageSchema } from "@/components/seo/StructuredData";
 import { dataService } from "@/services/data.service";
 import { Project } from "@/types/project";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Projects() {
 	const t = useTranslations("projects");
 	const locale = useLocale();
+	const { currentLanguage } = useLanguage();
 
 	const [projects, setProjects] = useState<Project[]>([]);
 	const [isLoading, setIsLoading] = useState(true);
@@ -32,7 +34,7 @@ export default function Projects() {
 		};
 
 		loadProjects();
-	}, []);
+	}, [currentLanguage]); // Trigger reload when language changes
 
 	if (isLoading) {
 		return (

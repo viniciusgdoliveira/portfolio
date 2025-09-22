@@ -12,10 +12,12 @@ import { StructuredData, createPersonSchema } from "@/components/seo/StructuredD
 import { dataService } from "@/services/data.service";
 import { Project } from "@/types/project";
 import { AboutSection } from "@/types/about";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Home() {
 	const pathname = usePathname();
 	const pathLocale = pathname.split("/")[1] || "en";
+	const { currentLanguage } = useLanguage();
 
 	const [featuredProjects, setFeaturedProjects] = useState<Project[]>([]);
 	const [aboutSections, setAboutSections] = useState<AboutSection[]>([]);
@@ -38,7 +40,7 @@ export default function Home() {
 		};
 
 		loadData();
-	}, []);
+	}, [currentLanguage]); // Trigger reload when language changes
 
 	if (isLoading) {
 		return (
