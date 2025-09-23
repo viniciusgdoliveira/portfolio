@@ -73,9 +73,9 @@ export function ProjectShowcase({ projects, selectedIndex = 0, onProjectSelect, 
 	const currentProject = projects[currentSelectedIndex];
 
 	return (
-		<div className={cn("h-full flex flex-col", className)}>
-			{/* Full-screen Project Display - Compact with minimal empty space */}
-			<div className="flex-1 flex items-center justify-center p-2 lg:p-4">
+		<div className={cn("flex flex-col", className)}>
+			{/* Full-screen Project Display - Natural height determines sidebar height */}
+			<div className="flex items-center justify-center p-2 lg:p-4">
 				<div className="relative w-full max-w-5xl">
 					{/* Enhanced TV Frame Effect */}
 					<div className="absolute -inset-2 lg:-inset-3 bg-gradient-to-br from-white/10 via-white/5 to-transparent rounded-3xl blur-xl" />

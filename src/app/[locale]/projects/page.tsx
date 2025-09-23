@@ -53,12 +53,12 @@ export default function Projects() {
 		<div className="flex-1 liquid-bg flex flex-col">
 			<StructuredData data={createWebPageSchema(locale, "Projects")} />
 
-			{/* Mobile-first responsive layout with perfect alignment */}
-			<div className="flex-1 flex flex-col lg:flex-row gap-4 lg:gap-8 p-4 lg:p-6 lg:items-stretch">
-				{/* Main Display Area - Perfectly aligned with sidebar */}
+			{/* Mobile-first responsive layout - Main card determines height, sidebar cropped at bottom */}
+			<div className="flex-1 flex flex-col lg:flex-row gap-4 lg:gap-8 p-4 lg:p-6 lg:items-start">
+				{/* Main Display Area - This determines the height reference */}
 				<div className="flex-1 flex flex-col order-2 lg:order-1 lg:min-w-0">
-					{/* Main Project Display - Aligned with sidebar */}
-					<div className="flex-1 flex flex-col">
+					{/* Main Project Display - Natural height, sidebar will match */}
+					<div className="flex flex-col">
 						{projects.length > 0 ? (
 							<ProjectShowcase
 								projects={projects}
@@ -75,8 +75,8 @@ export default function Projects() {
 					</div>
 				</div>
 
-				{/* Mobile/Desktop Sidebar - Perfectly aligned with main card */}
-				<aside className="w-full lg:w-80 xl:w-96 liquid-glass-light rounded-t-3xl lg:rounded-l-3xl lg:rounded-t-none border-t lg:border-t-0 lg:border-l border-white/10 p-4 lg:p-6 flex flex-col order-1 lg:order-2 lg:flex-shrink-0">
+				{/* Mobile/Desktop Sidebar - Matches main card height, cropped at bottom */}
+				<aside className="w-full lg:w-80 xl:w-96 liquid-glass-light rounded-t-3xl lg:rounded-l-3xl lg:rounded-t-none border-t lg:border-t-0 lg:border-l border-white/10 p-4 lg:p-6 flex flex-col order-1 lg:order-2 lg:flex-shrink-0 lg:self-stretch lg:overflow-hidden">
 					{/* Header with Navigation */}
 					<div className="mb-4 lg:mb-6 flex items-center justify-between">
 						<h3 className="text-white font-semibold text-base lg:text-sm">Projects ({projects.length})</h3>
@@ -189,7 +189,7 @@ export default function Projects() {
 						</div>
 					</div>
 
-					{/* Desktop: Vertical stack with scroll - Expanded for better usability */}
+					{/* Desktop: Vertical stack with scroll - Cropped at bottom */}
 					<div className="hidden lg:block flex-1 overflow-y-auto pr-2">
 						<div className="space-y-4 pb-4">
 							{projects.map((project, index) => (
