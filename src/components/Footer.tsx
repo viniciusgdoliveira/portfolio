@@ -28,7 +28,7 @@ export default function Footer({ className = '' }: FooterProps) {
           {/* Main message with glass effect */}
           <div className="mb-8">
             <div className="inline-block p-6 rounded-3xl bg-white/10 dark:bg-gray-900/10 backdrop-blur-md border border-white/20 dark:border-gray-700/30 shadow-2xl">
-              <p className="text-lg font-medium text-gray-800 dark:text-gray-200 leading-relaxed">
+              <p className="text-lg font-medium text-white leading-relaxed">
                 {t('mainMessage')}
               </p>
             </div>
@@ -41,7 +41,7 @@ export default function Footer({ className = '' }: FooterProps) {
             </div>
             <div className="relative flex justify-center">
               <div className="px-6 py-3 rounded-full bg-white/10 dark:bg-gray-900/10 backdrop-blur-md border border-white/20 dark:border-gray-700/30">
-                <p className="text-sm font-medium text-gray-600 dark:text-gray-400">
+                <p className="text-sm font-medium text-white">
                   {t('developedBy')}
                 </p>
               </div>

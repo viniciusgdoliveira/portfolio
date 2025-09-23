@@ -78,7 +78,7 @@
 		"video": "🎥 Vidéo",
 		"videoComingSoon": "Vidéo Bientôt Disponible",
 		"projectPreview": "Aperçu du Projet",
-		"backToHome": "Retour à l'Accueil",
+		"backToHome": "🏠 Retour à l'Accueil",
 		"actions": {
 			"viewCode": "Voir le Code",
 			"liveDemo": "Démo en Direct"
@@ -169,9 +169,9 @@
 		}
 	},
 	"footer": {
-		"mainMessage": "Si vous avez aimé mon portfolio, vous pouvez me contacter pour que nous puissions vous aider à obtenir votre site web",
+		"mainMessage": "Merci d'avoir pris le temps d'explorer mon travail ! J'aimerais avoir de vos nouvelles et vous aider à donner vie à vos idées. Créons quelque chose d'incroyable ensemble !",
 		"contactButton": "Entrer en Contact",
-		"developedBy": "Développé avec ❤️ par moi =)"
+		"developedBy": "Créé avec ❤️ et beaucoup de café ☕ par Vinícius"
 	},
 	"seo": {
 		"title": "Vinícius Guimarães de Oliveira - Ingénieur Logiciel",

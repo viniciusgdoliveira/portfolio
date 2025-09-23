@@ -11,6 +11,7 @@ import { StructuredData, createWebPageSchema } from "@/components/seo/Structured
 
 export default function Contact() {
 	const t = useTranslations("contact");
+	const tProjects = useTranslations("projects");
 	const locale = useLocale();
 
 	return (
@@ -67,7 +68,7 @@ export default function Contact() {
 									d="M10 19l-7-7m0 0l7-7m-7 7h18"
 								/>
 							</svg>
-							<span>Back to Home</span>
+							<span>{tProjects("backToHome")}</span>
 						</Link>
 					</Button>
 				</div>
