@@ -74,12 +74,12 @@ export function ProjectShowcase({ projects, selectedIndex = 0, onProjectSelect, 
 
 	return (
 		<div className={cn("h-full flex flex-col", className)}>
-			{/* Full-screen Project Display */}
-			<div className="flex-1 flex items-center justify-center p-4 lg:p-0">
-				<div className="relative w-full max-w-7xl">
+			{/* Full-screen Project Display - Compact with minimal empty space */}
+			<div className="flex-1 flex items-center justify-center p-2 lg:p-4">
+				<div className="relative w-full max-w-5xl">
 					{/* Enhanced TV Frame Effect */}
-					<div className="absolute -inset-4 bg-gradient-to-br from-white/10 via-white/5 to-transparent rounded-3xl blur-xl" />
-					<div className="relative liquid-glass-light rounded-3xl p-4 lg:p-6 border border-white/20">
+					<div className="absolute -inset-2 lg:-inset-3 bg-gradient-to-br from-white/10 via-white/5 to-transparent rounded-3xl blur-xl" />
+					<div className="relative liquid-glass-light rounded-3xl p-3 lg:p-6 border border-white/20">
 						{/* Inner glow effect */}
 						<div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-3xl" />
 

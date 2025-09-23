@@ -50,11 +50,20 @@ export default async function LocaleLayout({
     <NextIntlClientProvider messages={messages}>
       <LanguageProvider initialLocale={locale}>
         <div className="min-h-screen flex flex-col">
-          <Navigation />
-          <main className="flex-1">
+          {/* Header Box */}
+          <header className="flex-shrink-0">
+            <Navigation />
+          </header>
+          
+          {/* Main Content Area */}
+          <main className="flex-1 flex flex-col">
             {children}
           </main>
-          <Footer />
+          
+          {/* Footer Box */}
+          <footer className="flex-shrink-0">
+            <Footer />
+          </footer>
         </div>
       </LanguageProvider>
     </NextIntlClientProvider>

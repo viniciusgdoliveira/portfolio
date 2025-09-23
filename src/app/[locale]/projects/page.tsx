@@ -50,15 +50,15 @@ export default function Projects() {
 	}
 
 	return (
-		<div className="min-h-screen liquid-bg">
+		<div className="flex-1 liquid-bg flex flex-col">
 			<StructuredData data={createWebPageSchema(locale, "Projects")} />
 
-			{/* Mobile-first responsive layout */}
-			<div className="flex min-h-[calc(100vh-5rem)] flex-col lg:flex-row lg:h-[calc(100vh-3rem)] gap-4 lg:gap-6">
-				{/* Main Display Area */}
-				<div className="flex-1 flex flex-col order-2 lg:order-1">
-					{/* Main Project Display */}
-					<main className="flex-1 p-4 lg:p-0">
+			{/* Mobile-first responsive layout with perfect alignment */}
+			<div className="flex-1 flex flex-col lg:flex-row gap-4 lg:gap-8 p-4 lg:p-6 lg:items-stretch">
+				{/* Main Display Area - Perfectly aligned with sidebar */}
+				<div className="flex-1 flex flex-col order-2 lg:order-1 lg:min-w-0">
+					{/* Main Project Display - Aligned with sidebar */}
+					<div className="flex-1 flex flex-col">
 						{projects.length > 0 ? (
 							<ProjectShowcase
 								projects={projects}
@@ -72,11 +72,11 @@ export default function Projects() {
 								<p className="text-white/60 text-lg">No projects found.</p>
 							</div>
 						)}
-					</main>
+					</div>
 				</div>
 
-				{/* Mobile/Desktop Sidebar */}
-				<aside className="w-full lg:w-72 lg:h-[calc(100vh-2rem)] liquid-glass-light rounded-t-3xl lg:rounded-l-3xl lg:rounded-t-none border-t lg:border-t-0 lg:border-l border-white/10 p-4 lg:p-6 flex flex-col order-1 lg:order-2">
+				{/* Mobile/Desktop Sidebar - Perfectly aligned with main card */}
+				<aside className="w-full lg:w-80 xl:w-96 liquid-glass-light rounded-t-3xl lg:rounded-l-3xl lg:rounded-t-none border-t lg:border-t-0 lg:border-l border-white/10 p-4 lg:p-6 flex flex-col order-1 lg:order-2 lg:flex-shrink-0">
 					{/* Header with Navigation */}
 					<div className="mb-4 lg:mb-6 flex items-center justify-between">
 						<h3 className="text-white font-semibold text-base lg:text-sm">Projects ({projects.length})</h3>
@@ -165,13 +165,13 @@ export default function Projects() {
 					</div>
 
 					{/* Mobile: Horizontal scroll with enhanced styling */}
-					<div className="lg:hidden">
-						<div className="relative">
+					<div className="lg:hidden flex-1">
+						<div className="relative h-full">
 							{/* Gradient fade effects */}
 							<div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-transparent to-white/5 z-10 pointer-events-none" />
 							<div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-transparent to-white/5 z-10 pointer-events-none" />
 
-							<div className="flex gap-4 overflow-x-auto py-4 px-2 scrollbar-hide">
+							<div className="flex gap-4 overflow-x-auto py-4 px-2 scrollbar-hide h-full">
 								{projects.map((project, index) => (
 									<div
 										key={project.id}
@@ -189,9 +189,9 @@ export default function Projects() {
 						</div>
 					</div>
 
-					{/* Desktop: Vertical stack with scroll */}
-					<div className="hidden lg:block h-[calc(3.5*280px+3*16px)] overflow-y-auto pr-2">
-						<div className="space-y-4">
+					{/* Desktop: Vertical stack with scroll - Expanded for better usability */}
+					<div className="hidden lg:block flex-1 overflow-y-auto pr-2">
+						<div className="space-y-4 pb-4">
 							{projects.map((project, index) => (
 								<MiniatureProjectCard
 									key={project.id}
