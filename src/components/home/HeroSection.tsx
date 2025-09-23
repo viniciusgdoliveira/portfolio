@@ -53,6 +53,14 @@ export function HeroSection({ locale, className }: HeroSectionProps) {
 						size="lg"
 						asChild
 					>
+						<Link href={`/${locale}/chat`}>{t("talkWithMe")}</Link>
+					</Button>
+
+					<Button
+						variant="glass"
+						size="lg"
+						asChild
+					>
 						<Link href={`/${locale}/contact`}>{t("getInTouch")}</Link>
 					</Button>
 				</div>
