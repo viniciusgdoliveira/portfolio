@@ -56,7 +56,7 @@ export default async function LocaleLayout({
           </header>
           
           {/* Main Content Area */}
-          <main className="flex-1 flex flex-col">
+          <main className="flex-1 flex flex-col pt-16">
             {children}
           </main>
           
