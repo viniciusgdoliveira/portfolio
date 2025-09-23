@@ -163,7 +163,7 @@
 			"fullDescription": "Comprehensive Shopify store with custom themes and features. Built with Shopify, Liquid, and JavaScript to create a complete e-commerce solution that helps businesses grow.",
 			"technologies": ["Shopify", "Liquid", "JavaScript"],
 			"category": "E-commerce",
-			"status": "completed",
+			"status": "in development",
 			"featured": true,
 			"image": {
 				"type": "gradient",
