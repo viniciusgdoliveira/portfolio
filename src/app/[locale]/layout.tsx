@@ -2,6 +2,7 @@ import {NextIntlClientProvider} from 'next-intl';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import enMessages from '../../../messages/en.json';
 import ptBRMessages from '../../../messages/pt-BR.json';
@@ -48,8 +49,13 @@ export default async function LocaleLayout({
   return (
     <NextIntlClientProvider messages={messages}>
       <LanguageProvider initialLocale={locale}>
-        <Navigation />
-        {children}
+        <div className="min-h-screen flex flex-col">
+          <Navigation />
+          <main className="flex-1">
+            {children}
+          </main>
+          <Footer />
+        </div>
       </LanguageProvider>
     </NextIntlClientProvider>
   );

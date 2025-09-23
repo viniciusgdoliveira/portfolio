@@ -167,6 +167,11 @@
 			"tokensUsed": "Tokens utilisés : {count}"
 		}
 	},
+	"footer": {
+		"mainMessage": "Si vous avez aimé mon portfolio, vous pouvez me contacter pour que nous puissions vous aider à obtenir votre site web",
+		"contactButton": "Entrer en Contact",
+		"developedBy": "Développé par moi =)"
+	},
 	"seo": {
 		"title": "Vinícius Guimarães de Oliveira - Ingénieur Logiciel",
 		"description": "Ingénieur Logiciel spécialisé dans Shopify, Hydrogen, TypeScript, ReactJS, Next.js et Firebase. Créer des expériences numériques belles, fonctionnelles et centrées sur l'utilisateur avec des technologies modernes.",
