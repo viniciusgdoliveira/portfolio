@@ -24,7 +24,7 @@ export interface Project {
 	featured: boolean;
 	image: MediaItem;
 	links: ProjectLinks;
-	keyFeatures?: string[];
+	keyFeatures: string[];
 	challenges?: string;
 	learnings?: string;
 }

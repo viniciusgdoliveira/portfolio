@@ -2,19 +2,16 @@
 
 "use client";
 
-import Link from "next/link";
-import { useTranslations, useLocale } from "next-intl";
+import { useLocale } from "next-intl";
 import { useEffect, useState } from "react";
 import { ProjectShowcase } from "@/components/projects/ProjectShowcase";
 import { MiniatureProjectCard } from "@/components/projects/MiniatureProjectCard";
-import { Button } from "@/components/ui/Button";
 import { StructuredData, createWebPageSchema } from "@/components/seo/StructuredData";
 import { dataService } from "@/services/data.service";
 import { Project } from "@/types/project";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Projects() {
-	const t = useTranslations("projects");
 	const locale = useLocale();
 	const { currentLanguage } = useLanguage();
 

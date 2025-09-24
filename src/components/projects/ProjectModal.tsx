@@ -6,10 +6,8 @@ import { useEffect } from "react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
-import { Badge } from "@/components/ui/Badge";
 import { MediaDisplay } from "@/components/ui/MediaDisplay";
 import { Project } from "@/types/project";
-import { cn } from "@/lib/utils";
 
 interface ProjectModalProps {
 	project: Project | null;

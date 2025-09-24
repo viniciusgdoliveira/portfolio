@@ -22,7 +22,7 @@ export function ProjectCard({ project, size = "medium", showFullDescription = fa
 			title: t(`items.${projectKey}.title`),
 			shortDescription: t(`items.${projectKey}.description`),
 			fullDescription: t(`items.${projectKey}.description`), // Using the same description for both
-			keyFeatures: t.raw(`items.${projectKey}.keyFeatures`) || proj.keyFeatures, // Use translated keyFeatures
+			keyFeatures: t.raw(`items.${projectKey}.keyFeatures`) || proj.keyFeatures || [], // Use translated keyFeatures
 		};
 	};
 
@@ -92,7 +92,7 @@ export function ProjectCard({ project, size = "medium", showFullDescription = fa
 					<div className="mb-3 sm:mb-4">
 						<h4 className="text-white font-semibold mb-2 sm:mb-3 text-sm sm:text-sm md:text-base">Key Features:</h4>
 						<ul className="text-white/70 text-xs sm:text-xs md:text-sm space-y-1 sm:space-y-1.5">
-							{translatedProject.keyFeatures.map((feature, index) => (
+							{translatedProject.keyFeatures.map((feature: string, index: number) => (
 								<li
 									key={index}
 									className="flex items-start"

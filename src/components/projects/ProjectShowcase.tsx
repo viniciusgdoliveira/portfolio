@@ -6,7 +6,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { ProjectCard } from "./ProjectCard";
-import { ProjectSelector } from "./ProjectSelector";
 import { ProjectModal } from "./ProjectModal";
 import { Button } from "@/components/ui/Button";
 import { Project } from "@/types/project";
@@ -197,23 +196,3 @@ export function ProjectShowcase({ projects, selectedIndex = 0, onProjectSelect, 
 	);
 }
 
-interface ProjectPreviewProps {
-	project: Project;
-	onClick: () => void;
-	className?: string;
-}
-
-function ProjectPreview({ project, onClick, className }: ProjectPreviewProps) {
-	return (
-		<div
-			className={cn("flex-shrink-0 w-40 md:w-48 transition-opacity duration-300 cursor-pointer", className)}
-			onClick={onClick}
-		>
-			<ProjectCard
-				project={project}
-				size="small"
-				showFullDescription={false}
-			/>
-		</div>
-	);
-}
