@@ -39,27 +39,33 @@
 			"items": {
 				"trailMakingTest": {
 					"title": "Trail Making Test Digital",
-					"description": "Digital neuropsychological assessment tool for iPad and tablets. Features Part A (number sequencing) and Part B (alternating number-letter sequences) to evaluate visual attention and task switching abilities."
+					"description": "Digital neuropsychological assessment tool for iPad and tablets. Features Part A (number sequencing) and Part B (alternating number-letter sequences) to evaluate visual attention and task switching abilities.",
+					"keyFeatures": ["Touch-based interaction", "Timer functionality", "Results analysis", "Part A and B testing", "Cognitive assessment"]
 				},
 				"aulaFirebase": {
 					"title": "Aula Firebase Next.js",
-					"description": "Learning management system with Firebase integration and real-time features. Features user authentication, Firestore document management, Cloud Storage for image uploads, and real-time data synchronization."
+					"description": "Learning management system with Firebase integration and real-time features. Features user authentication, Firestore document management, Cloud Storage for image uploads, and real-time data synchronization.",
+					"keyFeatures": ["User authentication", "Firestore document management", "Cloud Storage integration", "Real-time data synchronization", "Responsive design"]
 				},
 				"meuAssessorFashion": {
 					"title": "Meu Assessor Fashion",
-					"description": "AI-powered fashion consultant with intelligent styling recommendations."
+					"description": "AI-powered fashion consultant with intelligent styling recommendations.",
+					"keyFeatures": ["AI-powered recommendations", "Style analysis", "User preference learning", "Fashion trend integration", "Interactive interface"]
 				},
 				"pythonAutomation": {
 					"title": "Python Code Automation",
-					"description": "Powerful automation toolkit for streamlining development workflows."
+					"description": "Powerful automation toolkit for streamlining development workflows.",
+					"keyFeatures": ["Workflow automation", "API integrations", "Script management", "Task scheduling", "Error handling"]
 				},
 				"hydrogenMush": {
 					"title": "Hydrogen Mush",
-					"description": "Modern e-commerce platform built with Shopify Hydrogen."
+					"description": "Modern e-commerce platform built with Shopify Hydrogen.",
+					"keyFeatures": ["Server-side rendering", "Fast performance", "Modern UI/UX", "Shopify integration", "Responsive design"]
 				},
 				"mushShopify": {
 					"title": "Mush Shopify Store",
-					"description": "Comprehensive Shopify store with custom themes and features."
+					"description": "Comprehensive Shopify store with custom themes and features.",
+					"keyFeatures": ["Custom Shopify themes", "Advanced Liquid templating", "JavaScript enhancements", "Mobile optimization", "Conversion optimization"]
 				}
 			}
 		},
@@ -86,27 +92,33 @@
 		"items": {
 			"trailMakingTest": {
 				"title": "Trail Making Test Digital",
-				"description": "Digital neuropsychological assessment tool for iPad and tablets. Features Part A (number sequencing) and Part B (alternating number-letter sequences) to evaluate visual attention and task switching abilities."
+				"description": "Digital neuropsychological assessment tool for iPad and tablets. Features Part A (number sequencing) and Part B (alternating number-letter sequences) to evaluate visual attention and task switching abilities.",
+				"keyFeatures": ["Touch-based interaction", "Timer functionality", "Results analysis", "Part A and B testing", "Cognitive assessment"]
 			},
 			"aulaFirebase": {
 				"title": "Aula Firebase Next.js",
-				"description": "Learning management system with Firebase integration and real-time features. Features user authentication, Firestore document management, Cloud Storage for image uploads, and real-time data synchronization."
+				"description": "Learning management system with Firebase integration and real-time features. Features user authentication, Firestore document management, Cloud Storage for image uploads, and real-time data synchronization.",
+				"keyFeatures": ["User authentication", "Firestore document management", "Cloud Storage integration", "Real-time data synchronization", "Responsive design"]
 			},
 			"meuAssessorFashion": {
 				"title": "Meu Assessor Fashion",
-				"description": "AI-powered fashion consultant with intelligent styling recommendations."
+				"description": "AI-powered fashion consultant with intelligent styling recommendations.",
+				"keyFeatures": ["AI-powered recommendations", "Style analysis", "User preference learning", "Fashion trend integration", "Interactive interface"]
 			},
 			"pythonAutomation": {
 				"title": "Python Code Automation",
-				"description": "Powerful automation toolkit for streamlining development workflows."
+				"description": "Powerful automation toolkit for streamlining development workflows.",
+				"keyFeatures": ["Workflow automation", "API integrations", "Script management", "Task scheduling", "Error handling"]
 			},
 			"hydrogenMush": {
 				"title": "Hydrogen Mush",
-				"description": "Modern e-commerce platform built with Shopify Hydrogen."
+				"description": "Modern e-commerce platform built with Shopify Hydrogen.",
+				"keyFeatures": ["Server-side rendering", "Fast performance", "Modern UI/UX", "Shopify integration", "Responsive design"]
 			},
 			"mushShopify": {
 				"title": "Mush Shopify Store",
-				"description": "Comprehensive Shopify store with custom themes and features."
+				"description": "Comprehensive Shopify store with custom themes and features.",
+				"keyFeatures": ["Custom Shopify themes", "Advanced Liquid templating", "JavaScript enhancements", "Mobile optimization", "Conversion optimization"]
 			}
 		}
 	},

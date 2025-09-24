@@ -22,7 +22,7 @@ export function ProjectCard({ project, size = "medium", showFullDescription = fa
 			title: t(`items.${projectKey}.title`),
 			shortDescription: t(`items.${projectKey}.description`),
 			fullDescription: t(`items.${projectKey}.description`), // Using the same description for both
-			keyFeatures: proj.keyFeatures, // Keep original keyFeatures
+			keyFeatures: t.raw(`items.${projectKey}.keyFeatures`) || proj.keyFeatures, // Use translated keyFeatures
 		};
 	};
 

@@ -39,27 +39,33 @@
 			"items": {
 				"trailMakingTest": {
 					"title": "Trail Making Test Digital",
-					"description": "Outil d'évaluation neuropsychologique numérique pour iPad et tablettes. Comprend la Partie A (séquençage numérique) et la Partie B (séquences alternées nombre-lettre) pour évaluer l'attention visuelle et les capacités de changement de tâche."
+					"description": "Outil d'évaluation neuropsychologique numérique pour iPad et tablettes. Comprend la Partie A (séquençage numérique) et la Partie B (séquences alternées nombre-lettre) pour évaluer l'attention visuelle et les capacités de changement de tâche.",
+					"keyFeatures": ["Interaction tactile", "Fonctionnalité de minuterie", "Analyse des résultats", "Tests Partie A et B", "Évaluation cognitive"]
 				},
 				"aulaFirebase": {
 					"title": "Aula Firebase Next.js",
-					"description": "Système de gestion d'apprentissage avec intégration Firebase et fonctionnalités temps réel. Comprend l'authentification utilisateur, la gestion de documents Firestore, Cloud Storage pour le téléchargement d'images et la synchronisation de données en temps réel."
+					"description": "Système de gestion d'apprentissage avec intégration Firebase et fonctionnalités temps réel. Comprend l'authentification utilisateur, la gestion de documents Firestore, Cloud Storage pour le téléchargement d'images et la synchronisation de données en temps réel.",
+					"keyFeatures": ["Authentification utilisateur", "Gestion de documents Firestore", "Intégration Cloud Storage", "Synchronisation de données temps réel", "Design responsive"]
 				},
 				"meuAssessorFashion": {
 					"title": "Meu Assessor Fashion",
-					"description": "Consultant mode alimenté par IA avec des recommandations de style intelligentes."
+					"description": "Consultant mode alimenté par IA avec des recommandations de style intelligentes.",
+					"keyFeatures": ["Recommandations alimentées par IA", "Analyse de style", "Apprentissage des préférences utilisateur", "Intégration des tendances mode", "Interface interactive"]
 				},
 				"pythonAutomation": {
 					"title": "Automatisation de Code Python",
-					"description": "Boîte à outils d'automatisation puissante pour rationaliser les flux de travail de développement."
+					"description": "Boîte à outils d'automatisation puissante pour rationaliser les flux de travail de développement.",
+					"keyFeatures": ["Automatisation des flux de travail", "Intégrations API", "Gestion des scripts", "Planification des tâches", "Gestion des erreurs"]
 				},
 				"hydrogenMush": {
 					"title": "Hydrogen Mush",
-					"description": "Plateforme e-commerce moderne construite avec Shopify Hydrogen."
+					"description": "Plateforme e-commerce moderne construite avec Shopify Hydrogen.",
+					"keyFeatures": ["Rendu côté serveur", "Performance rapide", "UI/UX moderne", "Intégration Shopify", "Design responsive"]
 				},
 				"mushShopify": {
 					"title": "Boutique Shopify Mush",
-					"description": "Boutique Shopify complète avec thèmes et fonctionnalités personnalisés."
+					"description": "Boutique Shopify complète avec thèmes et fonctionnalités personnalisés.",
+					"keyFeatures": ["Thèmes Shopify personnalisés", "Templates Liquid avancés", "Améliorations JavaScript", "Optimisation mobile", "Optimisation de conversion"]
 				}
 			}
 		},
@@ -86,27 +92,33 @@
 		"items": {
 			"trailMakingTest": {
 				"title": "Trail Making Test Digital",
-				"description": "Outil d'évaluation neuropsychologique numérique pour iPad et tablettes. Comprend la Partie A (séquençage numérique) et la Partie B (séquences alternées nombre-lettre) pour évaluer l'attention visuelle et les capacités de changement de tâche."
+				"description": "Outil d'évaluation neuropsychologique numérique pour iPad et tablettes. Comprend la Partie A (séquençage numérique) et la Partie B (séquences alternées nombre-lettre) pour évaluer l'attention visuelle et les capacités de changement de tâche.",
+				"keyFeatures": ["Interaction tactile", "Fonctionnalité de minuterie", "Analyse des résultats", "Tests Partie A et B", "Évaluation cognitive"]
 			},
 			"aulaFirebase": {
 				"title": "Aula Firebase Next.js",
-				"description": "Système de gestion d'apprentissage avec intégration Firebase et fonctionnalités temps réel. Comprend l'authentification utilisateur, la gestion de documents Firestore, Cloud Storage pour le téléchargement d'images et la synchronisation de données en temps réel."
+				"description": "Système de gestion d'apprentissage avec intégration Firebase et fonctionnalités temps réel. Comprend l'authentification utilisateur, la gestion de documents Firestore, Cloud Storage pour le téléchargement d'images et la synchronisation de données en temps réel.",
+				"keyFeatures": ["Authentification utilisateur", "Gestion de documents Firestore", "Intégration Cloud Storage", "Synchronisation de données temps réel", "Design responsive"]
 			},
 			"meuAssessorFashion": {
 				"title": "Meu Assessor Fashion",
-				"description": "Consultant mode alimenté par IA avec des recommandations de style intelligentes."
+				"description": "Consultant mode alimenté par IA avec des recommandations de style intelligentes.",
+				"keyFeatures": ["Recommandations alimentées par IA", "Analyse de style", "Apprentissage des préférences utilisateur", "Intégration des tendances mode", "Interface interactive"]
 			},
 			"pythonAutomation": {
 				"title": "Automatisation de Code Python",
-				"description": "Boîte à outils d'automatisation puissante pour rationaliser les flux de travail de développement."
+				"description": "Boîte à outils d'automatisation puissante pour rationaliser les flux de travail de développement.",
+				"keyFeatures": ["Automatisation des flux de travail", "Intégrations API", "Gestion des scripts", "Planification des tâches", "Gestion des erreurs"]
 			},
 			"hydrogenMush": {
 				"title": "Hydrogen Mush",
-				"description": "Plateforme e-commerce moderne construite avec Shopify Hydrogen."
+				"description": "Plateforme e-commerce moderne construite avec Shopify Hydrogen.",
+				"keyFeatures": ["Rendu côté serveur", "Performance rapide", "UI/UX moderne", "Intégration Shopify", "Design responsive"]
 			},
 			"mushShopify": {
 				"title": "Boutique Shopify Mush",
-				"description": "Boutique Shopify complète avec thèmes et fonctionnalités personnalisés."
+				"description": "Boutique Shopify complète avec thèmes et fonctionnalités personnalisés.",
+				"keyFeatures": ["Thèmes Shopify personnalisés", "Templates Liquid avancés", "Améliorations JavaScript", "Optimisation mobile", "Optimisation de conversion"]
 			}
 		}
 	},
