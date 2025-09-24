@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useTheme } from "@/contexts/ThemeContext";
 import ThemeToggle from "./ThemeToggle";
 import LanguageSwitcher from "./LanguageSwitcher";
 
@@ -16,6 +17,7 @@ export default function Navigation() {
 	const t = useTranslations("navigation");
 	const urlLocale = useLocale();
 	const { currentLanguage } = useLanguage();
+	const { style } = useTheme();
 
 	// Use the context language, fallback to URL locale
 	const activeLocale = currentLanguage || urlLocale;
@@ -64,7 +66,11 @@ export default function Navigation() {
 						{/* Left: Mobile menu button */}
 						<button
 							onClick={() => setIsMenuOpen(!isMenuOpen)}
-							className="p-2 rounded-[20px] liquid-glass-light text-white/80 hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
+							className={`p-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
+								style === 'dos-style' 
+									? 'bg-[var(--dos-bg)] border border-dashed border-[var(--dos-border)] text-[var(--dos-fg)] hover:bg-[var(--dos-fg)] hover:text-[var(--dos-bg)] focus:ring-[var(--dos-accent)]'
+									: 'rounded-[20px] liquid-glass-light text-white/80 hover:text-white focus:ring-white'
+							}`}
 							aria-label="Toggle menu"
 						>
 							<svg
@@ -109,7 +115,11 @@ export default function Navigation() {
 
 				{/* Mobile Navigation */}
 				{isMenuOpen && (
-					<div className="md:hidden py-4 mt-4 liquid-glass-light rounded-[20px]">
+					<div className={`md:hidden py-4 mt-4 ${
+						style === 'dos-style' 
+							? 'bg-[var(--dos-bg)] border border-dashed border-[var(--dos-border)]'
+							: 'liquid-glass-light rounded-[20px]'
+					}`}>
 						<div className="flex flex-col space-y-2 px-4">
 							{navItems.map((item) => (
 								<Link

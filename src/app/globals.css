@@ -10,6 +10,16 @@
 	--glass-border: rgba(255, 255, 255, 0.25);
 	--glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
 	--liquid-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.08));
+	
+	/* DOS Style Variables - Light Mode (Blue on Grey) */
+	--dos-bg: #2d2d2d;
+	--dos-fg: #0078d4;
+	--dos-accent: #0078d4;
+	--dos-border: #0078d4;
+	--dos-shadow: #0078d440;
+	--dos-highlight: #0078d480;
+	--dos-font: 'Courier New', 'Monaco', 'Consolas', 'Liberation Mono', 'DejaVu Sans Mono', monospace;
+	--dos-fg-rgb: 0, 120, 212;
 }
 
 @theme inline {
@@ -40,6 +50,15 @@
 	--glass-border: rgba(255, 255, 255, 0.15);
 	--glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 	--liquid-gradient: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+	
+	/* DOS Style Variables - Dark Mode (Green Terminal) */
+	--dos-bg: #000000;
+	--dos-fg: #00ff00;
+	--dos-accent: #00ff00;
+	--dos-border: #00ff00;
+	--dos-shadow: #00ff0040;
+	--dos-highlight: #00ff0080;
+	--dos-fg-rgb: 0, 255, 0;
 }
 
 .dark .liquid-glass-light {
@@ -965,4 +984,956 @@ html {
 /* Chat send button green hover effect */
 .hover\:shadow-green-500\/25:hover {
 	box-shadow: 0 8px 32px rgba(34, 197, 94, 0.25);
+}
+
+/* ========================================
+   DOS STYLE THEME IMPLEMENTATION
+   ======================================== */
+
+/* DOS Style Body Override */
+.dos-style body {
+	background: var(--dos-bg) !important;
+	color: var(--dos-fg) !important;
+	font-family: var(--dos-font) !important;
+	background-attachment: fixed !important;
+	overflow-x: hidden;
+	min-height: 100vh;
+	transition: all 0.3s ease;
+}
+
+/* Theme Transition Optimization */
+body {
+	transition: background 0.3s ease, color 0.3s ease, font-family 0.3s ease;
+}
+
+/* Disable transitions during theme switching for performance */
+.theme-switching * {
+	transition: none !important;
+}
+
+/* DOS Style Typography */
+.dos-style {
+	font-family: var(--dos-font);
+	letter-spacing: 0.05em;
+	line-height: 1.2;
+	font-variant-numeric: tabular-nums;
+}
+
+.dos-style h1,
+.dos-style h2,
+.dos-style h3,
+.dos-style h4,
+.dos-style h5,
+.dos-style h6 {
+	font-family: var(--dos-font);
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	position: relative;
+}
+
+/* DOS Style ASCII Art Headers */
+.dos-style h1::before,
+.dos-style h2::before {
+	content: '>>> ';
+	color: var(--dos-accent);
+	font-weight: bold;
+}
+
+.dos-style h1::after,
+.dos-style h2::after {
+	content: ' <<<';
+	color: var(--dos-accent);
+	font-weight: bold;
+}
+
+/* DOS Style Paragraph Styling */
+.dos-style p {
+	text-align: justify;
+	margin-bottom: 1em;
+}
+
+/* DOS Style Code and Monospace Elements */
+.dos-style code,
+.dos-style pre,
+.dos-style kbd {
+	font-family: var(--dos-font);
+	background: var(--dos-bg);
+	color: var(--dos-fg);
+	border: 1px dashed var(--dos-border);
+	padding: 0.25em 0.5em;
+	font-size: 0.9em;
+}
+
+/* DOS Style List Items */
+.dos-style ul li::before {
+	content: '> ';
+	color: var(--dos-accent);
+	font-weight: bold;
+}
+
+.dos-style ol li::before {
+	content: counter(list-item) '. ';
+	color: var(--dos-accent);
+	font-weight: bold;
+}
+
+.dos-style ol {
+	counter-reset: list-item;
+}
+
+.dos-style ol li {
+	counter-increment: list-item;
+}
+
+/* DOS Style Buttons and Interactive Elements */
+.dos-style button,
+.dos-style .liquid-button {
+	background: var(--dos-bg);
+	color: var(--dos-fg);
+	border: 1px dashed var(--dos-border);
+	font-family: var(--dos-font);
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	transition: all 0.2s ease;
+	box-shadow: 0 0 10px var(--dos-shadow);
+	border-radius: 0;
+}
+
+.dos-style button:hover,
+.dos-style .liquid-button:hover {
+	background: var(--dos-fg);
+	color: var(--dos-bg);
+	box-shadow: 0 0 20px var(--dos-highlight);
+	transform: none;
+}
+
+/* DOS Style - Disable liquid button hover effects */
+.dos-style .liquid-button::before {
+	display: none;
+}
+
+.dos-style .liquid-button:hover::before {
+	display: none;
+}
+
+/* DOS Style Button Variants */
+.dos-style button[class*="secondary"] {
+	background: var(--dos-bg);
+	color: var(--dos-fg);
+	border: 1px dashed var(--dos-border);
+}
+
+.dos-style button[class*="glass"] {
+	background: var(--dos-bg);
+	color: var(--dos-fg);
+	border: 1px dashed var(--dos-border);
+}
+
+.dos-style button[class*="outline"] {
+	background: var(--dos-bg);
+	color: var(--dos-fg);
+	border: 1px dashed var(--dos-border);
+}
+
+/* DOS Style Cards and Containers */
+.dos-style .liquid-glass,
+.dos-style .liquid-glass-light,
+.dos-style .liquid-card {
+	background: var(--dos-bg);
+	border: 1px dashed var(--dos-border);
+	border-radius: 0;
+	box-shadow: 0 0 15px var(--dos-shadow);
+	backdrop-filter: none;
+	-webkit-backdrop-filter: none;
+}
+
+.dos-style .liquid-glass:hover,
+.dos-style .liquid-glass-light:hover,
+.dos-style .liquid-card:hover {
+	background: var(--dos-bg);
+	border-color: var(--dos-accent);
+	box-shadow: 0 0 25px var(--dos-highlight);
+	transform: none;
+}
+
+/* DOS Style - Disable liquid glass hover effects */
+.dos-style .liquid-glass::before {
+	display: none;
+}
+
+.dos-style .liquid-glass:hover::before {
+	display: none;
+}
+
+.dos-style .liquid-card::before {
+	display: none;
+}
+
+.dos-style .liquid-card:hover::before {
+	display: none;
+}
+
+/* DOS Style Links */
+.dos-style a {
+	color: var(--dos-fg);
+	text-decoration: underline;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.dos-style a:hover {
+	color: var(--dos-bg);
+	background: var(--dos-fg);
+	padding: 2px 4px;
+}
+
+/* DOS Style Navigation */
+.dos-style .nav-selected {
+	background: var(--dos-fg);
+	color: var(--dos-bg);
+	border: 1px dashed var(--dos-border);
+	border-radius: 0;
+	box-shadow: 0 0 10px var(--dos-shadow);
+}
+
+/* DOS Style Scrollbars */
+.dos-style ::-webkit-scrollbar {
+	width: 8px;
+	background: var(--dos-bg);
+}
+
+.dos-style ::-webkit-scrollbar-track {
+	background: var(--dos-bg);
+	border: 1px dashed var(--dos-border);
+}
+
+.dos-style ::-webkit-scrollbar-thumb {
+	background: var(--dos-fg);
+	border: 1px dashed var(--dos-border);
+}
+
+.dos-style ::-webkit-scrollbar-thumb:hover {
+	background: var(--dos-accent);
+}
+
+/* DOS Style Form Elements */
+.dos-style input,
+.dos-style textarea {
+	background: var(--dos-bg);
+	color: var(--dos-fg);
+	border: 1px dashed var(--dos-border);
+	font-family: var(--dos-font);
+	border-radius: 0;
+}
+
+.dos-style input:focus,
+.dos-style textarea:focus {
+	border-color: var(--dos-accent);
+	box-shadow: 0 0 10px var(--dos-shadow);
+	outline: none;
+}
+
+/* DOS Style Animations */
+@keyframes dosBlink {
+	0%, 50% { opacity: 1; }
+	51%, 100% { opacity: 0; }
+}
+
+@keyframes dosTypewriter {
+	from { width: 0; }
+	to { width: 100%; }
+}
+
+@keyframes dosCursor {
+	0%, 50% { border-right-color: var(--dos-fg); }
+	51%, 100% { border-right-color: transparent; }
+}
+
+@keyframes dosGlitch {
+	0% { transform: translate(0); }
+	20% { transform: translate(-2px, 2px); }
+	40% { transform: translate(-2px, -2px); }
+	60% { transform: translate(2px, 2px); }
+	80% { transform: translate(2px, -2px); }
+	100% { transform: translate(0); }
+}
+
+@keyframes dosFlicker {
+	0%, 98%, 100% { opacity: 1; }
+	99% { opacity: 0.8; }
+}
+
+.dos-style .dos-cursor::after {
+	content: '_';
+	animation: dosBlink 1s infinite;
+	color: var(--dos-fg);
+}
+
+/* DOS Style Typewriter Effect */
+.dos-style .dos-typewriter {
+	overflow: hidden;
+	border-right: 2px solid var(--dos-fg);
+	white-space: nowrap;
+	animation: dosTypewriter 3s steps(40, end), dosCursor 1s step-end infinite;
+}
+
+/* DOS Style Glitch Effect */
+.dos-style .dos-glitch {
+	animation: dosGlitch 0.3s ease-in-out infinite;
+}
+
+/* DOS Style Screen Flicker */
+.dos-style .dos-flicker {
+	animation: dosFlicker 0.15s infinite linear;
+}
+
+/* DOS Style ASCII Borders */
+.dos-style .dos-border {
+	border: none;
+	position: relative;
+}
+
+.dos-style .dos-border::before {
+	content: '┌─┐ ┌─┐ ┌─┐ ┌─┐ ┌─┐ ┌─┐ ┌─┐ ┌─┐ ┌─┐ ┌─┐ ┌─┐ ┌─┐ ┌─┐ ┌─┐ ┌─┐';
+	position: absolute;
+	top: -1em;
+	left: 0;
+	right: 0;
+	color: var(--dos-border);
+	font-family: var(--dos-font);
+	font-size: 0.8em;
+	white-space: pre;
+	line-height: 1;
+}
+
+.dos-style .dos-border::after {
+	content: '└─┘ └─┘ └─┘ └─┘ └─┘ └─┘ └─┘ └─┘ └─┘ └─┘ └─┘ └─┘ └─┘ └─┘ └─┘';
+	position: absolute;
+	bottom: -1em;
+	left: 0;
+	right: 0;
+	color: var(--dos-border);
+	font-family: var(--dos-font);
+	font-size: 0.8em;
+	white-space: pre;
+	line-height: 1;
+}
+
+/* DOS Style Navigation Dots */
+.dos-style button[class*="w-3"][class*="h-3"] {
+	background: var(--dos-bg) !important;
+	border: 1px dashed var(--dos-border) !important;
+	color: var(--dos-fg) !important;
+}
+
+.dos-style button[class*="w-3"][class*="h-3"]:hover {
+	background: var(--dos-fg) !important;
+	color: var(--dos-bg) !important;
+	border-color: var(--dos-accent) !important;
+}
+
+.dos-style button[class*="scale-125"] {
+	background: var(--dos-fg) !important;
+	color: var(--dos-bg) !important;
+	border: 1px dashed var(--dos-accent) !important;
+}
+
+/* ========================================
+   DOS STYLE TERMINAL AESTHETICS
+   ======================================== */
+
+/* DOS Style Terminal Prompt */
+.dos-style .dos-prompt::before {
+	content: 'C:\\>';
+	color: var(--dos-accent);
+	font-weight: bold;
+	margin-right: 0.5em;
+}
+
+/* DOS Style ASCII Art Decorative Elements */
+.dos-style .dos-ascii-border-top::before {
+	content: '╔══════════════════════════════════════════════════════════════════════════════╗';
+	display: block;
+	color: var(--dos-border);
+	font-family: var(--dos-font);
+	font-size: 0.8em;
+	line-height: 1;
+	margin-bottom: 0.5em;
+	white-space: pre;
+}
+
+.dos-style .dos-ascii-border-bottom::after {
+	content: '╚══════════════════════════════════════════════════════════════════════════════╝';
+	display: block;
+	color: var(--dos-border);
+	font-family: var(--dos-font);
+	font-size: 0.8em;
+	line-height: 1;
+	margin-top: 0.5em;
+	white-space: pre;
+}
+
+/* DOS Style Status Indicators */
+.dos-style .dos-status::before {
+	content: '[ ';
+	color: var(--dos-accent);
+}
+
+.dos-style .dos-status::after {
+	content: ' ]';
+	color: var(--dos-accent);
+}
+
+/* DOS Style Progress Bars */
+.dos-style .dos-progress {
+	background: var(--dos-bg);
+	border: 1px dashed var(--dos-border);
+	height: 1em;
+	position: relative;
+	overflow: hidden;
+}
+
+.dos-style .dos-progress::before {
+	content: '████████████████████████████████████████████████████████████████████████████';
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	background: var(--dos-fg);
+	color: var(--dos-fg);
+	font-family: var(--dos-font);
+	font-size: 0.8em;
+	line-height: 1;
+	white-space: pre;
+	animation: dosProgress 3s ease-in-out infinite;
+}
+
+@keyframes dosProgress {
+	0% { width: 0%; }
+	50% { width: 100%; }
+	100% { width: 0%; }
+}
+
+/* DOS Style Loading Animation */
+.dos-style .dos-loading::after {
+	content: '...';
+	animation: dosLoading 1.5s infinite;
+}
+
+@keyframes dosLoading {
+	0%, 33% { content: '.'; }
+	34%, 66% { content: '..'; }
+	67%, 100% { content: '...'; }
+}
+
+/* DOS Style Error Messages */
+.dos-style .dos-error {
+	color: #ff0000;
+	background: var(--dos-bg);
+	border: 1px dashed #ff0000;
+	padding: 0.5em;
+}
+
+.dos-style .dos-error::before {
+	content: 'ERROR: ';
+	font-weight: bold;
+}
+
+/* DOS Style Success Messages */
+.dos-style .dos-success {
+	color: #00ff00;
+	background: var(--dos-bg);
+	border: 1px dashed #00ff00;
+	padding: 0.5em;
+}
+
+.dos-style .dos-success::before {
+	content: 'SUCCESS: ';
+	font-weight: bold;
+}
+
+/* DOS Style Warning Messages */
+.dos-style .dos-warning {
+	color: #ffff00;
+	background: var(--dos-bg);
+	border: 1px dashed #ffff00;
+	padding: 0.5em;
+}
+
+.dos-style .dos-warning::before {
+	content: 'WARNING: ';
+	font-weight: bold;
+}
+
+/* DOS Style Info Messages */
+.dos-style .dos-info {
+	color: var(--dos-fg);
+	background: var(--dos-bg);
+	border: 1px dashed var(--dos-border);
+	padding: 0.5em;
+}
+
+.dos-style .dos-info::before {
+	content: 'INFO: ';
+	font-weight: bold;
+	color: var(--dos-accent);
+}
+
+/* DOS Style Terminal Transitions */
+.dos-style * {
+	transition: color 0.1s ease, background-color 0.1s ease, border-color 0.1s ease;
+}
+
+/* DOS Style Matrix Effect */
+.dos-style .dos-matrix {
+	position: relative;
+	overflow: hidden;
+}
+
+.dos-style .dos-matrix::before {
+	content: '01010101010101010101010101010101010101010101010101010101010101010101010101010101';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	color: var(--dos-accent);
+	font-family: var(--dos-font);
+	font-size: 0.8em;
+	line-height: 1.2;
+	opacity: 0.1;
+	animation: dosMatrix 10s linear infinite;
+	pointer-events: none;
+}
+
+@keyframes dosMatrix {
+	0% { transform: translateY(-100%); }
+	100% { transform: translateY(100%); }
+}
+
+/* ========================================
+   DOS STYLE CRT MONITOR EFFECTS
+   ======================================== */
+
+/* CRT Monitor Scan Lines */
+.dos-style::before {
+	content: '';
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: repeating-linear-gradient(
+		0deg,
+		transparent,
+		transparent 2px,
+		rgba(0, 0, 0, 0.03) 2px,
+		rgba(0, 0, 0, 0.03) 4px
+	);
+	pointer-events: none;
+	z-index: 9999;
+	animation: dosScanlines 0.1s linear infinite;
+}
+
+@keyframes dosScanlines {
+	0% { transform: translateY(0); }
+	100% { transform: translateY(4px); }
+}
+
+/* CRT Monitor Curvature */
+.dos-style {
+	transform: perspective(1000px) rotateX(2deg);
+	transform-origin: center center;
+}
+
+/* CRT Monitor Glow Effect */
+.dos-style::after {
+	content: '';
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: radial-gradient(
+		ellipse at center,
+		transparent 0%,
+		transparent 60%,
+		rgba(var(--dos-fg-rgb), 0.02) 100%
+	);
+	pointer-events: none;
+	z-index: 9998;
+}
+
+/* Pixelated Shadows */
+.dos-style .dos-pixel-shadow {
+	box-shadow: 
+		2px 2px 0 var(--dos-fg),
+		4px 4px 0 var(--dos-fg),
+		6px 6px 0 var(--dos-fg),
+		8px 8px 0 var(--dos-fg);
+}
+
+/* CRT Screen Burn-in Effect */
+.dos-style .dos-burn-in {
+	position: relative;
+}
+
+.dos-style .dos-burn-in::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		45deg,
+		transparent 48%,
+		rgba(var(--dos-fg-rgb), 0.01) 49%,
+		rgba(var(--dos-fg-rgb), 0.01) 51%,
+		transparent 52%
+	);
+	pointer-events: none;
+	animation: dosBurnIn 20s ease-in-out infinite;
+}
+
+@keyframes dosBurnIn {
+	0%, 100% { opacity: 0; }
+	50% { opacity: 1; }
+}
+
+/* CRT Phosphor Glow */
+.dos-style .dos-phosphor {
+	text-shadow: 
+		0 0 2px var(--dos-fg),
+		0 0 4px var(--dos-fg),
+		0 0 6px var(--dos-fg),
+		0 0 8px var(--dos-fg);
+}
+
+/* CRT Screen Flicker */
+.dos-style .dos-crt-flicker {
+	animation: dosCrtFlicker 0.1s infinite linear;
+}
+
+@keyframes dosCrtFlicker {
+	0%, 98%, 100% { 
+		opacity: 1; 
+		filter: brightness(1);
+	}
+	99% { 
+		opacity: 0.98; 
+		filter: brightness(0.95);
+	}
+}
+
+/* CRT Interference Lines */
+.dos-style .dos-interference::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: repeating-linear-gradient(
+		90deg,
+		transparent,
+		transparent 1px,
+		rgba(var(--dos-fg-rgb), 0.01) 1px,
+		rgba(var(--dos-fg-rgb), 0.01) 2px
+	);
+	animation: dosInterference 0.05s linear infinite;
+	pointer-events: none;
+}
+
+@keyframes dosInterference {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(2px); }
+}
+
+/* ========================================
+   DOS STYLE COMPONENT OVERRIDES
+   ======================================== */
+
+/* DOS Style Badge Component */
+.dos-style .liquid-glass-light[class*="inline-flex"] {
+	background: var(--dos-bg);
+	color: var(--dos-fg);
+	border: 1px dashed var(--dos-border);
+	border-radius: 0;
+	font-family: var(--dos-font);
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+}
+
+/* DOS Style Language Switcher */
+.dos-style .language-selector-container {
+	position: relative;
+	display: inline-flex;
+}
+
+.dos-style .language-selector-track {
+	background: var(--dos-bg);
+	border: 1px dashed var(--dos-border);
+	border-radius: 0;
+	padding: 2px;
+	gap: 2px;
+	height: 40px;
+}
+
+.dos-style .language-selector-button {
+	width: 32px;
+	height: 32px;
+	border-radius: 0;
+	border: 1px dashed var(--dos-border);
+	background: var(--dos-bg);
+	color: var(--dos-fg);
+	transition: all 0.2s ease;
+}
+
+.dos-style .language-selector-button:hover {
+	background: var(--dos-fg);
+	color: var(--dos-bg);
+	border-color: var(--dos-accent);
+}
+
+.dos-style .language-selector-button.active {
+	background: var(--dos-fg);
+	color: var(--dos-bg);
+	border-color: var(--dos-accent);
+}
+
+/* DOS Style Mobile Language Dropdown */
+.dos-style .liquid-glass-light[class*="absolute"] {
+	background: var(--dos-bg);
+	border: 1px dashed var(--dos-border);
+	border-radius: 0;
+}
+
+.dos-style .liquid-glass-light[class*="absolute"] button {
+	background: transparent;
+	color: var(--dos-fg);
+	border: none;
+	border-radius: 0;
+	font-family: var(--dos-font);
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+}
+
+.dos-style .liquid-glass-light[class*="absolute"] button:hover {
+	background: var(--dos-fg);
+	color: var(--dos-bg);
+}
+
+/* DOS Style Form Fields */
+.dos-style .liquid-glass-light[class*="w-full"][class*="px-4"] {
+	background: var(--dos-bg);
+	color: var(--dos-fg);
+	border: 1px dashed var(--dos-border);
+	border-radius: 0;
+	font-family: var(--dos-font);
+}
+
+.dos-style .liquid-glass-light[class*="w-full"][class*="px-4"]:focus {
+	border-color: var(--dos-accent);
+	box-shadow: 0 0 10px var(--dos-shadow);
+	outline: none;
+}
+
+.dos-style .liquid-glass-light[class*="w-full"][class*="px-4"]::placeholder {
+	color: var(--dos-fg);
+	opacity: 0.6;
+}
+
+/* DOS Style Status Messages */
+.dos-style .liquid-glass-light[class*="p-4"] {
+	background: var(--dos-bg);
+	border: 1px dashed var(--dos-border);
+	border-radius: 0;
+	font-family: var(--dos-font);
+}
+
+/* DOS Style Media Display */
+.dos-style .bg-gradient-to-br {
+	background: var(--dos-bg) !important;
+	border: 1px dashed var(--dos-border);
+	border-radius: 0;
+}
+
+.dos-style .bg-white\/20 {
+	background: var(--dos-bg) !important;
+	border: 1px dashed var(--dos-border);
+}
+
+/* DOS Style Project Components */
+.dos-style .project-card,
+.dos-style .project-grid,
+.dos-style .project-modal {
+	background: var(--dos-bg);
+	border: 1px dashed var(--dos-border);
+	border-radius: 0;
+	font-family: var(--dos-font);
+}
+
+/* DOS Style Chat Interface */
+.dos-style .chat-bubble,
+.dos-style .chat-interface {
+	background: var(--dos-bg);
+	border: 1px dashed var(--dos-border);
+	border-radius: 0;
+	font-family: var(--dos-font);
+}
+
+/* DOS Style Hero Section */
+.dos-style .hero-section,
+.dos-style .cta-section {
+	background: var(--dos-bg);
+	color: var(--dos-fg);
+	font-family: var(--dos-font);
+}
+
+/* DOS Style About Section */
+.dos-style .about-section,
+.dos-style .about-carousel {
+	background: var(--dos-bg);
+	border: 1px dashed var(--dos-border);
+	border-radius: 0;
+	font-family: var(--dos-font);
+}
+
+/* DOS Style Hero Section Avatar */
+.dos-style .liquid-glass[class*="w-32"][class*="h-32"] {
+	background: var(--dos-bg);
+	border: 1px dashed var(--dos-border);
+	border-radius: 0;
+}
+
+/* DOS Style Navigation VGO Logo */
+.dos-style .bg-gradient-to-r {
+	background: var(--dos-fg) !important;
+	color: var(--dos-bg) !important;
+	-webkit-background-clip: initial !important;
+	background-clip: initial !important;
+	-webkit-text-fill-color: initial !important;
+	font-family: var(--dos-font);
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+}
+
+/* DOS Style Mobile Menu Button */
+.dos-style button[class*="p-2"][class*="rounded"] {
+	background: var(--dos-bg);
+	border: 1px dashed var(--dos-border);
+	border-radius: 0;
+	color: var(--dos-fg);
+}
+
+.dos-style button[class*="p-2"][class*="rounded"]:hover {
+	background: var(--dos-fg);
+	color: var(--dos-bg);
+}
+
+/* DOS Style Mobile Navigation */
+.dos-style .mobile-nav {
+	background: var(--dos-bg);
+	border: 1px dashed var(--dos-border);
+	border-radius: 0;
+}
+
+.dos-style .mobile-nav a {
+	color: var(--dos-fg);
+	font-family: var(--dos-font);
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+}
+
+.dos-style .mobile-nav a:hover {
+	background: var(--dos-fg);
+	color: var(--dos-bg);
+}
+
+/* DOS Style Chat Scroll Button */
+.dos-style .chat-scroll-button {
+	background: var(--dos-bg);
+	border: 1px dashed var(--dos-border);
+	border-radius: 0;
+	color: var(--dos-fg);
+}
+
+.dos-style .chat-scroll-button:hover {
+	background: var(--dos-fg);
+	color: var(--dos-bg);
+}
+
+/* DOS Style Chat Input */
+.dos-style .chat-input {
+	background: var(--dos-bg);
+	border: 1px dashed var(--dos-border);
+	border-radius: 0;
+	color: var(--dos-fg);
+	font-family: var(--dos-font);
+}
+
+.dos-style .chat-input:focus {
+	border-color: var(--dos-accent);
+	box-shadow: 0 0 10px var(--dos-shadow);
+	outline: none;
+}
+
+/* DOS Style Chat Send Button */
+.dos-style .chat-send-button {
+	background: var(--dos-bg);
+	border: 1px dashed var(--dos-border);
+	border-radius: 0;
+	color: var(--dos-fg);
+}
+
+.dos-style .chat-send-button:hover {
+	background: var(--dos-fg);
+	color: var(--dos-bg);
+}
+
+/* DOS Style Quick Actions */
+.dos-style .quick-action-button {
+	background: var(--dos-bg);
+	border: 1px dashed var(--dos-border);
+	border-radius: 0;
+	color: var(--dos-fg);
+	font-family: var(--dos-font);
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+}
+
+.dos-style .quick-action-button:hover {
+	background: var(--dos-fg);
+	color: var(--dos-bg);
+}
+
+/* DOS Style Theme Toggle Icons */
+.dos-style .ios-toggle-icon-left svg,
+.dos-style .ios-toggle-icon-right svg,
+.dos-style .ios-toggle-knob-icon svg {
+	fill: var(--dos-fg) !important;
+	color: var(--dos-fg) !important;
+	transition: fill 0.3s ease, color 0.3s ease;
+}
+
+.dos-style button[class*="p-2"] svg {
+	fill: var(--dos-fg) !important;
+	color: var(--dos-fg) !important;
+	transition: fill 0.3s ease, color 0.3s ease;
+}
+
+.dos-style button[class*="p-2"]:hover svg {
+	fill: var(--dos-bg) !important;
+	color: var(--dos-bg) !important;
+}
+
+/* Override Tailwind classes for DOS mode */
+.dos-style .text-blue-500 {
+	color: var(--dos-fg) !important;
+}
+
+.dos-style .dark\:text-green-400 {
+	color: var(--dos-fg) !important;
 }

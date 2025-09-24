@@ -16,7 +16,7 @@ export function HeroSection({ locale, className }: HeroSectionProps) {
 	const t = useTranslations("home");
 
 	return (
-		<section className={`container mx-auto px-4 py-10 ${className || ""}`}>
+		<section className={`container mx-auto px-4 pb-10 ${className || ""}`}>
 			<div className="max-w-4xl mx-auto text-center">
 				<div className="mb-8">
 					<div className="w-32 h-32 liquid-glass mx-auto mb-6 flex items-center justify-center floating overflow-hidden rounded-full">

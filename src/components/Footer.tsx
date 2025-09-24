@@ -1,7 +1,8 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { useTheme } from '@/contexts/ThemeContext';
 
 interface FooterProps {
   className?: string;
@@ -9,6 +10,40 @@ interface FooterProps {
 
 export default function Footer({ className = '' }: FooterProps) {
   const t = useTranslations('footer');
+  const { style, setStyle } = useTheme();
+  const [clickCount, setClickCount] = useState(0);
+  const [lastClickTime, setLastClickTime] = useState(0);
+
+  const handleSecretClick = () => {
+    const now = Date.now();
+    
+    // Reset click count if more than 2 seconds have passed
+    if (now - lastClickTime > 2000) {
+      setClickCount(1);
+    } else {
+      setClickCount(prev => prev + 1);
+    }
+    
+    setLastClickTime(now);
+
+    // Toggle style after 3 clicks within 2 seconds
+    if (clickCount >= 2) {
+      const newStyle = style === 'liquid-glass' ? 'dos-style' : 'liquid-glass';
+      setStyle(newStyle);
+      setClickCount(0);
+      
+      // Add temporary class for smooth transition
+      document.body.classList.add('theme-switching');
+      
+      // Show console notification
+      console.log(`🎮 Secret theme activated: ${newStyle === 'dos-style' ? 'DOS Mode' : 'Liquid Glass Mode'}`);
+      
+      // Remove transition class after animation
+      setTimeout(() => {
+        document.body.classList.remove('theme-switching');
+      }, 300);
+    }
+  };
 
   return (
     <footer className={`relative overflow-hidden ${className}`}>
@@ -27,8 +62,12 @@ export default function Footer({ className = '' }: FooterProps) {
         <div className="text-center">
           {/* Main message with glass effect */}
           <div className="mb-8">
-            <div className="inline-block p-6 rounded-3xl bg-white/10 dark:bg-gray-900/10 backdrop-blur-md border border-white/20 dark:border-gray-700/30 shadow-2xl">
-              <p className="text-lg font-medium text-white leading-relaxed">
+            <div 
+              className="inline-block p-6 rounded-3xl bg-white/10 dark:bg-gray-900/10 backdrop-blur-md border border-white/20 dark:border-gray-700/30 shadow-2xl cursor-pointer hover:bg-white/15 dark:hover:bg-gray-900/15 hover:border-white/30 dark:hover:border-gray-700/40 transition-all duration-300 select-none"
+              onClick={handleSecretClick}
+              title={style === 'dos-style' ? "Click 3 times to return to Liquid Glass! 🎮" : "Click me 3 times quickly for a surprise! 🎮"}
+            >
+              <p className="text-lg font-medium text-white leading-relaxed hover:text-blue-200 transition-colors duration-300">
                 {t('mainMessage')}
               </p>
             </div>
@@ -40,8 +79,12 @@ export default function Footer({ className = '' }: FooterProps) {
               <div className="w-full h-px bg-gradient-to-r from-transparent via-white/30 dark:via-gray-600/30 to-transparent" />
             </div>
             <div className="relative flex justify-center">
-              <div className="px-6 py-3 rounded-full bg-white/10 dark:bg-gray-900/10 backdrop-blur-md border border-white/20 dark:border-gray-700/30">
-                <p className="text-sm font-medium text-white">
+              <div 
+                className="px-6 py-3 rounded-full bg-white/10 dark:bg-gray-900/10 backdrop-blur-md border border-white/20 dark:border-gray-700/30 cursor-pointer hover:bg-white/15 dark:hover:bg-gray-900/15 hover:border-white/30 dark:hover:border-gray-700/40 transition-all duration-300 select-none"
+                onClick={handleSecretClick}
+                title={style === 'dos-style' ? "Click 3 times to return to Liquid Glass! 🎮" : "Click me 3 times quickly for a surprise! 🎮"}
+              >
+                <p className="text-sm font-medium text-white hover:text-blue-200 transition-colors duration-300">
                   {t('developedBy')}
                 </p>
               </div>
