@@ -6,7 +6,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 export interface MediaItem {
-	type: "video" | "image" | "gradient";
+	type: "video" | "image" | "gradient" | "iframe";
 	url: string;
 	fallback?: string;
 	alt?: string;
@@ -85,6 +85,26 @@ export function MediaDisplay({
 					className={cn(baseClassName, imageClassName)}
 					priority={priority}
 					sizes={sizes}
+					{...props}
+				/>
+			);
+
+		case "iframe":
+			if (!media.url) {
+				return (
+					<GradientFallback
+						fallback={media.fallback}
+						className={baseClassName}
+					/>
+				);
+			}
+			return (
+				<iframe
+					src={media.url}
+					className={cn(baseClassName, "border-0")}
+					title={media.alt || "Embedded content"}
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					allowFullScreen
 					{...props}
 				/>
 			);

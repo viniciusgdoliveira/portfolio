@@ -1,9 +1,10 @@
 /** @format */
 
 export interface MediaItem {
-	type: "video" | "image" | "gradient";
+	type: "video" | "image" | "gradient" | "iframe";
 	url: string;
 	fallback?: string;
+	alt?: string;
 }
 
 export interface ProjectLinks {

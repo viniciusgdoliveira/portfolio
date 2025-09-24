@@ -42,12 +42,17 @@
 					"description": "Outil d'évaluation neuropsychologique numérique pour iPad et tablettes. Comprend la Partie A (séquençage numérique) et la Partie B (séquences alternées nombre-lettre) pour évaluer l'attention visuelle et les capacités de changement de tâche.",
 					"keyFeatures": ["Interaction tactile", "Fonctionnalité de minuterie", "Analyse des résultats", "Tests Partie A et B", "Évaluation cognitive"]
 				},
-				"aulaFirebase": {
-					"title": "Aula Firebase Next.js",
-					"description": "Système de gestion d'apprentissage avec intégration Firebase et fonctionnalités temps réel. Comprend l'authentification utilisateur, la gestion de documents Firestore, Cloud Storage pour le téléchargement d'images et la synchronisation de données en temps réel.",
-					"keyFeatures": ["Authentification utilisateur", "Gestion de documents Firestore", "Intégration Cloud Storage", "Synchronisation de données temps réel", "Design responsive"]
-				},
-				"meuAssessorFashion": {
+			"aulaFirebase": {
+				"title": "Aula Firebase Next.js",
+				"description": "Système de gestion d'apprentissage avec intégration Firebase et fonctionnalités temps réel. Comprend l'authentification utilisateur, la gestion de documents Firestore, Cloud Storage pour le téléchargement d'images et la synchronisation de données en temps réel.",
+				"keyFeatures": ["Authentification utilisateur", "Gestion de documents Firestore", "Intégration Cloud Storage", "Synchronisation de données temps réel", "Design responsive"]
+			},
+			"portfolio": {
+				"title": "Site Web de Portfolio Personnel",
+				"description": "Site web de portfolio moderne et multilingue présentant mes projets et compétences. Construit avec Next.js 15, React 19, TypeScript et Tailwind CSS v4. Comprend une interface de chat alimentée par IA, support multilingue (EN/ES/FR/PT-BR), thème sombre/clair, design responsive et performances optimisées.",
+				"keyFeatures": ["Support multilingue (4 langues)", "Interface de chat alimentée par IA", "Système de thème sombre/clair", "Design responsive", "Optimisation SEO", "Intégration formulaire de contact", "Vitrine de projets", "Performances optimisées"]
+			},
+			"meuAssessorFashion": {
 					"title": "Meu Assessor Fashion",
 					"description": "Consultant mode alimenté par IA avec des recommandations de style intelligentes.",
 					"keyFeatures": ["Recommandations alimentées par IA", "Analyse de style", "Apprentissage des préférences utilisateur", "Intégration des tendances mode", "Interface interactive"]
@@ -99,6 +104,11 @@
 				"title": "Aula Firebase Next.js",
 				"description": "Système de gestion d'apprentissage avec intégration Firebase et fonctionnalités temps réel. Comprend l'authentification utilisateur, la gestion de documents Firestore, Cloud Storage pour le téléchargement d'images et la synchronisation de données en temps réel.",
 				"keyFeatures": ["Authentification utilisateur", "Gestion de documents Firestore", "Intégration Cloud Storage", "Synchronisation de données temps réel", "Design responsive"]
+			},
+			"portfolio": {
+				"title": "Site Web de Portfolio Personnel",
+				"description": "Site web de portfolio moderne et multilingue présentant mes projets et compétences. Construit avec Next.js 15, React 19, TypeScript et Tailwind CSS v4. Comprend une interface de chat alimentée par IA, support multilingue (EN/ES/FR/PT-BR), thème sombre/clair, design responsive et performances optimisées.",
+				"keyFeatures": ["Support multilingue (4 langues)", "Interface de chat alimentée par IA", "Système de thème sombre/clair", "Design responsive", "Optimisation SEO", "Intégration formulaire de contact", "Vitrine de projets", "Performances optimisées"]
 			},
 			"meuAssessorFashion": {
 				"title": "Meu Assessor Fashion",

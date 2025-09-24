@@ -42,12 +42,17 @@
 					"description": "Digital neuropsychological assessment tool for iPad and tablets. Features Part A (number sequencing) and Part B (alternating number-letter sequences) to evaluate visual attention and task switching abilities.",
 					"keyFeatures": ["Touch-based interaction", "Timer functionality", "Results analysis", "Part A and B testing", "Cognitive assessment"]
 				},
-				"aulaFirebase": {
-					"title": "Aula Firebase Next.js",
-					"description": "Learning management system with Firebase integration and real-time features. Features user authentication, Firestore document management, Cloud Storage for image uploads, and real-time data synchronization.",
-					"keyFeatures": ["User authentication", "Firestore document management", "Cloud Storage integration", "Real-time data synchronization", "Responsive design"]
-				},
-				"meuAssessorFashion": {
+			"aulaFirebase": {
+				"title": "Aula Firebase Next.js",
+				"description": "Learning management system with Firebase integration and real-time features. Features user authentication, Firestore document management, Cloud Storage for image uploads, and real-time data synchronization.",
+				"keyFeatures": ["User authentication", "Firestore document management", "Cloud Storage integration", "Real-time data synchronization", "Responsive design"]
+			},
+			"portfolio": {
+				"title": "Personal Portfolio Website",
+				"description": "Modern, multilingual portfolio website showcasing my projects and skills. Built with Next.js 15, React 19, TypeScript, and Tailwind CSS v4. Features AI-powered chat interface, multilingual support (EN/ES/FR/PT-BR), dark/light theme, responsive design, and optimized performance.",
+				"keyFeatures": ["Multilingual support (4 languages)", "AI-powered chat interface", "Dark/light theme system", "Responsive design", "SEO optimization", "Contact form integration", "Project showcase", "Performance optimized"]
+			},
+			"meuAssessorFashion": {
 					"title": "Meu Assessor Fashion",
 					"description": "AI-powered fashion consultant with intelligent styling recommendations.",
 					"keyFeatures": ["AI-powered recommendations", "Style analysis", "User preference learning", "Fashion trend integration", "Interactive interface"]
@@ -99,6 +104,11 @@
 				"title": "Aula Firebase Next.js",
 				"description": "Learning management system with Firebase integration and real-time features. Features user authentication, Firestore document management, Cloud Storage for image uploads, and real-time data synchronization.",
 				"keyFeatures": ["User authentication", "Firestore document management", "Cloud Storage integration", "Real-time data synchronization", "Responsive design"]
+			},
+			"portfolio": {
+				"title": "Personal Portfolio Website",
+				"description": "Modern, multilingual portfolio website showcasing my projects and skills. Built with Next.js 15, React 19, TypeScript, and Tailwind CSS v4. Features AI-powered chat interface, multilingual support (EN/ES/FR/PT-BR), dark/light theme, responsive design, and optimized performance.",
+				"keyFeatures": ["Multilingual support (4 languages)", "AI-powered chat interface", "Dark/light theme system", "Responsive design", "SEO optimization", "Contact form integration", "Project showcase", "Performance optimized"]
 			},
 			"meuAssessorFashion": {
 				"title": "Meu Assessor Fashion",

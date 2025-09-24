@@ -91,6 +91,29 @@
 			"learnings": "Advanced Firebase techniques, real-time application architecture"
 		},
 		{
+			"id": "portfolio",
+			"title": "Personal Portfolio Website",
+			"shortDescription": "Modern, multilingual portfolio website built with Next.js 15 and Tailwind CSS.",
+			"fullDescription": "Modern, multilingual portfolio website showcasing my projects and skills. Built with Next.js 15, React 19, TypeScript, and Tailwind CSS v4. Features AI-powered chat interface, multilingual support (EN/ES/FR/PT-BR), dark/light theme, responsive design, and optimized performance.",
+			"technologies": ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS v4", "next-intl", "next-themes", "Radix UI", "OpenAI", "Resend"],
+			"category": "Web Application",
+			"status": "completed",
+			"featured": true,
+			"image": {
+				"type": "iframe",
+				"url": "https://viniciusgdoliveira.dev",
+				"fallback": "bg-gradient-to-br from-blue-500 to-purple-600",
+				"alt": "Personal Portfolio Website"
+			},
+			"links": {
+				"github": "https://github.com/viniciusgdoliveira/portfolio",
+				"live": "https://viniciusgdoliveira.dev"
+			},
+			"keyFeatures": ["Multilingual support (4 languages)", "AI-powered chat interface", "Dark/light theme system", "Responsive design", "SEO optimization", "Contact form integration", "Project showcase", "Performance optimized"],
+			"challenges": "Implementing clean architecture with SOLID principles, managing complex multilingual routing, and optimizing performance across different devices",
+			"learnings": "Advanced Next.js 15 App Router patterns, internationalization with next-intl, AI integration with OpenAI, modern React 19 features, and comprehensive TypeScript typing"
+		},
+		{
 			"id": "meuAssessorFashion",
 			"title": "Meu Assessor Fashion",
 			"shortDescription": "AI-powered fashion consultant with intelligent styling recommendations.",
@@ -155,30 +178,8 @@
 			"keyFeatures": ["Server-side rendering", "Fast performance", "Modern UI/UX", "Shopify integration", "Responsive design"],
 			"challenges": "Optimizing performance with Hydrogen and creating seamless user experience",
 			"learnings": "Advanced Hydrogen techniques, e-commerce optimization, performance tuning"
-		},
-		{
-			"id": "mushShopify",
-			"title": "Mush Shopify Store",
-			"shortDescription": "Comprehensive Shopify store with custom themes and features.",
-			"fullDescription": "Comprehensive Shopify store with custom themes and features. Built with Shopify, Liquid, and JavaScript to create a complete e-commerce solution that helps businesses grow.",
-			"technologies": ["Shopify", "Liquid", "JavaScript"],
-			"category": "E-commerce",
-			"status": "in development",
-			"featured": true,
-			"image": {
-				"type": "gradient",
-				"url": "",
-				"fallback": "bg-gradient-to-br from-indigo-400 to-purple-500"
-			},
-			"links": {
-				"github": "https://github.com/viniciusgdoliveira/mush-shopify",
-				"live": "https://mushcompany.myshopify.com"
-			},
-			"keyFeatures": ["Custom Shopify themes", "Advanced Liquid templating", "JavaScript enhancements", "Mobile optimization", "Conversion optimization"],
-			"challenges": "Creating custom Shopify themes that balance functionality with performance",
-			"learnings": "Advanced Shopify development, Liquid templating, e-commerce best practices"
 		}
 	],
 	"categories": ["Mobile App", "Web Application", "E-commerce", "AI/Web Application", "Automation/Tools"],
-	"technologies": ["React Native", "Expo", "TypeScript", "Next.js", "Firebase", "Vercel", "Python", "Flask", "AI/ML", "Automation", "APIs", "Hydrogen", "React", "Shopify", "Liquid", "JavaScript"]
+	"technologies": ["React Native", "Expo", "TypeScript", "Next.js", "Next.js 15", "React 19", "Tailwind CSS v4", "next-intl", "next-themes", "Radix UI", "OpenAI", "Resend", "Firebase", "Vercel", "Python", "Flask", "AI/ML", "Automation", "APIs", "Hydrogen", "React", "Shopify", "Liquid", "JavaScript"]
 }
