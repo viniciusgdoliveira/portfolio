@@ -25,7 +25,7 @@ export default async function ChatPage({ params }: PageProps) {
 	setRequestLocale(locale);
 
 	return (
-		<div className="min-h-screen liquid-bg">
+		<div className="flex-1 flex flex-col liquid-bg">
 			{/* Structured Data */}
 			<script
 				type="application/ld+json"
@@ -53,8 +53,8 @@ export default async function ChatPage({ params }: PageProps) {
 				}}
 			/>
 
-			<div className="h-[calc(100vh-5rem)] flex flex-col px-4 sm:px-6 lg:px-8">
-				<div className="flex-1 flex flex-col max-w-none lg:max-w-7xl mx-auto w-full">
+			<div className="flex-1 flex flex-col px-4 sm:px-6 lg:px-8 py-4">
+				<div className="flex-1 flex flex-col max-w-none lg:max-w-7xl mx-auto w-full min-h-0">
 					<ChatInterface />
 				</div>
 			</div>

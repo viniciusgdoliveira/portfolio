@@ -960,6 +960,26 @@ html {
 	}
 }
 
+/* Mobile layout fixes for proper footer positioning */
+@media (max-width: 768px) {
+	/* Ensure chat interface doesn't overflow on mobile */
+	.chat-interface-mobile {
+		height: calc(100vh - 8rem); /* Account for header and footer */
+		max-height: calc(100vh - 8rem);
+	}
+	
+	/* Fix mobile viewport height issues */
+	.mobile-viewport-fix {
+		min-height: calc(100vh - 8rem);
+	}
+	
+	/* Ensure proper scrolling on mobile */
+	.mobile-scroll-container {
+		-webkit-overflow-scrolling: touch;
+		overscroll-behavior: contain;
+	}
+}
+
 /* Mobile-specific liquid glass enhancements */
 @media (max-width: 768px) {
 	.liquid-glass-light {

@@ -78,7 +78,7 @@ export default function ChatInterface() {
 	];
 
 	return (
-		<div className="h-full flex flex-col w-full py-4">
+		<div className="h-full flex flex-col w-full mobile-scroll-container">
 			<div className="liquid-card p-6 mb-6 flex-shrink-0">
 				<div className="flex items-center justify-between">
 					<div>
@@ -279,10 +279,10 @@ export default function ChatInterface() {
 				)}
 
 				{/* Input form */}
-				<div className="border-t border-white/10 p-6 flex-shrink-0">
+				<div className="border-t border-white/10 p-4 sm:p-6 flex-shrink-0">
 					<form
 						onSubmit={handleSubmit}
-						className="flex space-x-4"
+						className="flex space-x-3 sm:space-x-4"
 					>
 						<div className="flex-1 relative">
 							<textarea
@@ -308,7 +308,7 @@ export default function ChatInterface() {
 						<button
 							type="submit"
 							disabled={!input.trim() || isLoading || (rateLimit?.remaining ?? 1) <= 0}
-							className="liquid-button text-white font-semibold px-6 py-4 rounded-[20px] transition-all duration-300 hover:scale-105 hover:bg-green-500/20 hover:border-green-400/50 hover:shadow-green-500/25 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:bg-transparent disabled:hover:border-transparent min-w-[80px] flex items-center justify-center"
+							className="liquid-button text-white font-semibold px-4 sm:px-6 py-3 sm:py-4 rounded-[20px] transition-all duration-300 hover:scale-105 hover:bg-green-500/20 hover:border-green-400/50 hover:shadow-green-500/25 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:bg-transparent disabled:hover:border-transparent min-w-[60px] sm:min-w-[80px] flex items-center justify-center"
 						>
 							{isLoading ? (
 								<div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />

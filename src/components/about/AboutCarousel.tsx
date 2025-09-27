@@ -2,7 +2,7 @@
 
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Card } from "@/components/ui/Card";
@@ -13,6 +13,11 @@ import { cn } from "@/lib/utils";
 export function AboutCarousel({ sections, autoRotate = true, interval = 8000, className }: AboutCarouselProps) {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [isAutoRotating, setIsAutoRotating] = useState(autoRotate);
+	const [isDragging, setIsDragging] = useState(false);
+	const [dragStartX, setDragStartX] = useState(0);
+	const [dragCurrentX, setDragCurrentX] = useState(0);
+	const [wasAutoRotating, setWasAutoRotating] = useState(false);
+	const imageRef = useRef<HTMLDivElement>(null);
 	const t = useTranslations("home");
 
 	useEffect(() => {
@@ -31,6 +36,57 @@ export function AboutCarousel({ sections, autoRotate = true, interval = 8000, cl
 
 	const toggleAutoRotation = () => {
 		setIsAutoRotating(!isAutoRotating);
+	};
+
+	// Touch event handlers for mobile drag
+	const handleTouchStart = (e: React.TouchEvent) => {
+		if (sections.length <= 1) return;
+		
+		setIsDragging(true);
+		setDragStartX(e.touches[0].clientX);
+		setDragCurrentX(e.touches[0].clientX);
+		
+		// Pause auto-rotation during drag
+		if (isAutoRotating) {
+			setWasAutoRotating(true);
+			setIsAutoRotating(false);
+		}
+	};
+
+	const handleTouchMove = (e: React.TouchEvent) => {
+		if (!isDragging) return;
+		
+		setDragCurrentX(e.touches[0].clientX);
+	};
+
+	const handleTouchEnd = () => {
+		if (!isDragging) return;
+		
+		const dragDistance = dragCurrentX - dragStartX;
+		const threshold = 50; // Minimum distance to trigger section change
+		
+		if (Math.abs(dragDistance) > threshold) {
+			if (dragDistance > 0) {
+				// Swipe right - go to previous section
+				setCurrentIndex((prevIndex) => 
+					prevIndex === 0 ? sections.length - 1 : prevIndex - 1
+				);
+			} else {
+				// Swipe left - go to next section
+				setCurrentIndex((prevIndex) => (prevIndex + 1) % sections.length);
+			}
+		}
+		
+		// Reset drag state
+		setIsDragging(false);
+		setDragStartX(0);
+		setDragCurrentX(0);
+		
+		// Resume auto-rotation if it was active before
+		if (wasAutoRotating) {
+			setIsAutoRotating(true);
+			setWasAutoRotating(false);
+		}
 	};
 
 	if (!sections || sections.length === 0) {
@@ -62,13 +118,25 @@ export function AboutCarousel({ sections, autoRotate = true, interval = 8000, cl
 			<div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
 				{/* Image Section */}
 				<div className="relative">
-					<div className="aspect-square md:aspect-[4/5] lg:aspect-square rounded-3xl liquid-glass overflow-hidden transition-all duration-1000 ease-in-out">
+					<div 
+						ref={imageRef}
+						className="aspect-square md:aspect-[4/5] lg:aspect-square rounded-3xl liquid-glass overflow-hidden transition-all duration-1000 ease-in-out touch-pan-y"
+						onTouchStart={handleTouchStart}
+						onTouchMove={handleTouchMove}
+						onTouchEnd={handleTouchEnd}
+						style={{
+							transform: isDragging ? `translateX(${dragCurrentX - dragStartX}px)` : 'translateX(0)',
+							opacity: isDragging ? 0.8 : 1,
+							transition: isDragging ? 'none' : 'all 0.3s ease-out'
+						}}
+					>
 						<Image
 							src={translatedSection.image}
 							alt={translatedSection.alt || `${translatedSection.title} - About section`}
 							width={500}
 							height={500}
 							className="w-full h-full object-cover transition-all duration-1000 ease-in-out"
+							draggable={false}
 						/>
 						<div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 

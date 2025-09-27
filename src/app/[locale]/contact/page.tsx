@@ -15,7 +15,7 @@ export default function Contact() {
 	const locale = useLocale();
 
 	return (
-		<div className="min-h-screen liquid-bg">
+		<div className="flex-1 liquid-bg flex flex-col">
 			<StructuredData data={createWebPageSchema(locale, "Contact")} />
 
 			{/* Hero Section */}

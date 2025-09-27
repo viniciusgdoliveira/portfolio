@@ -44,7 +44,7 @@ export default function Home() {
 
 	if (isLoading) {
 		return (
-			<div className="min-h-screen liquid-bg flex items-center justify-center">
+			<div className="flex-1 liquid-bg flex items-center justify-center">
 				<div className="text-white text-center">
 					<div className="w-8 h-8 border-2 border-white/30 border-t-white rounded-full animate-spin mx-auto mb-4" />
 					<p>Loading...</p>
@@ -54,7 +54,7 @@ export default function Home() {
 	}
 
 	return (
-		<div className="min-h-screen liquid-bg">
+		<div className="flex-1 liquid-bg flex flex-col">
 			<StructuredData data={createPersonSchema()} />
 
 			<HeroSection locale={pathLocale} />
