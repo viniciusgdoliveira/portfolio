@@ -98,7 +98,7 @@
 		"video": "🎥 Video",
 		"videoComingSoon": "Video Próximamente",
 		"projectPreview": "Vista Previa del Proyecto",
-		"backToHome": "🏠 Volver al Inicio",
+		"backToHome": "Volver al Inicio",
 		"actions": {
 			"viewCode": "Ver Código",
 			"liveDemo": "Demo en Vivo"
@@ -202,7 +202,7 @@
 	"footer": {
 		"mainMessage": "¡Gracias por tomarte el tiempo de explorar mi trabajo! Me encantaría saber de ti y ayudarte a dar vida a tus ideas. ¡Creemos algo increíble juntos!",
 		"contactButton": "Ponerse en Contacto",
-		"developedBy": "Creado con ❤️ y mucho café ☕ por Vinícius"
+		"developedBy": "Creado con ❤️ y mucho café ☕ por yo =)"
 	},
 	"seo": {
 		"title": "Vinícius Guimarães de Oliveira - Ingeniero de Software",
