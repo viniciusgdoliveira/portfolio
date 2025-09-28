@@ -8,7 +8,7 @@ Sentry.init({
 
   // Capture unhandled promise rejections
   integrations: [
-    new Sentry.Integrations.Http({ tracing: true }),
+    // HTTP integration is automatically included in newer versions
   ],
 
   // Capture console errors

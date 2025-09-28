@@ -108,8 +108,8 @@ describe('/api/chat', () => {
     })
 
   it('handles rate limiting', async () => {
-    const rateLimiterModule = require('@/lib/rateLimiter')
-    rateLimiterModule.rateLimiter.checkRateLimit.mockResolvedValueOnce({
+    const { rateLimiter } = await import('@/lib/rateLimiter')
+    rateLimiter.checkRateLimit.mockResolvedValueOnce({
       allowed: false,
       current: 100,
       remaining: 0,

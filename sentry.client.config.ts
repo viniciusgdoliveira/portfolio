@@ -8,13 +8,7 @@ Sentry.init({
   
   // Capture unhandled promise rejections
   integrations: [
-    new Sentry.BrowserTracing({
-      // Set sampling rate for performance monitoring
-      tracePropagationTargets: [
-        'localhost',
-        /^https:\/\/viniciusgdoliveira\.vercel\.app/,
-      ],
-    }),
+    // BrowserTracing is automatically included in newer versions
   ],
 
   // Capture console errors
