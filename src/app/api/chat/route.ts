@@ -2,6 +2,7 @@ import OpenAI from 'openai';
 import { NextRequest, NextResponse } from 'next/server';
 import chatbotPersonality from '@/data/chatbot-personality.json';
 import { rateLimiter } from '@/lib/rateLimiter';
+import { safeValidateChatRequest, formatZodError } from '@/lib/validation';
 
 // OpenAI client - using fallback for build time, real key at runtime
 const openai = new OpenAI({
@@ -13,10 +14,6 @@ interface ChatMessage {
   content: string;
 }
 
-interface RequestBody {
-  messages: ChatMessage[];
-  locale?: string;
-}
 
 // Function to estimate tokens (rough approximation: 1 token ≈ 4 characters)
 function estimateTokens(text: string): number {
@@ -151,15 +148,22 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const body: RequestBody = await request.json();
-    const { messages, locale = 'en' } = body;
+    const body = await request.json();
     
-    if (!messages || !Array.isArray(messages)) {
+    // Validate request body using Zod
+    const validationResult = safeValidateChatRequest(body);
+    if (!validationResult.success) {
+      const formattedError = formatZodError(validationResult.error);
       return NextResponse.json(
-        { error: 'Messages array is required' },
+        { 
+          error: formattedError.message, 
+          details: formattedError.details 
+        }, 
         { status: 400 }
       );
     }
+
+    const { messages, locale = 'en' } = validationResult.data;
     
     // Check conversation length limits
     const { conversation_limits } = chatbotPersonality;

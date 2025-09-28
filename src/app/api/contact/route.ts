@@ -2,6 +2,7 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
+import { safeValidateContactForm, formatZodError } from "@/lib/validation";
 
 const resend = new Resend(process.env.RESEND_API_KEY || "dummy-key-for-build");
 
@@ -13,18 +14,21 @@ export async function POST(request: NextRequest) {
 		}
 
 		const body = await request.json();
-		const { firstName, lastName, email, subject, message } = body;
-
-		// Validate required fields
-		if (!firstName || !lastName || !email || !subject || !message) {
-			return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+		
+		// Validate request body using Zod
+		const validationResult = safeValidateContactForm(body);
+		if (!validationResult.success) {
+			const formattedError = formatZodError(validationResult.error);
+			return NextResponse.json(
+				{ 
+					error: formattedError.message, 
+					details: formattedError.details 
+				}, 
+				{ status: 400 }
+			);
 		}
 
-		// Validate email format
-		const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-		if (!emailRegex.test(email)) {
-			return NextResponse.json({ error: "Invalid email format" }, { status: 400 });
-		}
+		const { firstName, lastName, email, subject, message } = validationResult.data;
 
 		// Send email using Resend
 		const { data, error } = await resend.emails.send({
