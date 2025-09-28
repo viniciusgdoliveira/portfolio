@@ -17,8 +17,8 @@ declare global {
       toContainHTML(html: string): R
       toHaveAccessibleDescription(description?: string | RegExp): R
       toHaveAccessibleName(name?: string | RegExp): R
-      toHaveFormValues(expectedValues: Record<string, any>): R
-      toHaveStyle(css: string | Record<string, any>): R
+      toHaveFormValues<T = unknown>(expectedValues: Record<string, T>): R
+      toHaveStyle<T = string | number>(css: string | Record<string, T>): R
       toHaveDisplayValue(value: string | RegExp | (string | RegExp)[]): R
       toHaveDescription(description?: string | RegExp): R
       toHaveName(name?: string | RegExp): R
