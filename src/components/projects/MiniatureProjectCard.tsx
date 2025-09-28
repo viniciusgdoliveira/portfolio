@@ -35,7 +35,7 @@ export function MiniatureProjectCard({ project, index, isSelected, onClick, clas
 		<div
 			onClick={onClick}
 			className={cn(
-				"liquid-glass-light rounded-xl p-3 sm:p-4 transition-all duration-300 cursor-pointer group relative",
+				"liquid-glass-light rounded-xl p-4 sm:p-6 transition-all duration-300 cursor-pointer group relative",
 				"border border-white/20 hover:border-white/40",
 				"hover:scale-[1.02] hover:shadow-lg hover:shadow-white/10",
 				isSelected && "border-white/60 bg-white/10 shadow-lg scale-[1.02] shadow-white/20",
@@ -74,7 +74,7 @@ export function MiniatureProjectCard({ project, index, isSelected, onClick, clas
 
 			{/* Content Section */}
 			<div className="space-y-2">
-				<h3 className="text-white font-semibold text-sm sm:text-base leading-tight">{translatedProject.title}</h3>
+				<h2 className="text-white font-medium text-sm sm:text-base leading-tight">{translatedProject.title}</h2>
 				<p className="text-white/70 text-xs sm:text-sm leading-relaxed line-clamp-2">{translatedProject.shortDescription}</p>
 			</div>
 
@@ -92,7 +92,7 @@ export function MiniatureProjectCard({ project, index, isSelected, onClick, clas
 				{translatedProject.technologies.length > 3 && (
 					<Badge
 						size="sm"
-						className="text-xs px-2 py-1 bg-white/20 text-white/70"
+						className="text-xs px-2 py-1 bg-white/20 text-white/70 leading-relaxed"
 					>
 						+{translatedProject.technologies.length - 3}
 					</Badge>

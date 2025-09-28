@@ -57,8 +57,8 @@ export function ProjectCard({ project, size = "medium", showFullDescription = fa
 			</div>
 
 			{/* Content Section */}
-			<CardContent className="p-3 sm:p-4 md:p-5 pb-6">
-				<h3 className={cn("font-bold text-white mb-3", size === "large" ? "text-lg sm:text-xl md:text-2xl lg:text-3xl" : "text-lg md:text-xl")}>{translatedProject.title}</h3>
+			<CardContent className="p-3 sm:p-4 md:p-6 pb-6">
+				<h2 className={cn("font-semibold text-white mb-3", size === "large" ? "text-lg sm:text-xl md:text-2xl lg:text-3xl" : "text-lg md:text-xl")}>{translatedProject.title}</h2>
 
 				<p className={cn("text-white/80 mb-3 sm:mb-4 leading-relaxed", size === "large" ? "text-sm sm:text-base md:text-base lg:text-lg" : "text-sm md:text-base")}>
 					{showFullDescription ? translatedProject.fullDescription : translatedProject.shortDescription}
@@ -90,7 +90,7 @@ export function ProjectCard({ project, size = "medium", showFullDescription = fa
 				{/* Key Features (for large cards) */}
 				{size === "large" && translatedProject.keyFeatures && translatedProject.keyFeatures.length > 0 && (
 					<div className="mb-3 sm:mb-4">
-						<h4 className="text-white font-semibold mb-2 sm:mb-3 text-sm sm:text-sm md:text-base">Key Features:</h4>
+						<h3 className="text-white font-semibold mb-2 sm:mb-3 text-sm sm:text-sm md:text-base">Key Features:</h3>
 						<ul className="text-white/70 text-xs sm:text-xs md:text-sm space-y-1 sm:space-y-1.5">
 							{translatedProject.keyFeatures.map((feature: string, index: number) => (
 								<li
@@ -107,7 +107,7 @@ export function ProjectCard({ project, size = "medium", showFullDescription = fa
 			</CardContent>
 
 			{/* Action Buttons */}
-			<CardFooter className="p-3 sm:p-4 md:p-5 pt-0 pb-6">
+			<CardFooter className="p-3 sm:p-4 md:p-6 pt-0 pb-6">
 				<div className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full">
 					{translatedProject.links.github && (
 						<Button

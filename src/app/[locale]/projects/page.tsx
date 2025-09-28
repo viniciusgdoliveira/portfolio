@@ -76,7 +76,7 @@ export default function Projects() {
 				<aside className="w-full lg:w-80 xl:w-96 liquid-glass-light rounded-t-3xl lg:rounded-l-3xl lg:rounded-t-none border-t lg:border-t-0 lg:border-l border-white/10 p-4 lg:p-6 flex flex-col order-1 lg:order-2 lg:flex-shrink-0 lg:self-stretch lg:overflow-hidden">
 					{/* Header with Navigation */}
 					<div className="mb-4 lg:mb-6 flex items-center justify-between">
-						<h3 className="text-white font-semibold text-base lg:text-sm">Projects ({projects.length})</h3>
+						<h2 className="text-white font-medium text-base lg:text-sm leading-tight">Projects ({projects.length})</h2>
 						{/* Mobile Navigation Arrows */}
 						<div className="flex lg:hidden gap-2 ">
 							<button

@@ -155,7 +155,7 @@ export default function ChatInterface() {
 				>
 					{/* Welcome message */}
 					{messages.length === 0 && (
-						<div className="text-center py-8">
+						<div className="text-center py-10">
 							<div className="w-20 h-20 liquid-glass mx-auto mb-4 flex items-center justify-center rounded-full">
 								<svg
 									className="w-10 h-10 text-white/80"

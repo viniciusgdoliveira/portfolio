@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 export function ProjectGrid({ projects, columns = 2, className }: ProjectGridProps) {
 	if (!projects || projects.length === 0) {
 		return (
-			<div className="text-center py-12">
+			<div className="text-center py-10">
 				<p className="text-white/60">No projects found.</p>
 			</div>
 		);

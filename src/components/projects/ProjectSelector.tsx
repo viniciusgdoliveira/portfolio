@@ -15,7 +15,7 @@ interface ProjectSelectorProps {
 
 export function ProjectSelector({ projects, selectedIndex, onProjectSelect, className }: ProjectSelectorProps) {
 	return (
-		<div className={cn("flex justify-center items-center gap-6 md:gap-7 overflow-x-auto pb-4", className)}>
+		<div className={cn("flex justify-center items-center gap-6 md:gap-8 overflow-x-auto pb-4", className)}>
 			{projects.map((project, index) => (
 				<ProjectSelectorItem
 					key={project.id}
@@ -62,7 +62,7 @@ function ProjectSelectorItem({ project, isSelected, onClick }: ProjectSelectorIt
 
 			{/* Content Section */}
 			<div className="p-2 md:p-3 flex-1 flex items-center justify-center">
-				<h4 className="text-xs md:text-sm font-medium text-white truncate max-w-[10ch]">{project.title}</h4>
+				<h3 className="text-xs md:text-sm font-medium text-white truncate max-w-[10ch] leading-tight">{project.title}</h3>
 			</div>
 
 			{/* Selection indicator */}
