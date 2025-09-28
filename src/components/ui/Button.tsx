@@ -11,6 +11,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 	size?: "sm" | "md" | "lg";
 	asChild?: boolean;
 	children: React.ReactNode;
+	'aria-label'?: string;
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ className, variant = "primary", size = "md", asChild = false, children, ...props }, ref) => {
@@ -36,6 +37,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ className, variant 
 		<Comp
 			className={cn(baseClasses, variants[variant], sizes[size], className)}
 			ref={ref}
+			aria-label={props['aria-label']}
 			{...props}
 		>
 			{children}
