@@ -36,6 +36,7 @@ export const SPACING_CLASSES = {
     xl: 'p-8',     // 32px
     '2xl': 'p-10', // 40px
     '3xl': 'p-12', // 48px
+    '4xl': 'p-16', // 64px
   },
   // Margin
   margin: {
@@ -46,6 +47,7 @@ export const SPACING_CLASSES = {
     xl: 'm-8',     // 32px
     '2xl': 'm-10', // 40px
     '3xl': 'm-12', // 48px
+    '4xl': 'm-16', // 64px
   },
   // Gap
   gap: {
@@ -56,6 +58,7 @@ export const SPACING_CLASSES = {
     xl: 'gap-8',     // 32px
     '2xl': 'gap-10', // 40px
     '3xl': 'gap-12', // 48px
+    '4xl': 'gap-16', // 64px
   },
   // Space Between
   space: {
@@ -66,6 +69,7 @@ export const SPACING_CLASSES = {
     xl: 'space-x-8 space-y-8',     // 32px
     '2xl': 'space-x-10 space-y-10', // 40px
     '3xl': 'space-x-12 space-y-12', // 48px
+    '4xl': 'space-x-16 space-y-16', // 64px
   },
 } as const;
 
@@ -282,16 +286,16 @@ export type TypographyColor = keyof typeof TYPOGRAPHY.textColor;
 
 // Helper function to get spacing class
 export function getSpacingClass(type: 'padding' | 'margin' | 'gap' | 'space', size: SpacingSize): string {
-  return SPACING_CLASSES[type][size];
+  return SPACING_CLASSES[type][size] as string;
 }
 
 // Helper function to get component spacing
-export function getComponentSpacing(component: ComponentSpacing): string {
+export function getComponentSpacing(component: ComponentSpacing): string | Record<string, string> {
   return COMPONENT_SPACING[component];
 }
 
 // Helper function to get responsive spacing
-export function getResponsiveSpacing(type: 'padding' | 'margin' | 'gap', size: ResponsiveSpacing): string {
+export function getResponsiveSpacing(type: 'padding' | 'margin' | 'gap', size: 'mobile' | 'tablet' | 'desktop'): string {
   return RESPONSIVE_SPACING[type][size];
 }
 
