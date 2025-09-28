@@ -1,9 +1,7 @@
 import { render } from '@testing-library/react'
-import { axe, toHaveNoViolations } from 'jest-axe'
+import { axe } from 'jest-axe'
 import { Button } from '@/components/ui/Button'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/Card'
-
-expect.extend(toHaveNoViolations)
 
 describe('Accessibility Tests', () => {
   it('Button should not have accessibility violations', async () => {
@@ -53,7 +51,7 @@ describe('Accessibility Tests', () => {
     const { container } = render(
       <Card>
         <CardHeader>
-          <CardTitle as="h2">Section Title</CardTitle>
+          <CardTitle>Section Title</CardTitle>
           <CardDescription>Section description</CardDescription>
         </CardHeader>
         <CardContent>
