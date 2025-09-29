@@ -2,7 +2,7 @@
 
 # Portfolio - Vinícius Guimarães de Oliveira
 
-A sophisticated, multilingual portfolio website built with Next.js 15, featuring modern Liquid Glass design aesthetics, AI-powered chat functionality, and comprehensive internationalization support.
+A sophisticated, multilingual portfolio website built with Next.js 15, featuring modern Liquid Glass design aesthetics, AI-powered chat functionality, and comprehensive internationalization support. This project showcases modern web development practices with a focus on performance, accessibility, and user experience.
 
 ## ✨ Features
 
@@ -46,21 +46,26 @@ A sophisticated, multilingual portfolio website built with Next.js 15, featuring
 
 ### **Frontend**
 
-- **Framework**: Next.js 15 with App Router
-- **React**: React 19 with latest features
-- **Language**: TypeScript with strict type checking
-- **Styling**: Tailwind CSS 4 with custom Liquid Glass components
-- **Fonts**: Geist Sans & Geist Mono
+- **Framework**: Next.js 15 with App Router and Turbopack support
+- **React**: React 19 with latest features and optimizations
+- **Language**: TypeScript with strict type checking and custom type definitions
+- **Styling**: Tailwind CSS 4 with custom Liquid Glass design system
+- **Fonts**: Geist Sans & Geist Mono from Google Fonts
 - **UI Components**: Radix UI primitives with custom styling
 - **Icons**: Custom SVG icons and emojis
+- **Themes**: Dark/Light mode with DOS-style retro theme option
+- **Animations**: CSS transitions, transforms, and floating elements
 
 ### **Backend & APIs**
 
 - **API Routes**: Next.js API routes for chat and contact functionality
-- **AI Integration**: OpenAI GPT-4o-mini for intelligent responses
-- **Email Service**: Resend for contact form email delivery
-- **Rate Limiting**: Custom file-based rate limiting system
+- **AI Integration**: OpenAI GPT-4o-mini for intelligent responses with streaming
+- **Email Service**: Resend for contact form email delivery with HTML templates
+- **Rate Limiting**: Custom file-based rate limiting system (50 requests/day per IP)
 - **Data Storage**: JSON file-based storage for rate limiting data
+- **Validation**: Zod schema validation for API requests
+- **Error Handling**: Comprehensive error handling with localized messages
+- **Streaming**: Real-time message streaming for chat responses
 
 ### **Internationalization**
 
@@ -72,20 +77,24 @@ A sophisticated, multilingual portfolio website built with Next.js 15, featuring
 
 ### **Deployment & Infrastructure**
 
-- **Platform**: Vercel (optimized configuration)
-- **Domain**: Custom domain with SSL
-- **CDN**: Global content delivery
+- **Platform**: Vercel (optimized configuration with vercel.json)
+- **Domain**: Custom domain with SSL (viniciusgdoliveira.dev)
+- **CDN**: Global content delivery with Vercel Edge Network
 - **Environment**: Production-ready with environment variables
 - **Build Optimization**: Turbopack support for faster development
+- **Analytics**: Vercel Analytics and Speed Insights integration
+- **Monitoring**: Sentry integration for error tracking
+- **Performance**: Optimized bundle with tree shaking and code splitting
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-- Node.js 18+
-- npm or yarn
+- Node.js 18+ (recommended: Node.js 20+)
+- npm or yarn package manager
 - OpenAI API key (for chat functionality)
 - Resend API key (for contact form functionality)
+- Git for version control
 
 ### Installation
 
@@ -119,6 +128,18 @@ npm start
 
 # Run linting
 npm run lint
+
+# Run type checking
+npm run type-check
+
+# Run tests (if available)
+npm test
+
+# Run tests in CI mode
+npm run test:ci
+
+# Run end-to-end tests
+npm run test:e2e
 ```
 
 ### Environment Variables
@@ -139,66 +160,103 @@ NEXT_PUBLIC_SITE_URL=https://your-domain.com
 ## 📁 Project Structure
 
 ```
-src/
-├── app/                          # Next.js App Router
-│   ├── [locale]/                 # Internationalized routes
-│   │   ├── chat/                 # AI chat interface page
-│   │   ├── contact/              # Contact form page
-│   │   ├── projects/             # Projects showcase page
-│   │   ├── layout.tsx            # Locale-specific layout
-│   │   └── page.tsx             # Homepage with rotating content
-│   ├── api/                      # API routes
-│   │   ├── chat/                 # Chat API endpoint with streaming
-│   │   ├── contact/              # Contact form API endpoint
-│   │   └── data/                 # Data API endpoints
-│   │       ├── projects/          # Projects data endpoint
-│   │       └── about-sections/   # About sections data endpoint
-│   ├── globals.css               # Global styles & Liquid Glass effects
-│   ├── layout.tsx                # Root layout with providers
-│   ├── page.tsx                  # Root redirect page
-│   ├── robots.ts                 # SEO robots.txt
-│   └── sitemap.ts               # Dynamic sitemap generation
-├── components/                   # Reusable components
-│   ├── about/                    # About section components
-│   ├── contact/                  # Contact form components
-│   ├── home/                     # Homepage components
-│   ├── projects/                 # Project showcase components
-│   ├── seo/                      # SEO components
-│   ├── ui/                       # UI components (Badge, Button, Card, etc.)
-│   ├── ChatInterface.tsx         # AI chat interface
-│   ├── LanguageSwitcher.tsx      # Language selection component
-│   ├── Navigation.tsx            # Responsive navigation
-│   ├── ThemeToggle.tsx           # Dark/light mode toggle
-│   └── Footer.tsx               # Footer component
-├── contexts/                     # React contexts
-│   ├── LanguageContext.tsx       # Language state management
-│   └── ThemeContext.tsx          # Theme state management
-├── data/                         # Static data files
-│   ├── about-sections.json       # About sections data
-│   ├── chatbot-personality.json  # AI personality configuration
-│   ├── contact-info.json         # Contact information
-│   ├── personal-info.json        # Personal information
-│   ├── projects.json             # Projects data
-│   └── seo-data.json             # SEO metadata
-├── hooks/                        # Custom React hooks
-│   └── useChat.ts               # Chat functionality hook
-├── i18n/                        # Internationalization
-│   ├── request.ts               # i18n request configuration
-│   └── routing.ts               # Locale routing configuration
-├── lib/                         # Utility libraries
-│   ├── data.ts                  # Data service utilities
-│   ├── rateLimiter.ts           # Rate limiting implementation
-│   └── utils.ts                 # General utilities
-├── services/                     # Service layer
-│   └── data.service.ts          # Data service for API calls
-├── types/                        # TypeScript type definitions
-│   ├── about.ts                 # About section types
-│   └── project.ts               # Project types
-└── messages/                    # Translation files
-    ├── en.json                  # English translations
-    ├── pt-BR.json              # Portuguese (Brazil) translations
-    ├── es.json                 # Spanish translations
-    └── fr.json                 # French translations
+portfolio/
+├── src/
+│   ├── app/                          # Next.js 15 App Router
+│   │   ├── [locale]/                 # Internationalized routes
+│   │   │   ├── chat/                 # AI chat interface page
+│   │   │   ├── contact/              # Contact form page
+│   │   │   ├── projects/             # Projects showcase page
+│   │   │   ├── layout.tsx            # Locale-specific layout with providers
+│   │   │   └── page.tsx             # Homepage with rotating content
+│   │   ├── api/                      # API routes
+│   │   │   ├── chat/                 # Chat API endpoint with streaming
+│   │   │   ├── contact/              # Contact form API endpoint
+│   │   │   └── data/                 # Data API endpoints
+│   │   │       ├── projects/          # Projects data endpoint
+│   │   │       └── about-sections/   # About sections data endpoint
+│   │   ├── globals.css               # Global styles & Liquid Glass effects
+│   │   ├── layout.tsx                # Root layout with providers
+│   │   ├── page.tsx                  # Root redirect page
+│   │   ├── robots.ts                 # SEO robots.txt generation
+│   │   └── sitemap.ts               # Dynamic sitemap generation
+│   ├── components/                   # Reusable React components
+│   │   ├── about/                    # About section components
+│   │   │   └── AboutCarousel.tsx    # Rotating about sections
+│   │   ├── contact/                  # Contact form components
+│   │   │   ├── ContactForm.tsx      # Contact form with validation
+│   │   │   └── ContactInfo.tsx      # Contact information display
+│   │   ├── home/                     # Homepage components
+│   │   │   ├── HeroSection.tsx      # Hero section with CTA
+│   │   │   ├── AboutMeSection.tsx   # About me with rotating content
+│   │   │   ├── FeaturedProjectsSection.tsx # Featured projects display
+│   │   │   └── CtaSection.tsx       # Call-to-action section
+│   │   ├── projects/                 # Project showcase components
+│   │   │   ├── ProjectCard.tsx      # Individual project cards
+│   │   │   ├── ProjectGrid.tsx      # Project grid layout
+│   │   │   ├── ProjectModal.tsx     # Project detail modal
+│   │   │   ├── ProjectSelector.tsx  # Project filtering/selection
+│   │   │   └── ProjectShowcase.tsx  # Main project showcase
+│   │   ├── seo/                      # SEO components
+│   │   │   └── StructuredData.tsx   # JSON-LD structured data
+│   │   ├── ui/                       # Reusable UI components
+│   │   │   ├── Badge.tsx            # Technology badges
+│   │   │   ├── Button.tsx           # Custom button component
+│   │   │   ├── Card.tsx             # Card component
+│   │   │   └── MediaDisplay.tsx     # Media display component
+│   │   ├── ChatInterface.tsx         # AI chat interface
+│   │   ├── LanguageSwitcher.tsx      # Language selection component
+│   │   ├── Navigation.tsx            # Responsive navigation
+│   │   ├── ThemeToggle.tsx           # Dark/light mode toggle
+│   │   └── Footer.tsx               # Footer component
+│   ├── contexts/                     # React contexts
+│   │   ├── LanguageContext.tsx       # Language state management
+│   │   └── ThemeContext.tsx          # Theme state management
+│   ├── data/                         # Static data files
+│   │   ├── about-sections.json       # About sections data
+│   │   ├── chatbot-personality.json  # AI personality configuration
+│   │   ├── contact-info.json         # Contact information
+│   │   ├── personal-info.json        # Personal information
+│   │   ├── projects.json             # Projects data
+│   │   └── seo-data.json             # SEO metadata
+│   ├── hooks/                        # Custom React hooks
+│   │   └── useChat.ts               # Chat functionality hook
+│   ├── i18n/                        # Internationalization
+│   │   ├── request.ts               # i18n request configuration
+│   │   └── routing.ts               # Locale routing configuration
+│   ├── lib/                         # Utility libraries
+│   │   ├── data.ts                  # Data service utilities
+│   │   ├── rateLimiter.ts           # Rate limiting implementation
+│   │   └── utils.ts                 # General utilities
+│   ├── services/                     # Service layer
+│   │   └── data.service.ts          # Data service for API calls
+│   ├── types/                        # TypeScript type definitions
+│   │   ├── about.ts                 # About section types
+│   │   └── project.ts               # Project types
+│   └── messages/                    # Translation files
+│       ├── en.json                  # English translations
+│       ├── pt-BR.json              # Portuguese (Brazil) translations
+│       ├── es.json                 # Spanish translations
+│       └── fr.json                 # French translations
+├── data/                            # Runtime data storage
+│   └── rate-limit.json             # Rate limiting data (auto-generated)
+├── public/                          # Static assets
+│   ├── flags/                       # Country flag SVGs
+│   ├── file.svg                     # Custom icons
+│   ├── globe.svg                    # Globe icon
+│   ├── next.svg                     # Next.js logo
+│   ├── vercel.svg                   # Vercel logo
+│   └── window.svg                   # Window icon
+├── next.config.ts                   # Next.js configuration
+├── next-env.d.ts                    # Next.js TypeScript declarations
+├── tsconfig.json                    # TypeScript configuration
+├── tailwind.config.js               # Tailwind CSS configuration
+├── postcss.config.mjs               # PostCSS configuration
+├── eslint.config.mjs                # ESLint configuration
+├── vercel.json                      # Vercel deployment configuration
+├── package.json                     # Dependencies and scripts
+├── package-lock.json                # Dependency lock file
+└── README.md                        # Project documentation
 ```
 
 ## 🎯 Key Features Deep Dive
@@ -214,6 +272,9 @@ src/
 - **Error Handling**: Graceful error handling and user feedback
 - **Quick Actions**: Pre-defined conversation starters for common topics
 - **Rate Limit Headers**: Proper HTTP headers for rate limit information
+- **Plain Text Format**: No markdown formatting for clean chat experience
+- **Conversation Limits**: Maximum 20 messages per conversation session
+- **Personality Traits**: Methodical yet creative, values work-life balance, collaborative approach
 
 ### **Liquid Glass Design System**
 
@@ -244,6 +305,8 @@ src/
 - **Project Categories**: Organized by Mobile App, Web Application, E-commerce, AI/Web Application, Automation/Tools
 - **Featured Projects**: Highlighted projects with detailed descriptions
 - **Interactive Modals**: Detailed project views with media and descriptions
+- **Project Filtering**: Filter projects by technology or category
+- **Media Display**: Support for videos, images, iframes, and gradient backgrounds
 
 ## 🚀 Deployment
 
@@ -295,6 +358,10 @@ NEXT_PUBLIC_SITE_URL=https://your-domain.com
 - **Token Warning**: Warning at 3500 tokens to prevent context overflow
 - **Conversation Limits**: Maximum 20 messages per conversation
 - **Language Detection**: Automatic language detection and response matching
+- **Streaming**: Real-time response streaming for better UX
+- **Rate Limiting**: 50 messages per day per IP address
+- **Error Handling**: Comprehensive error handling with localized messages
+- **Quick Actions**: Pre-defined conversation starters for common topics
 
 ### **Internationalization**
 
@@ -302,6 +369,10 @@ NEXT_PUBLIC_SITE_URL=https://your-domain.com
 - **Default Locale**: English (`en`)
 - **Fallback**: Graceful fallback to English for missing translations
 - **URL Structure**: `/{locale}/{page}` format
+- **Translation Files**: JSON-based translation files in `messages/` directory
+- **Dynamic Routing**: Locale-based routing with Next.js App Router
+- **Context Management**: React context for language state persistence
+- **SEO Optimization**: Proper meta tags and structured data per language
 
 ## 📊 Performance Features
 
@@ -338,53 +409,108 @@ NEXT_PUBLIC_SITE_URL=https://your-domain.com
 
 ## 🚀 Featured Projects
 
+This portfolio showcases a diverse range of projects demonstrating expertise across different technologies and domains:
+
 ### **Trail Making Test Digital**
 - **Type**: Mobile App (React Native, Expo, TypeScript)
-- **Description**: Digital neuropsychological assessment tool for iPad and tablets
-- **Features**: Touch-based interaction, timer functionality, Part A and B testing
+- **Category**: Mobile App
+- **Description**: Digital neuropsychological assessment tool for iPad and tablets. Features Part A (number sequencing) and Part B (alternating number-letter sequences) to evaluate visual attention and task switching abilities.
+- **Key Features**: Touch-based interaction, timer functionality, results analysis, Part A and B testing, cognitive assessment
+- **Technologies**: React Native, Expo, TypeScript
+- **Challenges**: Implementing precise touch interactions and timing for neuropsychological accuracy
 - **GitHub**: [trail-making-test-digital](https://github.com/viniciusgdoliveira/trail-making-test-digital)
 
 ### **Aula Firebase Next.js**
 - **Type**: Web Application (Next.js, Firebase, Vercel)
-- **Description**: Learning management system with Firebase integration
-- **Features**: User authentication, real-time data sync, Cloud Storage
+- **Category**: Web Application
+- **Description**: Learning management system with Firebase integration and real-time features. Features user authentication, Firestore document management, Cloud Storage for image uploads, and real-time data synchronization.
+- **Key Features**: User authentication, Firestore document management, Cloud Storage integration, real-time data synchronization, responsive design
+- **Technologies**: Next.js, Firebase, Vercel
+- **Challenges**: Implementing real-time data sync and managing complex Firebase security rules
 - **Live**: [aula-firebase.vercel.app](http://aula-firebase.vercel.app/)
 - **GitHub**: [aula-firebase-nextjs](https://github.com/viniciusgdoliveira/aula-firebase-nextjs)
 
 ### **Meu Assessor Fashion**
 - **Type**: AI/Web Application (Python, Flask, AI/ML)
-- **Description**: AI-powered fashion consultant with intelligent styling recommendations
-- **Features**: AI recommendations, style analysis, user preferences
+- **Category**: AI/Web Application
+- **Description**: AI-powered fashion consultant with intelligent styling recommendations. This project challenged me to work with AI/ML integration and create a system that understands user preferences to provide personalized fashion advice.
+- **Key Features**: AI-powered recommendations, style analysis, user preference learning, fashion trend integration, interactive interface
+- **Technologies**: Python, Flask, AI/ML
+- **Challenges**: Training AI models for fashion recommendations and handling subjective style preferences
 - **Live**: [meuassessorfashion.onrender.com](https://meuassessorfashion.onrender.com)
 - **GitHub**: [meuassessorfashion](https://github.com/viniciusgdoliveira/meuassessorfashion)
 
 ### **Hydrogen Mush**
 - **Type**: E-commerce (Hydrogen, React, TypeScript)
-- **Description**: Modern e-commerce platform built with Shopify Hydrogen
-- **Features**: Server-side rendering, fast performance, modern UI
+- **Category**: E-commerce
+- **Description**: Modern e-commerce platform built with Shopify Hydrogen featuring server-side rendering, lightning-fast performance, and a beautiful modern UI. This project showcases the power of Hydrogen for e-commerce.
+- **Key Features**: Server-side rendering, fast performance, modern UI/UX, Shopify integration, responsive design
+- **Technologies**: Hydrogen, React, TypeScript
+- **Challenges**: Optimizing performance with Hydrogen and creating seamless user experience
 - **Live**: [mush.company](https://mush.company)
 - **GitHub**: [hydrogen-mush](https://github.com/viniciusgdoliveira/hydrogen-mush)
 
 ### **Python Code Automation**
 - **Type**: Automation/Tools (Python, Automation, APIs)
-- **Description**: Powerful automation toolkit for streamlining development workflows
-- **Features**: Workflow automation, API integrations, script management
+- **Category**: Automation/Tools
+- **Description**: Powerful automation toolkit for streamlining development workflows. Built to solve repetitive tasks and includes workflow automation, API integrations, and script management capabilities.
+- **Key Features**: Workflow automation, API integrations, script management, task scheduling, error handling
+- **Technologies**: Python, Automation, APIs
+- **Challenges**: Creating flexible automation scripts that work across different environments
 - **GitHub**: [python-code-automation](https://github.com/viniciusgdoliveira/python-code-automation)
 
 ### **Personal Portfolio Website**
 - **Type**: Web Application (Next.js 15, React 19, TypeScript, Tailwind CSS v4)
-- **Description**: This very portfolio website showcasing modern web development
-- **Features**: Multilingual support, AI chat, dark/light themes, responsive design
+- **Category**: Web Application
+- **Description**: This very portfolio website showcasing modern web development. Built with Next.js 15, React 19, TypeScript, and Tailwind CSS v4. Features AI-powered chat interface, multilingual support (EN/ES/FR/PT-BR), dark/light theme, responsive design, and optimized performance.
+- **Key Features**: Multilingual support (4 languages), AI-powered chat interface, dark/light theme system, responsive design, SEO optimization, contact form integration, project showcase, performance optimized
+- **Technologies**: Next.js 15, React 19, TypeScript, Tailwind CSS v4, next-intl, next-themes, Radix UI, OpenAI, Resend
+- **Challenges**: Implementing clean architecture with SOLID principles, managing complex multilingual routing, and optimizing performance across different devices
 - **Live**: [viniciusgdoliveira.dev](https://viniciusgdoliveira.dev)
 - **GitHub**: [portfolio](https://github.com/viniciusgdoliveira/portfolio)
+
+## 🧪 Development & Testing
+
+### **Development Practices**
+
+- **Type Safety**: Full TypeScript coverage with strict type checking
+- **Code Quality**: ESLint configuration with Next.js and TypeScript rules
+- **Component Architecture**: Modular, reusable components with clear separation of concerns
+- **State Management**: React Context for global state (theme, language)
+- **Error Handling**: Comprehensive error boundaries and graceful fallbacks
+- **Performance**: Optimized bundle size, lazy loading, and code splitting
+
+### **Testing Strategy**
+
+- **Unit Testing**: Jest configuration for component and utility testing
+- **Integration Testing**: Testing Library for component integration tests
+- **E2E Testing**: Playwright for end-to-end testing
+- **Accessibility**: Axe-core integration for accessibility testing
+- **Type Checking**: TypeScript compiler checks with `tsc --noEmit`
+- **Linting**: ESLint with Next.js and accessibility rules
+
+### **Code Quality Tools**
+
+```bash
+# Run all quality checks
+npm run lint          # ESLint
+npm run type-check    # TypeScript
+npm test             # Unit tests
+npm run test:ci      # CI tests with coverage
+npm run test:e2e     # End-to-end tests
+```
 
 ## 🤝 Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+3. Install dependencies (`npm install`)
+4. Make your changes following the existing code style
+5. Run quality checks (`npm run lint && npm run type-check`)
+6. Add tests for new functionality
+7. Commit your changes (`git commit -m 'Add amazing feature'`)
+8. Push to the branch (`git push origin feature/amazing-feature`)
+9. Open a Pull Request
 
 ## 📄 License
 
